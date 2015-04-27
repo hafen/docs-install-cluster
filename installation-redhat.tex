@@ -1,0 +1,310 @@
+\section{Tessera Stack Cluster Installation Guide}
+\subsection{Introduction}
+This is a guide to installing the Tessera stack consisting of
+Hadoop\textregistered, RHIPE, datadr, trelliscope and other supporting
+packages on a multi-node cluster.  This guide is intended to be used
+by the Systems Administrator to quickly install and configure the
+software necessary to run the full Tessera stack.  It is not focused
+on tuning and optimally configuring the Tessera stack.  It simplifies
+and generalizes certain aspects of the installation.  The Systems
+Administrator is encouraged to consult individual package
+documentation for further tuning later.  In this guide we assume
+64-bit Red Hat Enterprise Linux version 6.x is the operating system
+installed on he cluster, though these instructions should work with
+few modifications on CentOS and Fedora.
+
+\subsection{Example Configuration}
+Running the Tessera stack on a Hadoop cluster requires each Hadoop node
+to be configured to fill one or more of the roles of ResourceManager,
+NameNode, Secondary NameNode, DataNode, and NodeManager. The role
+descriptions are as follows.
+
+\begin{itemize}
+\item NameNode - Manages the directory tree and metadata of the Hadoop File System (HDFS), a distributed virtual file system that allows data to be replicated and stored across many nodes in the cluster. 
+\item SecondaryNameNode - Offloads HDFS checkpoint support for the NameNode.  It is not a NameNode failover or backup as the name may imply.
+\item ResourceManager - Schedules and issues map reduce jobs for NodeManagers across the cluster.
+\item DataNode - Stores data on the local drives of nodes as part of the distributed HDFS.  DataNodes are almost always also NodeManagers.
+\item NodeManager - Executes the map and reduce jobs issued by the ResourceManager. NodeManagers are almost always also DataNodes.
+\end{itemize}
+
+There can be just one NameNode, one ResourceManager, and one Secondary
+NameNode, but there will be many DataNodes and NodeManagers.  The node
+acting as NameNode cannot also be the Secondary NameNode, but could
+perform one or more of other roles of ResourceManager, DataNode, and
+NodeManager with a potential  performance penalty.  Most cluster nodes
+will be compute nodes with multiple hard drives and thus will run both
+the DataNode and NodeManager services.
+
+For our example we will have a single front-end server that acts as the
+R-session server.  It is where we will run R, which in turn runs RHIPE.
+The front-end server is aware of our Hadoop configuration and can issue
+Hadoop commands, though it isn't technically a Hadoop node itself. The
+front-end server will also be our Shiny server and optional Rstudio
+server.  We will have five nodes in our example Hadoop cluster.  Each of
+the Hadoop nodes in the cluster has a fully qualified domain
+name of the form \verb|nodeNNN.example.com|. In our example,
+
+\begin{itemize}
+\item \verb|node001.example.com| will be the NameNode and the ResourceManager.
+\item \verb|node002.example.com| will be the Secondary NameNode, a NodeManager, and a DataNode. 
+\item \verb|node003.example.com| to \verb|node005.example.com| will be NodeManagers and DataNodes. 
+\item \verb|frontend.example.com| will be the front end R-session server, the Shiny server, and optional Rstudio Server.
+\end{itemize}
+
+\subsection{Packages}
+\subsubsection{Required Packages}
+The Tessera stack consists of some packages provided by the Tessera group and some provided by other sources. \\
+
+\textbf{Packages provided by the Tessera group}
+\begin{enumerate}
+\item RHIPE - 0.75.1.4
+\item datadr
+\item trelliscope
+\end{enumerate}
+\textbf{Packages provided by others}
+\begin{enumerate}
+\item Sun/Oracle Java - 7
+\item Protocol Buffers - 2.5.0 
+\item Cloudera Hadoop version cdh5.3.3
+\item R - 3.1.3
+\item rJava - 0.9-6 
+\item R packages - codetools, ggplot2, lattice, boot, shiny, devtools
+\item Shiny server
+\end{enumerate}
+
+\subsubsection{Optional Packages}
+These optional packages can be installed along with the Tessera stack providing convenience for the analyst. 
+\begin{enumerate}
+\item Rstudio server - Rstudio server creates a persistent interactive R session for the analyst by running R on a remote server and providing access through a the analyst's local browser.
+\end{enumerate}
+
+\newpage
+
+\subsection{Installation}
+Some packages need only be installed on the Hadoop nodes, some need only
+be installed on the frontend server, and some must be installed on both.
+This is specified on a per-package basis below. This guide is command
+line friendly.
+
+\subsubsection{Compilers and development tools (all servers)}
+Some of the software to be installed must be compiled from source, so a
+typical set of compilers (gcc, gfortran) and development tools must
+be installed first.  This can be done by typing:
+
+\begin{verbatim}
+sudo yum groupinstall "Development tools"
+\end{verbatim}
+
+\subsubsection{Java (all servers)} (\url{http://www.java.com/en/})\\
+Oracle Java is downloaded from www.java.com for 64-bit RHEL by browsing to:
+
+http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html
+
+Check the ``Accept License Agreement'' radio box, then click the
+jdk-7u79-linux-x64.rpm link (or newer version if available) and save.
+Cd to the directory where it was downloaded and type the following to install
+the Java JDK, changing the filename to match the filename downloaded
+if necessary:
+
+\begin{verbatim}
+sudo rpm -ivh jdk-7u79-linux-x64.rpm
+\end{verbatim}
+
+Next, tell Red Hat that the newly installed Oracle Java is the default
+version to use, even if other versions of Java like OpenJDK were
+previously installed:
+
+\begin{verbatim}
+sudo /usr/sbin/alternatives --install /usr/bin/java java /usr/java/latest/bin/java 200005 
+sudo /usr/sbin/alternatives --install /usr/bin/javac javac /usr/java/latest/bin/javac 200005
+sudo /usr/sbin/alternatives --install /usr/bin/javadoc javadoc /usr/java/latest/bin/javadoc 200005
+sudo /usr/sbin/alternatives --install /usr/bin/javah javah /usr/java/latest/bin/javah 200005 
+sudo /usr/sbin/alternatives --install /usr/bin/javap javap /usr/java/latest/bin/javap 200005 
+sudo /usr/sbin/alternatives --install /usr/bin/javaws javaws /usr/java/latest/bin/javaws 200005 
+sudo /usr/sbin/alternatives --install /usr/lib64/mozilla/plugins/libjavaplugin.so libjavaplugin.so.x86_64 /usr/java/latest/jre/lib/amd64/libnpjp2.so 200005
+sudo /usr/sbin/alternatives --install /usr/bin/jar jar /usr/java/latest/bin/jar 200005
+\end{verbatim}
+
+
+%%%%%%%%%%%%%%%%%% Don't do this?
+%Java environment variables are added to the user environment for future logins.
+%\begin{verbatim}
+%echo "export JAVA_HOME=/usr/lib/jvm/java-7-oracle
+%export JAVA_BIN=\$JAVA_HOME/bin
+%export PATH=\$PATH:\$JAVA_HOME:\$JAVA_BIN" |
+%sudo bash -c "cat > /etc/profile.d/java.sh"
+%\end{verbatim}
+%%%%%%
+
+\subsubsection{Protocol Buffers (all servers)} (\url{https://code.google.com/p/protobuf/})\\
+Install Protocol Buffers.  It is important that version 2.5.0 be installed
+and not a newer or older version.  Note that certain other packages
+to be installed later rely on the pkg-config program, which should
+already exist on Red Hat.  The pkg-config program expects that newly
+installed programs register themselves by placing \emph{programname}.pc files in
+/usr/lib64/pkgconfig, which is why there is a \verb|--libdir=/usr/lib64|
+in the instructions below.  To install, first cd to a directory where
+the software can be downloaded and built, and type the following.
+
+\begin{verbatim}
+wget https://github.com/google/protobuf/archive/v2.5.0.zip
+unzip v2.5.0.zip
+cd protobuf-2.5.0
+./autogen.sh 
+./configure --prefix=/usr/local --libdir=/usr/lib64
+make
+sudo make install
+\end{verbatim}
+
+\subsubsection{Hadoop (all servers)} (\url{http://www.cloudera.com/content/cloudera/en/products-and-services/cdh.html})\\
+We use the Hadoop distribution built by Cloudera.  It is a Hadoop MRv2 /
+YARN implementation.  Download the Cloudera repo definition and install
+it so we can install Cloudera packages directly using yum.  Then update
+yum so it is aware of the packages available on the Cloudera repository.
+
+\begin{verbatim}
+wget http://archive.cloudera.com/cdh5/redhat/6/x86_64/cdh/cloudera-cdh5.repo
+sudo cp cloudera-cdh5.repo /etc/yum.repos.d/
+sudo yum update
+\end{verbatim}
+
+We install different Hadoop packages on each node based on the Hadoop roles
+played by that node.  After installing each set of packages we will configure
+them to be started automatically at boot time using \verb|chkconfig|.
+
+node001.example.com:
+\begin{verbatim}
+sudo yum install hadoop-yarn-resourcemanager hadoop-hdfs-namenode hadoop-client
+sudo chkconfig hadoop-yarn-resourcemanager on
+sudo chkconfig hadoop-hdfs-namenode on
+\end{verbatim}
+
+node002.example.com:
+\begin{verbatim}
+sudo yum install hadoop-hdfs-secondarynamenode hadoop-yarn-nodemanager
+sudo yum install hadoop-hdfs-datanode hadoop-mapreduce 
+sudo chkconfig hadoop-hdfs-secondarynamenode on
+sudo chkconfig hadoop-yarn-nodemanager on
+sudo chkconfig hadoop-hdfs-datanode on
+\end{verbatim}
+
+node003.example.com through node005.example.com:
+\begin{verbatim}
+sudo yum install hadoop-yarn-nodemanager hadoop-hdfs-datanode hadoop-mapreduce
+sudo chkconfig hadoop-yarn-nodemanager on
+sudo chkconfig hadoop-hdfs-datanode on
+\end{verbatim}
+
+frontend.example.com (doesn't run any hadoop services, but needs the hadoop commands):
+\begin{verbatim}
+sudo yum install hadoop-client
+\end{verbatim}
+
+As part of the above steps, three new users and groups named yarn, hdfs,
+and mapred will be added to the system.  All three users are added to
+the new group hadoop.
+
+Configuration of Hadoop settings is done in another section, but for now
+we will prepare the configuration directory and set it as the default
+Hadoop configuration on the system.  On each of node001 through node005
+and on the frontend, execute the following.  We choose the configuration
+directory name of "conf.tessera" in this guide:
+
+\begin{verbatim}
+sudo cp -r /etc/hadoop/conf.empty /etc/hadoop/conf.tessera
+sudo /usr/sbin/alternatives --install /etc/hadoop/conf hadoop-conf /etc/hadoop/conf.tessera 50
+sudo /usr/sbin/alternatives --set hadoop-conf /etc/hadoop/conf.tessera
+\end{verbatim}
+
+Add Hadoop environment variables and an updated path to the user
+environment for future logins.  This assumes users use an sh/ksh/bash/zsh
+based login shell.
+
+\begin{verbatim}
+echo "export HADOOP=/usr/lib/hadoop
+export HADOOP_HOME=\$HADOOP	
+export HADOOP_BIN=\$HADOOP/bin
+export HADOOP_LIB=\$HADOOP/lib
+export HADOOP_LIBS=\`hadoop classpath | tr -d \\*\`
+export HADOOP_CONF_DIR=/etc/hadoop/conf.tessera
+export HADOOP_COMMON_HOME=/usr/lib/hadoop
+export HADOOP_MAPRED_HOME=/usr/lib/hadoop-mapreduce
+export HADOOP_HDFS_HOME=/usr/lib/hadoop-hdfs
+export YARN_HOME=/usr/lib/hadoop-yarn
+export PATH=\$PATH:\$HADOOP_BIN" | 
+sudo bash -c "cat > /etc/profile.d/hadoop.sh"
+\end{verbatim}
+
+\subsubsection{R (all nodes)} (\url{http://cran.r-project.org/})\\
+R is installed and configured to know about Java.  Install the Red Hat
+provided blas and lapack packages first for extra performance.  Cd to
+a directory where the software can be downloaded and compiled and type:
+\begin{verbatim}
+sudo yum install blas blas-devel lapack lapack-devel
+wget http://cran.r-project.org/src/base/R-3/R-3.1.3.tar.gz
+tar zxvf R-3.1.3.tar.gz
+cd R-3.1.3
+./configure --with-blas --with-lapack --with-x --enable-R-shlib
+make
+sudo make install
+sudo env PATH=/usr/local/bin:$PATH R CMD javareconf
+\end{verbatim}
+
+\subsubsection{rJava (all nodes)}(\url{http://www.rforge.net/rJava/})\\
+rJava is also required by RHIPE.  It is installed by:
+
+\begin{verbatim}
+sudo env PATH=/usr/local/bin:$PATH R -e "install.packages('rJava', repos='http://cran.rstudio.com/')"
+\end{verbatim}
+
+\subsubsection{RHIPE (all nodes)}(\url{http://tessera.io/})\\
+RHIPE is downloaded and installed.
+\begin{verbatim}
+wget http://ml.stat.purdue.edu/rhipebin/Rhipe_0.75.1.4_cdh5.tar.gz
+sudo env PATH=/usr/local/bin:$PATH R CMD INSTALL Rhipe_0.75.1.4_cdh5.tar.gz
+\end{verbatim}
+
+\subsubsection{datadr and trelliscope support packages (all nodes)}(\url{http://cran.r-project.org/web/packages/available\_packages\_by\_name.html})\\
+Additional R packages - codetools, latttice, ggplot2, boot, shiny and devtools are needed for trelliscope and datadr. They are installed using the R internal package installer \verb|install.packages|. Use the command line to enter the following commands. 
+\begin{verbatim}
+sudo yum install libcurl-devel
+sudo env PATH=/usr/local/bin:$PATH R -e "install.packages('ggplot2', repos='http://cran.rstudio.com/')"
+sudo env PATH=/usr/local/bin:$PATH R -e "install.packages('lattice', repos='http://cran.rstudio.com/')"
+sudo env PATH=/usr/local/bin:$PATH R -e "install.packages('RCurl', repos='http://cran.rstudio.com/')"
+sudo env PATH=/usr/local/bin:$PATH R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
+sudo env PATH=/usr/local/bin:$PATH R -e "install.packages('devtools', repos='http://cran.rstudio.com/')"
+\end{verbatim}
+
+\subsubsection{datadr and trelliscope (all nodes)}(\url{http://tessera.io})\\
+datadr and trelliscope are installed using install\_github package from R. 
+\begin{verbatim}
+sudo env PATH=/usr/local/bin:$PATH R -e "options(repos = 'http://cran.rstudio.com/');\
+ library(devtools); install_github('tesseradata/datadr')"
+sudo env PATH=/usr/local/bin:$PATH R -e "options(repos = 'http://cran.rstudio.com/');\
+ library(devtools); install_github('tesseradata/trelliscope')"
+\end{verbatim}
+
+\subsubsection{Shiny server (frontend server)}(\url{http://www.rstudio.com/products/shiny/shiny-server/})\\
+
+Shiny server is only installed on frontend.example.com, our designated
+Shiny server. The following commands will install the software
+and launch the Shiny server.
+
+\begin{verbatim}
+wget http://download3.rstudio.org/centos-5.9/x86_64/shiny-server-1.3.0.403-rh5-x86_64.rpm
+sudo yum install --nogpgcheck shiny-server-1.3.0.403-rh5-x86_64.rpm
+\end{verbatim}
+
+\subsubsection{Rstudio Server (frontend server)}(\url{http://www.rstudio.com/})\\
+Rstudio Server is installed on just the shiny server,
+frontend.example.com.  The following commands will install the software
+and launch Rstudio server.
+\begin{verbatim}
+sudo yum install openssl098e
+wget http://download2.rstudio.org/rstudio-server-0.98.1103-x86_64.rpm
+sudo yum install --nogpgcheck rstudio-server-0.98.1103-x86_64.rpm
+\end{verbatim}
+
+Test Rstudio server by browsing to \url{http://frontend.example.com:8787}
+and logging in as a normal user with accounts on that server.  This may
+require firewall changes.

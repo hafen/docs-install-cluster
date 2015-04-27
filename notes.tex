@@ -1,0 +1,71 @@
+\subsection{Notes}
+
+\subsubsection{RAID and Redundancy Design under Hadoop/HDFS}
+\begin{itemize}
+\item RAID configurations are usually not recommended for HDFS data drives.
+HDFS already handles fault tolerance by distributing the blocks it writes
+to local drives among all nodes for both performance and redundancy.
+RAID won't improve performance, and could even slow things down.
+In some configurations it will reduce overall HDFS capacity.
+\item The default block redundancy setting for HDFS is
+three replicates, as specified by the \verb|dfs.replication| variable
+in \verb|hdfs-site.xml|. This means that each data block is copied to
+three drives, optimally on three different nodes. Hadoop has shown high
+availability is possible with three replicates.  The downside is the total
+capacity of HDFS is divided by the number of replicates used.  This means
+our 32 TB example cluster with three replicates can only hold 10.67 TB
+of data.  Decreasing \verb|dfs.replication| below 3 is not recommended
+and should be avoided.  Increasing it above 3 could increase performance for
+large clusters under certain workloads, but at the cost of capacity.
+\end{itemize}
+
+\subsubsection{R Package Design}
+\begin{itemize}
+\item Most R packages can be completely provided by the system
+administrator by installing them as root, which implicitly places them in
+a system wide accessible location, for example \verb|/usr/lib/R/library|
+or \verb|/usr/local/lib64/R/library|.
+\item Alternately, the system administrator can install just the core
+default R packages at a system wide location and allow individual
+users to install specific R library packages in their home directory.
+This permits users the flexibility to easily change versions of packages
+they are using and update them when they choose.
+\end{itemize} 
+
+\subsubsection{RHIPE\_HADOOP\_TMP\_FOLDER environment variable}
+\begin{itemize}
+\item It has been observed that some versions of Linux, such as Red
+Hat Enterprise Linux, may have an issue with RHIPE where it will give
+false errors about being unable to write files in HDFS, even where
+the directory in question is clearly writable.  This can be corrected
+by creating a directory somewhere in HDFS that is readable only by
+that user, and then setting the RHIPE\_HADOOP\_TMP\_FOLDER environment
+variable to point to that HDFS directory.  The user bob for example,
+would type this on frontend:
+
+\begin{verbatim}
+hadoop fs -mkdir -p /user/bob/tmp
+hadoop fs -chmod 700 /user/bob/tmp
+\end{verbatim}
+
+He would then add this to his environment by including it in his .bashrc or .bash\_profile, or whatever location is appropriate for his shell:
+
+\begin{verbatim}
+export RHIPE_HADOOP_TMP_FOLDER=/user/bob/tmp
+\end{verbatim}
+\end{itemize}
+
+\subsubsection{Consider using HDFS High Availability rather than a Secondary NameNode}
+The primary role of the Secondary NameNode is to perform periodic
+checkpointing so the NameNode doesn't have to, which makes reboots of
+the cluster go much more quickly.  The Secondary NameNode could also be
+used to reconstruct the majority of HDFS if the NameNode were to have
+a catastrophic failure, but through a manual, imperfect process prone
+to error.  For a more robust, fault tolerant Hadoop configuration,
+consider using a High Availability HDFS configuration, which uses
+a Standby NameNode rather than a Secondary NameNode, and can be
+configured for automatic failover in the event of a NameNode failure.
+This configuration is more complex, requires the use of Zookeeper, three
+or more JournalNode hosts (these can be regular nodes), and another
+node dedicated to act as the Standby NameNode.  The documentation at
+cloudera.com describes this in more detail.

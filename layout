@@ -1,0 +1,11 @@
+latex main
+bibtex main
+latex main
+latex main
+dvips -o main.ps -t letter -Ppdf -G0 main.dvi
+ps2pdf main.ps
+cat setup.tex installation.tex configuration.tex final.tex notes.tex packageinstall.tex | pandoc -s --smart -f latex -t markdown | iconv -f utf-8 -t ascii//TRANSLIT | (cat ubuntu.yaml; cat) > install-ubuntu.Rmd
+Rscript -e 'library(rmarkdown); library(packagedocs); render("install-ubuntu.Rmd", output_format = package_docs(lib_dir = "assets"))'
+cat setup.tex installation-redhat.tex configuration.tex final.tex notes.tex packageinstall.tex | pandoc -s --smart -f latex -t markdown | iconv -f utf-8 -t ascii//TRANSLIT | (cat redhat.yaml; cat) > install-redhat.Rmd
+Rscript -e 'library(rmarkdown); library(packagedocs); render("install-redhat.Rmd", output_format = package_docs(lib_dir = "assets"))'
+#pdfnew main.pdf &

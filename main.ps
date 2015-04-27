@@ -1,0 +1,3214 @@
+%!PS-Adobe-2.0
+%%Creator: dvips(k) 5.96.1 Copyright 2007 Radical Eye Software
+%%Title: main.dvi
+%%CreationDate: Mon Apr 27 16:31:19 2015
+%%Pages: 32
+%%PageOrder: Ascend
+%%BoundingBox: 0 0 612 792
+%%DocumentFonts: Times-Roman Times-Bold CMSY10 Courier
+%%DocumentPaperSizes: Letter
+%%EndComments
+%DVIPSWebPage: (www.radicaleye.com)
+%DVIPSCommandLine: dvips -o main.ps -t letter -Ppdf -G0 main.dvi
+%DVIPSParameters: dpi=8000
+%DVIPSSource:  TeX output 2015.04.27:1631
+%%BeginProcSet: tex.pro 0 0
+%!
+/TeXDict 300 dict def TeXDict begin/N{def}def/B{bind def}N/S{exch}N/X{S
+N}B/A{dup}B/TR{translate}N/isls false N/vsize 11 72 mul N/hsize 8.5 72
+mul N/landplus90{false}def/@rigin{isls{[0 landplus90{1 -1}{-1 1}ifelse 0
+0 0]concat}if 72 Resolution div 72 VResolution div neg scale isls{
+landplus90{VResolution 72 div vsize mul 0 exch}{Resolution -72 div hsize
+mul 0}ifelse TR}if Resolution VResolution vsize -72 div 1 add mul TR[
+matrix currentmatrix{A A round sub abs 0.00001 lt{round}if}forall round
+exch round exch]setmatrix}N/@landscape{/isls true N}B/@manualfeed{
+statusdict/manualfeed true put}B/@copies{/#copies X}B/FMat[1 0 0 -1 0 0]
+N/FBB[0 0 0 0]N/nn 0 N/IEn 0 N/ctr 0 N/df-tail{/nn 8 dict N nn begin
+/FontType 3 N/FontMatrix fntrx N/FontBBox FBB N string/base X array
+/BitMaps X/BuildChar{CharBuilder}N/Encoding IEn N end A{/foo setfont}2
+array copy cvx N load 0 nn put/ctr 0 N[}B/sf 0 N/df{/sf 1 N/fntrx FMat N
+df-tail}B/dfs{div/sf X/fntrx[sf 0 0 sf neg 0 0]N df-tail}B/E{pop nn A
+definefont setfont}B/Cw{Cd A length 5 sub get}B/Ch{Cd A length 4 sub get
+}B/Cx{128 Cd A length 3 sub get sub}B/Cy{Cd A length 2 sub get 127 sub}
+B/Cdx{Cd A length 1 sub get}B/Ci{Cd A type/stringtype ne{ctr get/ctr ctr
+1 add N}if}B/CharBuilder{save 3 1 roll S A/base get 2 index get S
+/BitMaps get S get/Cd X pop/ctr 0 N Cdx 0 Cx Cy Ch sub Cx Cw add Cy
+setcachedevice Cw Ch true[1 0 0 -1 -.1 Cx sub Cy .1 sub]{Ci}imagemask
+restore}B/D{/cc X A type/stringtype ne{]}if nn/base get cc ctr put nn
+/BitMaps get S ctr S sf 1 ne{A A length 1 sub A 2 index S get sf div put
+}if put/ctr ctr 1 add N}B/I{cc 1 add D}B/bop{userdict/bop-hook known{
+bop-hook}if/SI save N @rigin 0 0 moveto/V matrix currentmatrix A 1 get A
+mul exch 0 get A mul add .99 lt{/QV}{/RV}ifelse load def pop pop}N/eop{
+SI restore userdict/eop-hook known{eop-hook}if showpage}N/@start{
+userdict/start-hook known{start-hook}if pop/VResolution X/Resolution X
+1000 div/DVImag X/IEn 256 array N 2 string 0 1 255{IEn S A 360 add 36 4
+index cvrs cvn put}for pop 65781.76 div/vsize X 65781.76 div/hsize X}N
+/p{show}N/RMat[1 0 0 -1 0 0]N/BDot 260 string N/Rx 0 N/Ry 0 N/V{}B/RV/v{
+/Ry X/Rx X V}B statusdict begin/product where{pop false[(Display)(NeXT)
+(LaserWriter 16/600)]{A length product length le{A length product exch 0
+exch getinterval eq{pop true exit}if}{pop}ifelse}forall}{false}ifelse
+end{{gsave TR -.1 .1 TR 1 1 scale Rx Ry false RMat{BDot}imagemask
+grestore}}{{gsave TR -.1 .1 TR Rx Ry scale 1 1 false RMat{BDot}
+imagemask grestore}}ifelse B/QV{gsave newpath transform round exch round
+exch itransform moveto Rx 0 rlineto 0 Ry neg rlineto Rx neg 0 rlineto
+fill grestore}B/a{moveto}B/delta 0 N/tail{A/delta X 0 rmoveto}B/M{S p
+delta add tail}B/b{S p tail}B/c{-4 M}B/d{-3 M}B/e{-2 M}B/f{-1 M}B/g{0 M}
+B/h{1 M}B/i{2 M}B/j{3 M}B/k{4 M}B/w{0 rmoveto}B/l{p -4 w}B/m{p -3 w}B/n{
+p -2 w}B/o{p -1 w}B/q{p 1 w}B/r{p 2 w}B/s{p 3 w}B/t{p 4 w}B/x{0 S
+rmoveto}B/y{3 2 roll p a}B/bos{/SS save N}B/eos{SS restore}B end
+
+%%EndProcSet
+%%BeginProcSet: alt-rule.pro 0 0
+%!
+% Patch by TVZ
+% Makes dvips files draw rules with stroke rather than fill.
+% Makes narrow rules more predictable at low resolutions
+% after distilling to PDF.
+% May have unknown consequences for very thick rules.
+% Tested only with dvips 5.85(k).
+TeXDict begin
+/QV {
+  gsave newpath /ruleY X /ruleX X
+  Rx Ry gt
+  { ruleX ruleY Ry 2 div sub moveto Rx 0 rlineto Ry }
+  { ruleX Rx 2 div add ruleY moveto 0 Ry neg rlineto Rx }
+  ifelse
+  setlinewidth 0 setlinecap stroke grestore
+} bind def
+end
+
+%%EndProcSet
+%%BeginProcSet: 8r.enc 0 0
+% File 8r.enc  TeX Base 1 Encoding  Revision 2.0  2002-10-30
+%
+% @@psencodingfile@{
+%   author    = "S. Rahtz, P. MacKay, Alan Jeffrey, B. Horn, K. Berry,
+%                W. Schmidt, P. Lehman",
+%   version   = "2.0",
+%   date      = "27nov06",
+%   filename  = "8r.enc",
+%   email     = "tex-fonts@@tug.org",
+%   docstring = "This is the encoding vector for Type1 and TrueType
+%                fonts to be used with TeX.  This file is part of the
+%                PSNFSS bundle, version 9"
+% @}
+% 
+% The idea is to have all the characters normally included in Type 1 fonts
+% available for typesetting. This is effectively the characters in Adobe
+% Standard encoding, ISO Latin 1, Windows ANSI including the euro symbol,
+% MacRoman, and some extra characters from Lucida.
+% 
+% Character code assignments were made as follows:
+% 
+% (1) the Windows ANSI characters are almost all in their Windows ANSI
+% positions, because some Windows users cannot easily reencode the
+% fonts, and it makes no difference on other systems. The only Windows
+% ANSI characters not available are those that make no sense for
+% typesetting -- rubout (127 decimal), nobreakspace (160), softhyphen
+% (173). quotesingle and grave are moved just because it's such an
+% irritation not having them in TeX positions.
+% 
+% (2) Remaining characters are assigned arbitrarily to the lower part
+% of the range, avoiding 0, 10 and 13 in case we meet dumb software.
+% 
+% (3) Y&Y Lucida Bright includes some extra text characters; in the
+% hopes that other PostScript fonts, perhaps created for public
+% consumption, will include them, they are included starting at 0x12.
+% These are /dotlessj /ff /ffi /ffl.
+% 
+% (4) hyphen appears twice for compatibility with both ASCII and Windows.
+%
+% (5) /Euro was assigned to 128, as in Windows ANSI
+%
+% (6) Missing characters from MacRoman encoding incorporated as follows:
+%
+%     PostScript      MacRoman        TeXBase1
+%     --------------  --------------  --------------
+%     /notequal       173             0x16
+%     /infinity       176             0x17
+%     /lessequal      178             0x18
+%     /greaterequal   179             0x19
+%     /partialdiff    182             0x1A
+%     /summation      183             0x1B
+%     /product        184             0x1C
+%     /pi             185             0x1D
+%     /integral       186             0x81
+%     /Omega          189             0x8D
+%     /radical        195             0x8E
+%     /approxequal    197             0x8F
+%     /Delta          198             0x9D
+%     /lozenge        215             0x9E
+%
+/TeXBase1Encoding [
+% 0x00
+ /.notdef /dotaccent /fi /fl
+ /fraction /hungarumlaut /Lslash /lslash
+ /ogonek /ring /.notdef /breve
+ /minus /.notdef /Zcaron /zcaron
+% 0x10
+ /caron /dotlessi /dotlessj /ff
+ /ffi /ffl /notequal /infinity
+ /lessequal /greaterequal /partialdiff /summation
+ /product /pi /grave /quotesingle
+% 0x20
+ /space /exclam /quotedbl /numbersign
+ /dollar /percent /ampersand /quoteright
+ /parenleft /parenright /asterisk /plus
+ /comma /hyphen /period /slash
+% 0x30
+ /zero /one /two /three
+ /four /five /six /seven
+ /eight /nine /colon /semicolon
+ /less /equal /greater /question
+% 0x40
+ /at /A /B /C
+ /D /E /F /G
+ /H /I /J /K
+ /L /M /N /O
+% 0x50
+ /P /Q /R /S
+ /T /U /V /W
+ /X /Y /Z /bracketleft
+ /backslash /bracketright /asciicircum /underscore
+% 0x60
+ /quoteleft /a /b /c
+ /d /e /f /g
+ /h /i /j /k
+ /l /m /n /o
+% 0x70
+ /p /q /r /s
+ /t /u /v /w
+ /x /y /z /braceleft
+ /bar /braceright /asciitilde /.notdef
+% 0x80
+ /Euro /integral /quotesinglbase /florin
+ /quotedblbase /ellipsis /dagger /daggerdbl
+ /circumflex /perthousand /Scaron /guilsinglleft
+ /OE /Omega /radical /approxequal
+% 0x90
+ /.notdef /.notdef /.notdef /quotedblleft
+ /quotedblright /bullet /endash /emdash
+ /tilde /trademark /scaron /guilsinglright
+ /oe /Delta /lozenge /Ydieresis
+% 0xA0
+ /.notdef /exclamdown /cent /sterling
+ /currency /yen /brokenbar /section
+ /dieresis /copyright /ordfeminine /guillemotleft
+ /logicalnot /hyphen /registered /macron
+% 0xB0
+ /degree /plusminus /twosuperior /threesuperior
+ /acute /mu /paragraph /periodcentered
+ /cedilla /onesuperior /ordmasculine /guillemotright
+ /onequarter /onehalf /threequarters /questiondown
+% 0xC0
+ /Agrave /Aacute /Acircumflex /Atilde
+ /Adieresis /Aring /AE /Ccedilla
+ /Egrave /Eacute /Ecircumflex /Edieresis
+ /Igrave /Iacute /Icircumflex /Idieresis
+% 0xD0
+ /Eth /Ntilde /Ograve /Oacute
+ /Ocircumflex /Otilde /Odieresis /multiply
+ /Oslash /Ugrave /Uacute /Ucircumflex
+ /Udieresis /Yacute /Thorn /germandbls
+% 0xE0
+ /agrave /aacute /acircumflex /atilde
+ /adieresis /aring /ae /ccedilla
+ /egrave /eacute /ecircumflex /edieresis
+ /igrave /iacute /icircumflex /idieresis
+% 0xF0
+ /eth /ntilde /ograve /oacute
+ /ocircumflex /otilde /odieresis /divide
+ /oslash /ugrave /uacute /ucircumflex
+ /udieresis /yacute /thorn /ydieresis
+] def
+
+
+%%EndProcSet
+%%BeginProcSet: texps.pro 0 0
+%!
+TeXDict begin/rf{findfont dup length 1 add dict begin{1 index/FID ne 2
+index/UniqueID ne and{def}{pop pop}ifelse}forall[1 index 0 6 -1 roll
+exec 0 exch 5 -1 roll VResolution Resolution div mul neg 0 0]FontType 0
+ne{/Metrics exch def dict begin Encoding{exch dup type/integertype ne{
+pop pop 1 sub dup 0 le{pop}{[}ifelse}{FontMatrix 0 get div Metrics 0 get
+div def}ifelse}forall Metrics/Metrics currentdict end def}{{1 index type
+/nametype eq{exit}if exch pop}loop}ifelse[2 index currentdict end
+definefont 3 -1 roll makefont/setfont cvx]cvx def}def/ObliqueSlant{dup
+sin S cos div neg}B/SlantFont{4 index mul add}def/ExtendFont{3 -1 roll
+mul exch}def/ReEncodeFont{CharStrings rcheck{/Encoding false def dup[
+exch{dup CharStrings exch known not{pop/.notdef/Encoding true def}if}
+forall Encoding{]exch pop}{cleartomark}ifelse}if/Encoding exch def}def
+end
+
+%%EndProcSet
+%%BeginProcSet: special.pro 0 0
+%!
+TeXDict begin/SDict 200 dict N SDict begin/@SpecialDefaults{/hs 612 N
+/vs 792 N/ho 0 N/vo 0 N/hsc 1 N/vsc 1 N/ang 0 N/CLIP 0 N/rwiSeen false N
+/rhiSeen false N/letter{}N/note{}N/a4{}N/legal{}N}B/@scaleunit 100 N
+/@hscale{@scaleunit div/hsc X}B/@vscale{@scaleunit div/vsc X}B/@hsize{
+/hs X/CLIP 1 N}B/@vsize{/vs X/CLIP 1 N}B/@clip{/CLIP 2 N}B/@hoffset{/ho
+X}B/@voffset{/vo X}B/@angle{/ang X}B/@rwi{10 div/rwi X/rwiSeen true N}B
+/@rhi{10 div/rhi X/rhiSeen true N}B/@llx{/llx X}B/@lly{/lly X}B/@urx{
+/urx X}B/@ury{/ury X}B/magscale true def end/@MacSetUp{userdict/md known
+{userdict/md get type/dicttype eq{userdict begin md length 10 add md
+maxlength ge{/md md dup length 20 add dict copy def}if end md begin
+/letter{}N/note{}N/legal{}N/od{txpose 1 0 mtx defaultmatrix dtransform S
+atan/pa X newpath clippath mark{transform{itransform moveto}}{transform{
+itransform lineto}}{6 -2 roll transform 6 -2 roll transform 6 -2 roll
+transform{itransform 6 2 roll itransform 6 2 roll itransform 6 2 roll
+curveto}}{{closepath}}pathforall newpath counttomark array astore/gc xdf
+pop ct 39 0 put 10 fz 0 fs 2 F/|______Courier fnt invertflag{PaintBlack}
+if}N/txpose{pxs pys scale ppr aload pop por{noflips{pop S neg S TR pop 1
+-1 scale}if xflip yflip and{pop S neg S TR 180 rotate 1 -1 scale ppr 3
+get ppr 1 get neg sub neg ppr 2 get ppr 0 get neg sub neg TR}if xflip
+yflip not and{pop S neg S TR pop 180 rotate ppr 3 get ppr 1 get neg sub
+neg 0 TR}if yflip xflip not and{ppr 1 get neg ppr 0 get neg TR}if}{
+noflips{TR pop pop 270 rotate 1 -1 scale}if xflip yflip and{TR pop pop
+90 rotate 1 -1 scale ppr 3 get ppr 1 get neg sub neg ppr 2 get ppr 0 get
+neg sub neg TR}if xflip yflip not and{TR pop pop 90 rotate ppr 3 get ppr
+1 get neg sub neg 0 TR}if yflip xflip not and{TR pop pop 270 rotate ppr
+2 get ppr 0 get neg sub neg 0 S TR}if}ifelse scaleby96{ppr aload pop 4
+-1 roll add 2 div 3 1 roll add 2 div 2 copy TR .96 dup scale neg S neg S
+TR}if}N/cp{pop pop showpage pm restore}N end}if}if}N/normalscale{
+Resolution 72 div VResolution 72 div neg scale magscale{DVImag dup scale
+}if 0 setgray}N/psfts{S 65781.76 div N}N/startTexFig{/psf$SavedState
+save N userdict maxlength dict begin/magscale true def normalscale
+currentpoint TR/psf$ury psfts/psf$urx psfts/psf$lly psfts/psf$llx psfts
+/psf$y psfts/psf$x psfts currentpoint/psf$cy X/psf$cx X/psf$sx psf$x
+psf$urx psf$llx sub div N/psf$sy psf$y psf$ury psf$lly sub div N psf$sx
+psf$sy scale psf$cx psf$sx div psf$llx sub psf$cy psf$sy div psf$ury sub
+TR/showpage{}N/erasepage{}N/setpagedevice{pop}N/copypage{}N/p 3 def
+@MacSetUp}N/doclip{psf$llx psf$lly psf$urx psf$ury currentpoint 6 2 roll
+newpath 4 copy 4 2 roll moveto 6 -1 roll S lineto S lineto S lineto
+closepath clip newpath moveto}N/endTexFig{end psf$SavedState restore}N
+/@beginspecial{SDict begin/SpecialSave save N gsave normalscale
+currentpoint TR @SpecialDefaults count/ocount X/dcount countdictstack N}
+N/@setspecial{CLIP 1 eq{newpath 0 0 moveto hs 0 rlineto 0 vs rlineto hs
+neg 0 rlineto closepath clip}if ho vo TR hsc vsc scale ang rotate
+rwiSeen{rwi urx llx sub div rhiSeen{rhi ury lly sub div}{dup}ifelse
+scale llx neg lly neg TR}{rhiSeen{rhi ury lly sub div dup scale llx neg
+lly neg TR}if}ifelse CLIP 2 eq{newpath llx lly moveto urx lly lineto urx
+ury lineto llx ury lineto closepath clip}if/showpage{}N/erasepage{}N
+/setpagedevice{pop}N/copypage{}N newpath}N/@endspecial{count ocount sub{
+pop}repeat countdictstack dcount sub{end}repeat grestore SpecialSave
+restore end}N/@defspecial{SDict begin}N/@fedspecial{end}B/li{lineto}B
+/rl{rlineto}B/rc{rcurveto}B/np{/SaveX currentpoint/SaveY X N 1
+setlinecap newpath}N/st{stroke SaveX SaveY moveto}N/fil{fill SaveX SaveY
+moveto}N/ellipse{/endangle X/startangle X/yrad X/xrad X/savematrix
+matrix currentmatrix N TR xrad yrad scale 0 0 1 startangle endangle arc
+savematrix setmatrix}N end
+
+%%EndProcSet
+TeXDict begin @defspecial
+
+ /DvipsToPDF { 72.27 mul Resolution div } def /PDFToDvips { 72.27 div
+Resolution mul } def /HyperBorder { 1 PDFToDvips } def /H.V {pdf@hoff
+pdf@voff null} def /H.B {/Rect[pdf@llx pdf@lly pdf@urx pdf@ury]} def
+/H.S { currentpoint HyperBorder add /pdf@lly exch def dup DvipsToPDF
+/pdf@hoff exch def HyperBorder sub /pdf@llx exch def } def /H.L { 2
+sub dup /HyperBasePt exch def PDFToDvips /HyperBaseDvips exch def currentpoint
+HyperBaseDvips sub /pdf@ury exch def /pdf@urx exch def } def /H.A {
+H.L currentpoint exch pop vsize 72 sub exch DvipsToPDF HyperBasePt
+sub sub /pdf@voff exch def } def /H.R { currentpoint HyperBorder sub
+/pdf@ury exch def HyperBorder add /pdf@urx exch def currentpoint exch
+pop vsize 72 sub exch DvipsToPDF sub /pdf@voff exch def } def systemdict
+/pdfmark known { userdict /?pdfmark systemdict /exec get put }{ userdict
+/?pdfmark systemdict /pop get put userdict /pdfmark systemdict /cleartomark
+get put } ifelse
+ 
+@fedspecial end
+%%BeginFont: CMSY10
+%!PS-AdobeFont-1.1: CMSY10 1.0
+%%CreationDate: 1991 Aug 15 07:20:57
+% Copyright (C) 1997 American Mathematical Society. All Rights Reserved.
+11 dict begin
+/FontInfo 7 dict dup begin
+/version (1.0) readonly def
+/Notice (Copyright (C) 1997 American Mathematical Society. All Rights Reserved) readonly def
+/FullName (CMSY10) readonly def
+/FamilyName (Computer Modern) readonly def
+/Weight (Medium) readonly def
+/ItalicAngle -14.035 def
+/isFixedPitch false def
+end readonly def
+/FontName /CMSY10 def
+/PaintType 0 def
+/FontType 1 def
+/FontMatrix [0.001 0 0 0.001 0 0] readonly def
+/Encoding 256 array
+0 1 255 {1 index exch /.notdef put} for
+dup 13 /circlecopyrt put
+dup 15 /bullet put
+readonly def
+/FontBBox{-29 -960 1116 775}readonly def
+currentdict end
+currentfile eexec
+D9D66F633B846A97B686A97E45A3D0AA052F09F9C8ADE9D907C058B87E9B6964
+7D53359E51216774A4EAA1E2B58EC3176BD1184A633B951372B4198D4E8C5EF4
+A213ACB58AA0A658908035BF2ED8531779838A960DFE2B27EA49C37156989C85
+E21B3ABF72E39A89232CD9F4237FC80C9E64E8425AA3BEF7DED60B122A52922A
+221A37D9A807DD01161779DDE7D31FF2B87F97C73D63EECDDA4C49501773468A
+27D1663E0B62F461F6E40A5D6676D1D12B51E641C1D4E8E2771864FC104F8CBF
+5B78EC1D88228725F1C453A678F58A7E1B7BD7CA700717D288EB8DA1F57C4F09
+0ABF1D42C5DDD0C384C7E22F8F8047BE1D4C1CC8E33368FB1AC82B4E96146730
+DE3302B2E6B819CB6AE455B1AF3187FFE8071AA57EF8A6616B9CB7941D44EC7A
+71A7BB3DF755178D7D2E4BB69859EFA4BBC30BD6BB1531133FD4D9438FF99F09
+4ECC068A324D75B5F696B8688EEB2F17E5ED34CCD6D047A4E3806D000C199D7C
+515DB70A8D4F6146FE068DC1E5DE8BC57036431151EC603C8BCFE359BBD953AD
+5F3D998D8365AF76D4CF6A06FB66E1CBCFDB3A67D8880377CD677B9705EE853A
+D849F88A828E244FA5816B7D081D4D1975A56D771790C21AE05809BEE6613452
+953F26C39CE61F0E134BC35404FE2F0B7D244D9A6F66E4D817D1C65024013AD3
+5F242EDE94633B8E20EA42B07F83BA649F12B784B2AAFA542BC597C6C2C9AE9C
+39D60FBA6CD16AADB5DFDABF22F37E244DF3987FBFA55031CFCD46ADF03650CE
+D6CDFFD87BF7407FFB63F3FE4C29FE753896101B2CEAB9007B66E29D6A5B85D3
+FF91F888E445677157A5996FC7A3BD19BAF3A3BCF33F0719B992A0F013B1F0A1
+82E42DF6F651071FB407F448DFF37653E2A0569BDD8EABC3280B3582745DB98B
+644E5B341F531B0D81ED85F815B993C2B8B34CDDC6AE97606F6B3B1C5427F174
+362FAB82B935087B568E6F526347058C406E878F1CC2DD05C26D35565347C5A5
+7575891BB4
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+cleartomark
+%%EndFont 
+TeXDict begin 40258437 52099151 1000 8000 8000 (main.dvi)
+@start /Fa 134[664 664 959 664 739 442 517 590 739 739
+664 739 1107 369 739 1[369 739 664 442 590 739 590 739
+664 1[664 7[1328 1[959 886 739 959 1[812 1033 959 1254
+886 1[664 517 1033 1[812 886 959 959 886 959 6[442 664
+664 664 664 664 664 664 664 664 664 369 332 442 332 2[442
+442 37[739 2[{TeXBase1Encoding ReEncodeFont}62 1328.35
+/Times-Bold rf /Fb 130[677 677 677 677 677 677 677 677
+677 677 677 677 677 677 677 677 677 677 677 677 677 677
+677 677 677 677 677 677 677 677 677 677 677 677 677 1[677
+1[677 1[677 677 677 677 1[677 677 677 677 677 677 677
+677 677 677 677 677 677 677 677 677 1[677 677 677 677
+677 677 677 677 677 677 677 677 677 677 677 677 677 677
+677 677 1[677 677 677 677 2[677 1[677 677 33[{
+.85 ExtendFont TeXBase1Encoding ReEncodeFont}84 1328.35
+/Courier rf /Fc 240[664 1[1328 13[{}2 1328.35 /CMSY10
+rf /Fd 173[665 82[{TeXBase1Encoding ReEncodeFont}1 996.264
+/Times-Roman rf /Fe 133[590 664 664 959 664 664 369 517
+442 664 664 664 664 1033 369 664 369 369 664 664 442
+590 664 590 664 590 442 664 4[812 959 1[1254 1[959 812
+739 886 959 739 959 959 1181 812 1[517 442 959 959 739
+812 959 886 886 959 3[749 1[369 369 664 664 664 664 664
+664 664 664 664 664 369 332 442 332 2[442 442 442 1033
+1107 2[542 30[739 739 2[{TeXBase1Encoding ReEncodeFont}76
+1328.35 /Times-Roman rf /Ff 133[708 797 797 1151 797
+886 531 620 708 1[886 797 886 1328 443 886 1[443 886
+797 531 708 886 708 1[797 9[1594 2[1063 886 1151 1[974
+1240 1151 4[620 1240 1[974 1063 1151 1151 1063 1151 6[531
+797 797 797 797 797 797 797 797 797 2[399 531 42[886
+2[{TeXBase1Encoding ReEncodeFont}51 1594.02 /Times-Bold
+rf /Fg 135[956 2[1064 637 744 849 1[1064 956 1064 1593
+532 1064 1[532 1064 956 637 849 1064 849 1[956 11[1381
+1276 1064 1381 1[1169 6[744 1488 1488 1[1276 1[1381 15[956
+956 956 4[478 44[{TeXBase1Encoding ReEncodeFont}33 1912.83
+/Times-Bold rf /Fh 138[797 443 620 531 2[797 797 1[443
+2[443 797 797 4[797 708 8[1151 3[974 15[1151 1063 1063
+1151 65[{TeXBase1Encoding ReEncodeFont}18 1594.02 /Times-Roman
+rf /Fi 138[1148 638 893 765 2[1148 1148 1[638 1148 1[638
+3[1019 1[1019 1[1019 12[1403 1276 9[765 5[1531 67[{
+TeXBase1Encoding ReEncodeFont}16 2295.84 /Times-Roman
+rf end
+%%EndProlog
+%%BeginSetup
+%%Feature: *Resolution 8000dpi
+TeXDict begin
+%%BeginPaperSize: Letter
+letter
+%%EndPaperSize
+ end
+%%EndSetup
+%%Page: 1 1
+TeXDict begin 1 0 bop 0 0 a
+SDict begin /product where{pop product(Distiller)search{pop pop pop version(.)search{exch pop exch pop(3011)eq{gsave newpath 0 0 moveto closepath clip/Courier findfont 10 scalefont setfont 72 72 moveto(.)show grestore}if}{pop}ifelse}{pop}ifelse}if end
+ 0 0 a 0 0 a
+SDict begin [ /Producer (dvips + Distiller) /Title () /Subject () /Creator (LaTeX with hyperref package) /Author () /Keywords () /DOCINFO pdfmark end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0
+0 a 0 0 a
+SDict begin H.R end
+ 0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (page.1) cvn H.B /DEST pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -5 /Dest (section.1) cvn /Title (The R, RHIPE, Hadoop Setting) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsection.1.1) cvn /Title (Overview) /OUT pdfmark end
+ 0 0 a 0
+0 a
+SDict begin [ /Count -0 /Dest (subsection.1.2) cvn /Title (The R-Session Server and RStudio) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsection.1.3) cvn /Title (The Remote Computer) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsection.1.4) cvn /Title (Where Are the Data Analyzed) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsection.1.5) cvn /Title (A Few Basic Hadoop Features) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -9 /Dest (section.2) cvn /Title (Tessera Stack Cluster Installation Guide) /OUT pdfmark end
+ 0
+0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsection.2.1) cvn /Title (Introduction) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsection.2.2) cvn /Title (Example Configuration) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -2 /Dest (subsection.2.3) cvn /Title (Packages) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsubsection.2.3.1) cvn /Title (Required Packages) /OUT pdfmark end
+ 0 0 a 0
+0 a
+SDict begin [ /Count -0 /Dest (subsubsection.2.3.2) cvn /Title (Optional Packages) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -14 /Dest (subsection.2.4) cvn /Title (Installation) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsubsection.2.4.1) cvn /Title (System Update \(all servers\)) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsubsection.2.4.2) cvn /Title (pkg-config \(all servers\)) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsubsection.2.4.3) cvn /Title (Java \(all servers\)) /OUT pdfmark end
+ 0
+0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsubsection.2.4.4) cvn /Title (Protocol Buffers \(all servers\)) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsubsection.2.4.5) cvn /Title (Hadoop \(all servers\)) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsubsection.2.4.6) cvn /Title (R \(all nodes\)) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsubsection.2.4.7) cvn /Title (rJava \(all nodes\)) /OUT pdfmark end
+ 0 0 a 0
+0 a
+SDict begin [ /Count -0 /Dest (subsubsection.2.4.8) cvn /Title (RHIPE \(all nodes\)) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsubsection.2.4.9) cvn /Title (OpenSSL \(all nodes\)) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsubsection.2.4.10) cvn /Title (datadr and trelliscope support packages \(all nodes\)) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsubsection.2.4.11) cvn /Title (datadr and trelliscope \(all nodes\)) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsubsection.2.4.12) cvn /Title (gdebi-core \(frontend server\)) /OUT pdfmark end
+ 0
+0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsubsection.2.4.13) cvn /Title (Shiny server \(frontend server\)) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsubsection.2.4.14) cvn /Title (Rstudio Server \(frontend server\)) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -7 /Dest (subsection.2.5) cvn /Title (Configuration) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsubsection.2.5.1) cvn /Title (Hosts File or DNS entries) /OUT pdfmark end
+ 0 0 a 0
+0 a
+SDict begin [ /Count -0 /Dest (subsubsection.2.5.2) cvn /Title (Firewalls) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsubsection.2.5.3) cvn /Title (Hadoop core-site.xml) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsubsection.2.5.4) cvn /Title (Hadoop mapred-site.xml) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsubsection.2.5.5) cvn /Title (Hadoop yarn-site.xml) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsubsection.2.5.6) cvn /Title (Hadoop secondary namenode file masters) /OUT pdfmark end
+ 0
+0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsubsection.2.5.7) cvn /Title (Hadoop hdfs-site.xml) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsection.2.6) cvn /Title (Hadoop Pre-run Setup) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsection.2.7) cvn /Title (Starting the Hadoop Cluster) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsection.2.8) cvn /Title (Checking the status of the Hadoop Cluster) /OUT pdfmark end
+ 0 0 a 0
+0 a
+SDict begin [ /Count -4 /Dest (subsection.2.9) cvn /Title (Notes) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsubsection.2.9.1) cvn /Title (RAID and Redundancy Design under Hadoop/HDFS) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsubsection.2.9.2) cvn /Title (R Package Design) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsubsection.2.9.3) cvn /Title (RHIPE\137HADOOP\137TMP\137FOLDER environment variable) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsubsection.2.9.4) cvn /Title (Consider using HDFS High Availability rather than a Secondary NameNode) /OUT pdfmark end
+ 0
+0 a 0 0 a
+SDict begin [ /Count -3 /Dest (section.3) cvn /Title (Installing R Packages and Examples for Users) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsection.3.1) cvn /Title (Background) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsection.3.2) cvn /Title (Install and Push) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -4 /Dest (subsection.3.3) cvn /Title (Example: Housing Data) /OUT pdfmark end
+ 0 0 a 0
+0 a
+SDict begin [ /Count -0 /Dest (subsubsection.3.3.1) cvn /Title (The Data) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsubsection.3.3.2) cvn /Title (Write housing.txt to the HDFS) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsubsection.3.3.3) cvn /Title (Read and Divide by County) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Count -0 /Dest (subsubsection.3.3.4) cvn /Title (Compute County Min, Median, Max) /OUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin [ /Page 1 /View [ /Fit ] /PageMode /UseOutlines /DOCVIEW pdfmark end
+ 0
+0 a 0 0 a
+SDict begin [ {Catalog} << >> /PUT pdfmark end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin 14.5 H.A end
+ 0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (Doc-Start) cvn H.B /DEST pdfmark end
+ 0 0 a 10681
+6752 a Fi(T)-161 b(essera)575 b(Stack)g(Cluster)g(Installation)20975
+11335 y Fh(Ashrith)398 b(Barthur)21816 13328 y(Doug)g(Crabill)21924
+15320 y(Xiaosu)g(T)-128 b(ong)0 18841 y
+SDict begin H.S end
+ 0 18841 a 0 18841
+a
+SDict begin 14.5 H.A end
+ 0 18841 a 0 18841 a
+SDict begin [ /View [/XYZ H.V] /Dest (section.1) cvn H.B /DEST pdfmark end
+ 0 18841 a 2027 x Fg(1)1913 b(The)478
+b(R,)h(RHIPE,)f(Hadoop)g(Setting)0 22631 y
+SDict begin H.S end
+ 0 22631 a
+0 22631 a
+SDict begin 14.5 H.A end
+ 0 22631 a 0 22631 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsection.1.1) cvn H.B /DEST pdfmark end
+ 0 22631 a 2202 x Ff(1.1)1594
+b(Ov)-16 b(er)g(view)0 27932 y Fe(The)416 b(setting)h(has)f(three)g
+(components:)581 b(remote)417 b(computer)-53 b(,)439
+b(one)416 b(or)h(more)g(Unix)g(R-session)f(serv)-20 b(ers,)437
+b(and)416 b(a)0 29537 y(Unix)426 b(Hadoop)g(cluster)-73
+b(.)692 b(The)425 b(second)g(tw)-13 b(o)426 b(components)g(are)f
+(running)i(R)e(and)h(RHIPE.)f(Y)-146 b(ou)425 b(w)-13
+b(ork)426 b(on)g(the)0 31142 y(remote)467 b(computer)-53
+b(,)500 b(say)465 b(your)i(laptop,)500 b(and)466 b(login)g(to)h(an)e
+(R-session)h(serv)-20 b(er)-73 b(.)813 b(This)465 b(is)h(home)g(base,)
+499 b(where)0 32748 y(you)393 b(do)g(all)g(of)h(your)f(programming)j
+(of)d(R)g(and)f(RHIPE)h(R)f(commands.)595 b(The)392 b(R)h(commands)g
+(you)h(write)f(for)0 34353 y(di)-33 b(vision,)399 b(application)386
+b(of)g(analytic)f(methods,)399 b(and)386 b(recombination)g(that)g(are)f
+(destined)g(for)h(Hadoop)f(on)h(the)0 35958 y(cluster)332
+b(are)g(passed)g(along)g(by)h(RHIPE)f(R)g(commands.)0
+38161 y(The)433 b(remote)i(computer)f(is)g(typically)h(for)f(you)h(to)f
+(maintain.)717 b(The)434 b(R-session)f(serv)-20 b(ers)434
+b(require)g(IT)g(staf)-33 b(f)434 b(to)0 39766 y(help)347
+b(install)g(softw)-13 b(are,)350 b(con\002gure,)g(and)d(maintain.)456
+b(Ho)-33 b(we)g(v)-20 b(er)346 b(you)h(install)g(packages)f(too)h(on)g
+(the)f(R-session)0 41371 y(serv)-20 b(ers,)304 b(just)297
+b(you)g(do)f(when)h(you)g(w)-13 b(ant)297 b(to)g(use)f(an)g(R)h(CRAN)f
+(package)h(in)f(R.)h(There)f(is)h(an)f(e)-20 b(xtra)297
+b(task)g(though;)0 42976 y(you)385 b(w)-13 b(ant)384
+b(packages)f(you)i(install)g(to)g(be)f(pushed)g(up)h(the)f(Hadoop)h
+(cluster)f(so)g(the)-20 b(y)385 b(can)f(be)g(used)g(there)g(too.)0
+44581 y(Except)374 b(for)g(this)h(push)f(by)g(you,)385
+b(the)374 b(Hadoop)g(cluster)g(is)g(the)g(domain)h(of)f(the)g(systems)g
+(administrators)i(who)0 46186 y(must,)333 b(among)g(other)f(tasks,)g
+(install)h(Hadoop.)0 48344 y
+SDict begin H.S end
+ 0 48344 a 0 48344 a
+SDict begin 14.5 H.A end
+ 0 48344
+a 0 48344 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsection.1.2) cvn H.B /DEST pdfmark end
+ 0 48344 a 2303 x Ff(1.2)1594 b(The)398 b(R-Session)h(Ser)
+-16 b(v)g(er)398 b(and)h(RStudio)0 53746 y Fe(No)-33
+b(w)402 b(the)g(R-session)g(serv)-20 b(er)403 b(can)f(be)g(separate)f
+(from)j(the)e(Hadoop)h(cluster)-53 b(,)419 b(handling)404
+b(only)f(R)f(sessions,)418 b(or)0 55351 y(it)428 b(can)f(be)g(one)g(of)
+h(the)f(serv)-20 b(ers)427 b(on)h(the)f(Hadoop)h(cluster)-73
+b(.)697 b(If)428 b(it)g(is)f(on)g(the)h(Hadoop)g(cluster)-53
+b(,)451 b(there)427 b(must)h(be)0 56956 y(some)350 b(precautions)h(tak)
+-13 b(en)350 b(in)g(the)g(Hadoop)h(con\002guration)g(to)f(protect)h
+(the)f(programming)j(of)d(the)g(R)g(session.)0 58562
+y(This)331 b(is)h(needed)g(because)e(the)i(RHIPE)f(Hadoop)i(jobs)e
+(compete)i(with)f(the)g(R)f(sessions.)411 b(There)332
+b(are)f(ne)-33 b(v)-20 b(er)332 b(full)0 60167 y(guarantees)366
+b(though,)376 b(so)367 b("safe)e(mode")i(is)f(separate)g(R)h(session)f
+(serv)-20 b(ers.)514 b(The)366 b(last)g(thing)h(you)g(w)-13
+b(ant)367 b(is)f(for)h(R)0 61772 y(sessions)362 b(to)i(get)f(bogged)h
+(do)-33 b(wn.)506 b(If)363 b(the)h(cluster)f(option)i(is)e(chosen,)371
+b(then)363 b(you)h(w)-13 b(ant)363 b(to)h(mount)g(a)f(\002le)g(serv)-20
+b(er)0 63377 y(on)296 b(the)h(cluster)f(that)h(contains)f(the)g
+(\002les)g(associated)f(with)i(the)f(R)g(session)g(such)g(as)f(.RData)h
+(and)h(\002les)e(read)h(into)0 64982 y(to)333 b(R)f(or)g(written)h(by)g
+(R.)0 67185 y(There)346 b(is)h(a)g(v)-33 b(ast)346 b(se)-20
+b(gment)347 b(of)g(the)g(R)g(community)h(that)g(uses)e(RStudio,)351
+b(for)c(good)h(reason.)455 b(RStudio)348 b(can)e(join)0
+68790 y(the)373 b(setting.)534 b(Y)-146 b(ou)373 b(ha)-27
+b(v)-20 b(e)373 b(RStudio)h(serv)-20 b(er)373 b(installed)g(on)g(the)g
+(R-session)g(serv)-20 b(ers)372 b(by)h(system)g(administrators.)0
+70395 y(A)282 b(web)f(bro)-33 b(wser)282 b(on)g(the)g(R)f(serv)-20
+b(er)282 b(runs)g(the)g(RStudio)g(interf)-13 b(ace)282
+b(which)g(is)g(accessed)e(by)i(you)g(on)g(your)g(remote)0
+72000 y(de)-33 b(vice)332 b(via)g(the)g(remote)h(login.)25668
+75321 y(1)p eop end
+%%Page: 2 2
+TeXDict begin 2 1 bop 0 0 a
+SDict begin /product where{pop product(Distiller)search{pop pop pop version(.)search{exch pop exch pop(3011)eq{gsave newpath 0 0 moveto closepath clip/Courier findfont 10 scalefont setfont 72 72 moveto(.)show grestore}if}{pop}ifelse}{pop}ifelse}if end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin H.R end
+ 0
+0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (page.2) cvn H.B /DEST pdfmark end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin 14.5 H.A end
+ 0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsection.1.3) cvn H.B /DEST pdfmark end
+ 0 0 a 1328
+x Ff(1.3)1594 b(The)398 b(Remote)g(Computer)0 4428 y
+Fe(The)483 b(remote)g(computer)h(is)f(just)h(a)f(communication)h(de)-33
+b(vice,)521 b(and)483 b(does)g(not)g(carry)h(out)f(data)g(analysis,)521
+b(so)0 6033 y(it)c(can)f(run)h(an)-20 b(y)517 b(operating)g(system,)563
+b(such)516 b(as)g(W)-53 b(indo)-33 b(ws.)965 b(This)516
+b(is)h(especially)f(important)i(for)g(teaching,)0 7638
+y(since)384 b(W)-53 b(indo)-33 b(ws)384 b(labs)g(are)f(typically)i(v)
+-20 b(ery)385 b(plentiful)g(at)f(academic)g(institutions,)399
+b(b)-27 b(ut)385 b(Unix)f(labs)g(much)h(less)0 9243 y(so.)743
+b(Whate)-33 b(v)-20 b(er)443 b(the)g(operating)g(system,)471
+b(a)442 b(common)i(communication)g(protocol)g(that)f(is)g(used)f(is)h
+(the)g(SSH)0 10848 y(protocol.)413 b(SSH)329 b(is)i(typically)h(used)e
+(to)h(log)g(into)h(a)e(remote)i(machine)f(and)f(e)-20
+b(x)g(ecute)331 b(commands)g(or)g(to)g(transfer)0 12453
+y(\002les.)733 b(But)440 b(a)g(critical)g(capability)g(of)g(it)g(for)g
+(our)h(purposes)e(here)h(is)f(that)h(it)g(supports)g(both)h(your)f(R)f
+(session)0 14058 y(command-line)334 b(windo)-33 b(w)-86
+b(,)332 b(sho)-33 b(wing)333 b(both)g(input)g(and)f(output,)i(and)e(a)g
+(separate)g(windo)-33 b(w)332 b(to)h(sho)-33 b(w)332
+b(graphics.)0 16289 y
+SDict begin H.S end
+ 0 16289 a 0 16289 a
+SDict begin 14.5 H.A end
+ 0 16289 a 0
+16289 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsection.1.4) cvn H.B /DEST pdfmark end
+ 0 16289 a 2302 x Ff(1.4)1594 b(Wher)-29 b(e)398
+b(Ar)-29 b(e)398 b(the)g(Data)h(Analyzed)0 21691 y Fe(Ob)-20
+b(viously)-86 b(,)319 b(much)314 b(data)h(analysis)e(is)i(carried)f
+(out)h(by)f(Hadoop)h(on)f(the)h(Hadoop)f(cluster)-73
+b(.)406 b(Y)-146 b(our)315 b(R)f(commands)0 23296 y(are)321
+b(gi)-33 b(v)-20 b(en)321 b(to)g(RHIPE,)g(passed)f(along)h(to)h
+(Hadoop,)h(and)e(the)g(outputs)h(are)f(written)h(by)f(Hadoop)g(to)h
+(the)f(HDFS.)0 25499 y(But)485 b(in)g(man)-20 b(y)485
+b(analyses)f(of)i(lar)-24 b(ger)485 b(and)g(more)g(comple)-20
+b(x)486 b(data,)522 b(it)486 b(is)e(common)i(to)f(ha)-27
+b(v)-20 b(e)485 b(\(1\))h(outputs)f(of)g(a)0 27104 y(recombination)498
+b(method)f(that)g(constitute)g(a)f(relati)-33 b(v)-20
+b(ely)497 b(small)g(dataset,)537 b(and)496 b(\(2\))h(the)f(outputs)i
+(are)e(further)0 28709 y(analyzed)420 b(as)f(part)h(of)g(the)g(o)-20
+b(v)g(erall)420 b(analysis.)674 b(If)421 b(the)-20 b(y)420
+b(are)f(small)h(enough)h(to)f(be)f(readily)i(analyzed)e(in)h(your)0
+30314 y(R)519 b(session,)565 b(then)520 b(for)f(sure)h(that)f(is)g
+(where)g(you)h(w)-13 b(ant)519 b(to)g(be.)973 b(RHIPE)518
+b(commands)i(allo)-33 b(w)519 b(you)h(to)f(write)0 31919
+y(the)409 b(recombination)h(outputs)f(from)h(the)f(HDFS)e(to)i(the)g(R)
+f(global)h(en)-53 b(vironment)410 b(of)f(your)g(R)g(session.)640
+b(The)-20 b(y)0 33524 y(become)395 b(a)g(dataset)g(in)h(.RData.)601
+b(While)396 b(programming)h(R)e(and)h(RHIPE)e(is)i(easy)-86
+b(,)410 b(it)395 b(is)h(not)f(as)g(easy)g(as)f(plain)0
+35129 y(old)339 b(serial)g(R.)g(The)f(point)i(is)e(that)i(a)e(lot)h(of)
+g(data)g(analysis)g(can)f(be)h(carried)g(out)g(in)g(just)g(R)g(e)-33
+b(v)-20 b(en)338 b(when)h(the)g(data)0 36734 y(are)332
+b(lar)-24 b(ge)333 b(and)f(comple)-20 b(x.)0 38965 y
+SDict begin H.S end
+
+0 38965 a 0 38965 a
+SDict begin 14.5 H.A end
+ 0 38965 a 0 38965 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsection.1.5) cvn H.B /DEST pdfmark end
+ 0 38965 a 2302
+x Ff(1.5)1594 b(A)398 b(F)-40 b(ew)398 b(Basic)h(Hadoop)g(F)-40
+b(eatur)-29 b(es)0 44367 y Fe(The)284 b(tw)-13 b(o)284
+b(principal)i(computational)g(operations)f(of)g(Hadoop)g(are)f(Map)g
+(and)h(Reduce.)395 b(The)284 b(\002rst)h(runs)f(parallel)0
+45972 y(computations)451 b(on)e(subsets)g(without)h(communication)h
+(among)f(them.)764 b(The)449 b(second)g(can)g(compute)g(across)0
+47577 y(subset)441 b(outputs.)742 b(So)441 b(Map)g(carries)h(out)g(the)
+g(analytic)g(method)g(computation.)742 b(Reduce)441 b(tak)-13
+b(es)441 b(the)h(outputs)0 49182 y(from)456 b(Map)e(and)h(runs)g(the)g
+(recombination)h(computation.)781 b(A)455 b(di)-33 b(vision)456
+b(is)e(typically)i(carried)f(out)g(both)h(by)0 50787
+y(Map)383 b(and)g(Reduce,)395 b(sometimes)383 b(each)g(used)f(se)-33
+b(v)-20 b(eral)383 b(times,)396 b(and)383 b(can)g(occur)g(as)f(part)h
+(of)h(the)f(reading)g(of)h(the)0 52392 y(data)332 b(into)h(R)f(at)g
+(the)h(start)f(of)h(the)f(analysis.)0 54595 y(Usage)389
+b(of)g(Map)g(and)g(Reduce)g(in)-53 b(v)-27 b(olv)-20
+b(es)390 b(the)g(critical)g(Hadoop)f(element)h(of)f(k)-13
+b(e)-20 b(y-v)-33 b(alue)390 b(pairs.)583 b(W)-106 b(e)388
+b(gi)-33 b(v)-20 b(e)390 b(one)0 56200 y(instance)458
+b(here.)791 b(The)458 b(Map)g(operation,)491 b(instructed)459
+b(by)g(the)f(analyst)h(R)f(code,)490 b(puts)458 b(a)g(k)-13
+b(e)-20 b(y)459 b(on)f(each)g(subset)0 57805 y(output.)604
+b(This)395 b(forms)h(a)g(k)-13 b(e)-20 b(y-v)-33 b(alue)396
+b(pair)g(with)g(the)g(output)h(as)e(the)h(v)-33 b(alue.)602
+b(Each)395 b(output)i(can)e(ha)-27 b(v)-20 b(e)396 b(a)f(unique)0
+59411 y(k)-13 b(e)-20 b(y)-86 b(,)312 b(or)c(each)f(k)-13
+b(e)-20 b(y)307 b(can)h(be)f(gi)-33 b(v)-20 b(en)308
+b(to)g(man)-20 b(y)308 b(outputs,)313 b(or)308 b(all)g(outputs)h(can)e
+(ha)-27 b(v)-20 b(e)308 b(the)f(same)g(k)-13 b(e)-20
+b(y)-86 b(.)404 b(When)307 b(Reduce)0 61016 y(is)400
+b(gi)-33 b(v)-20 b(en)401 b(the)f(Map)g(outputs,)418
+b(it)401 b(assembles)f(the)g(k)-13 b(e)-20 b(y-v)-33
+b(alue)401 b(pairs)f(by)h(k)-13 b(e)-20 b(y)-86 b(,)416
+b(which)401 b(forms)g(groups,)418 b(and)401 b(then)0
+62621 y(the)369 b(R)g(recombination)h(code)f(is)f(applied)i(to)f(the)g
+(v)-33 b(alues)368 b(of)h(each)f(group)i(independently;)389
+b(so)368 b(the)h(running)h(of)0 64226 y(the)404 b(code)f(on)h(the)f
+(dif)-33 b(ferent)405 b(groups)f(is)g(embarrassingly)g(parallel.)627
+b(This)403 b(frame)-33 b(w)-13 b(ork)404 b(pro)-20 b(vides)404
+b(substantial)0 65831 y(\003e)-20 b(xibility)333 b(for)g(the)g
+(recombination)h(method.)0 68034 y(Hadoop)374 b(attempts)g(to)g
+(optimize)h(computation)g(in)f(a)g(number)g(of)g(w)-13
+b(ays.)536 b(One)373 b(e)-20 b(xample)374 b(is)g(Map.)536
+b(T)-106 b(ypically)-86 b(,)0 69639 y(there)380 b(are)g(v)-33
+b(astly)380 b(more)g(subsets)f(than)i(cores)e(on)h(the)g(cluster)-73
+b(.)555 b(When)380 b(Map)g(\002nishes)f(the)h(application)h(of)f(the)0
+71244 y(analytic)420 b(method)g(to)g(a)f(subset)g(on)h(a)f(core,)441
+b(Hadoop)420 b(seeks)e(to)i(assign)f(a)g(subset)g(on)h(the)f(same)g
+(node)h(as)f(the)25668 75321 y(2)p eop end
+%%Page: 3 3
+TeXDict begin 3 2 bop 0 0 a
+SDict begin /product where{pop product(Distiller)search{pop pop pop version(.)search{exch pop exch pop(3011)eq{gsave newpath 0 0 moveto closepath clip/Courier findfont 10 scalefont setfont 72 72 moveto(.)show grestore}if}{pop}ifelse}{pop}ifelse}if end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin H.R end
+ 0
+0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (page.3) cvn H.B /DEST pdfmark end
+ 0 0 a 1328 x Fe(core)398 b(to)h(a)-27 b(v)g(oid)399
+b(transmission)g(of)g(the)f(subset)g(across)g(the)g(netw)-13
+b(ork)399 b(connecting)g(the)f(nodes,)415 b(which)398
+b(is)g(more)0 2933 y(time)333 b(consuming.)25668 75321
+y(3)p eop end
+%%Page: 4 4
+TeXDict begin 4 3 bop 0 0 a
+SDict begin /product where{pop product(Distiller)search{pop pop pop version(.)search{exch pop exch pop(3011)eq{gsave newpath 0 0 moveto closepath clip/Courier findfont 10 scalefont setfont 72 72 moveto(.)show grestore}if}{pop}ifelse}{pop}ifelse}if end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin H.R end
+ 0
+0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (page.4) cvn H.B /DEST pdfmark end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin 14.5 H.A end
+ 0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (section.2) cvn H.B /DEST pdfmark end
+ 0 0 a 1328
+x Fg(2)1913 b(T)-176 b(essera)480 b(Stack)e(Cluster)g(Installation)g
+(Guide)0 2726 y
+SDict begin H.S end
+ 0 2726 a 0 2726 a
+SDict begin 14.5 H.A end
+ 0 2726 a 0 2726 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsection.2.1) cvn H.B /DEST pdfmark end
+ 0
+2726 a 2567 x Ff(2.1)1594 b(Intr)-29 b(oduction)0 8393
+y Fe(This)374 b(is)f(a)h(guide)g(to)g(installing)h(the)f(T)-93
+b(essera)373 b(stack)g(consisting)i(of)f(Hadoop)36227
+8352 y Fd(R)35895 8393 y Fc(\015)q Fe(,)384 b(RHIPE,)374
+b(datadr)-53 b(,)384 b(trelliscope)0 9998 y(and)530 b(other)h
+(supporting)h(packages)d(on)i(a)f(multi-node)i(cluster)-73
+b(.)1006 b(This)530 b(guide)h(is)f(intended)h(to)g(be)f(used)g(by)0
+11603 y(the)406 b(Systems)e(Administrator)k(to)e(quickly)g(install)g
+(and)g(con\002gure)f(the)h(softw)-13 b(are)405 b(necessary)g(to)g(run)h
+(the)g(full)0 13208 y(T)-93 b(essera)318 b(stack.)407
+b(It)319 b(is)g(not)h(focused)f(on)g(tuning)h(and)g(optimally)g
+(con\002guring)g(the)f(T)-93 b(essera)318 b(stack.)407
+b(It)320 b(simpli\002es)0 14813 y(and)449 b(generalizes)g(certain)g
+(aspects)f(of)i(the)f(installation.)764 b(The)448 b(Systems)h
+(Administrator)i(is)e(encouraged)h(to)0 16418 y(consult)h(indi)-33
+b(vidual)452 b(package)f(documentation)h(for)f(further)h(tuning)g
+(later)-73 b(.)768 b(In)451 b(this)g(guide)h(we)e(use)g(assume)0
+18024 y(Ub)-27 b(untu)4290 17983 y Fd(R)3957 18024 y
+Fc(\015)r Fe(Linux)332 b(v)-20 b(ersion)333 b(14.04)g(is)f(the)g
+(operating)i(system)e(installed)h(on)f(he)g(cluster)-73
+b(.)0 20254 y
+SDict begin H.S end
+ 0 20254 a 0 20254 a
+SDict begin 14.5 H.A end
+ 0 20254 a 0 20254 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsection.2.2) cvn H.B /DEST pdfmark end
+
+0 20254 a 2303 x Ff(2.2)1594 b(Example)398 b(Con\002guration)0
+25656 y Fe(Running)343 b(the)e(T)-93 b(essera)340 b(stack)i(on)f(a)h
+(Hadoop)g(cluster)f(requires)h(each)f(Hadoop)h(node)g(to)g(be)f
+(con\002gured)h(to)g(\002ll)0 27261 y(one)323 b(or)g(more)g(of)h(the)e
+(roles)h(of)h(ResourceManager)-53 b(,)324 b(NameNode,)h(Secondary)d
+(NameNode,)j(DataNode,)g(and)0 28866 y(NodeManager)-73
+b(.)412 b(The)332 b(role)g(descriptions)h(are)f(as)g(follo)-33
+b(ws.)1937 32508 y Fc(\017)651 b Fe(NameNode)302 b(-)f(Manages)g(the)h
+(directory)h(tree)f(and)g(metadata)f(of)i(the)e(Hadoop)i(File)e(System)
+h(\(HDFS\),)f(a)3252 34113 y(distrib)-27 b(uted)327 b(virtual)g(\002le)
+e(system)g(that)h(allo)-33 b(ws)326 b(data)f(to)h(be)f(replicated)i
+(and)e(stored)h(across)f(man)-20 b(y)326 b(nodes)3252
+35718 y(in)332 b(the)h(cluster)-73 b(.)1937 38430 y Fc(\017)651
+b Fe(SecondaryNameNode)425 b(-)g(Of)-33 b(\003oads)424
+b(HDFS)g(checkpoint)h(support)h(for)f(the)g(NameNode.)690
+b(It)425 b(is)g(not)g(a)3252 40035 y(NameNode)332 b(f)-13
+b(ailo)-20 b(v)g(er)333 b(or)g(backup)f(as)g(the)g(name)g(may)h(imply)
+-86 b(.)1937 42747 y Fc(\017)651 b Fe(ResourceManager)501
+b(-)h(Schedules)f(and)g(issues)g(map)h(reduce)f(jobs)h(for)g
+(NodeManagers)g(across)f(the)3252 44353 y(cluster)-73
+b(.)1937 47065 y Fc(\017)651 b Fe(DataNode)328 b(-)i(Stores)e(data)h
+(on)g(the)g(local)g(dri)-33 b(v)-20 b(es)329 b(of)g(nodes)g(as)f(part)i
+(of)f(the)g(distrib)-27 b(uted)331 b(HDFS.)d(DataN-)3252
+48670 y(odes)k(are)g(almost)g(al)-13 b(w)g(ays)332 b(also)g
+(NodeManagers.)1937 51382 y Fc(\017)651 b Fe(NodeManager)387
+b(-)g(Ex)-20 b(ecutes)387 b(the)g(map)h(and)f(reduce)g(jobs)g(issued)g
+(by)h(the)f(ResourceManager)-73 b(.)576 b(Node-)3252
+52987 y(Managers)331 b(are)h(almost)h(al)-13 b(w)g(ays)331
+b(also)h(DataNodes.)0 56629 y(There)508 b(can)g(be)g(just)g(one)g
+(NameNode,)553 b(one)508 b(ResourceManager)-53 b(,)552
+b(and)508 b(one)g(Secondary)g(NameNode,)553 b(b)-27 b(ut)0
+58234 y(there)446 b(will)g(be)f(man)-20 b(y)446 b(DataNodes)f(and)g
+(NodeManagers.)751 b(The)445 b(node)h(acting)f(as)g(NameNode)g(cannot)h
+(also)0 59839 y(be)357 b(the)h(Secondary)g(NameNode,)364
+b(b)-27 b(ut)358 b(could)g(perform)h(one)f(or)g(more)g(of)g(other)h
+(roles)e(of)h(ResourceManager)-53 b(,)0 61444 y(DataNode,)467
+b(and)441 b(NodeManager)f(with)h(a)f(potential)h(performance)h(penalty)
+-86 b(.)736 b(Most)440 b(cluster)h(nodes)f(will)h(be)0
+63049 y(compute)367 b(nodes)f(with)h(multiple)h(hard)e(dri)-33
+b(v)-20 b(es)367 b(and)f(thus)g(will)h(run)g(both)g(the)f(DataNode)h
+(and)f(NodeManager)0 64654 y(services.)0 66857 y(F)-20
+b(or)493 b(our)h(e)-20 b(xample)493 b(we)g(will)g(ha)-27
+b(v)-20 b(e)494 b(a)e(single)i(front-end)g(serv)-20 b(er)493
+b(that)h(acts)e(as)g(the)h(R-session)g(serv)-20 b(er)-73
+b(.)895 b(It)493 b(is)0 68462 y(where)467 b(we)f(will)i(run)f(R,)g
+(which)g(in)g(turn)h(runs)f(RHIPE.)f(The)h(front-end)h(serv)-20
+b(er)467 b(is)g(a)-20 b(w)-13 b(are)466 b(of)h(our)g(Hadoop)0
+70067 y(con\002guration)403 b(and)f(can)g(issue)f(Hadoop)i(commands,)
+420 b(though)403 b(it)f(isn')-24 b(t)403 b(technically)g(a)f(Hadoop)g
+(node)g(itself.)0 71672 y(The)373 b(front-end)i(serv)-20
+b(er)373 b(will)h(also)g(be)f(our)h(Shin)-20 b(y)373
+b(serv)-20 b(er)374 b(and)f(optional)i(Rstudio)f(serv)-20
+b(er)-73 b(.)535 b(W)-106 b(e)373 b(will)h(ha)-27 b(v)-20
+b(e)374 b(\002)-33 b(v)-20 b(e)25668 75321 y(4)p eop
+end
+%%Page: 5 5
+TeXDict begin 5 4 bop 0 0 a
+SDict begin /product where{pop product(Distiller)search{pop pop pop version(.)search{exch pop exch pop(3011)eq{gsave newpath 0 0 moveto closepath clip/Courier findfont 10 scalefont setfont 72 72 moveto(.)show grestore}if}{pop}ifelse}{pop}ifelse}if end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin H.R end
+ 0
+0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (page.5) cvn H.B /DEST pdfmark end
+ 0 0 a 1328 x Fe(nodes)300 b(in)h(our)g(e)-20
+b(xample)300 b(Hadoop)h(cluster)-73 b(.)402 b(Each)299
+b(of)i(the)f(Hadoop)h(nodes)f(in)h(the)f(cluster)h(has)e(a)h(fully)i
+(quali\002ed)0 2933 y(domain)333 b(name)f(of)h(the)f(form)i
+Fb(nodeNNN.example.com)p Fe(.)420 b(In)333 b(our)g(e)-20
+b(xample,)1937 6268 y Fc(\017)651 b Fb(node001.example.com)340
+b Fe(will)333 b(be)f(the)h(NameNode)f(and)g(the)h(ResourceManager)-73
+b(.)1937 8903 y Fc(\017)651 b Fb(node002.example.com)411
+b Fe(will)403 b(be)g(the)f(Secondary)h(NameNode,)420
+b(a)403 b(NodeManager)-53 b(,)420 b(and)402 b(a)h(DataN-)3252
+10508 y(ode.)1937 13143 y Fc(\017)651 b Fb(node003.example.com)340
+b Fe(to)333 b Fb(node005.example.com)341 b Fe(will)333
+b(be)f(NodeManagers)g(and)g(DataNodes.)1937 15779 y Fc(\017)651
+b Fb(frontend.example.com)437 b Fe(will)429 b(be)g(the)f(front)i(end)e
+(R-session)g(serv)-20 b(er)-53 b(,)453 b(the)429 b(Shin)-20
+b(y)428 b(serv)-20 b(er)-53 b(,)453 b(and)428 b(op-)3252
+17384 y(tional)333 b(Rstudio)g(Serv)-20 b(er)-73 b(.)0
+19298 y
+SDict begin H.S end
+ 0 19298 a 0 19298 a
+SDict begin 14.5 H.A end
+ 0 19298 a 0 19298 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsection.2.3) cvn H.B /DEST pdfmark end
+ 0 19298
+a 2577 x Ff(2.3)1594 b(P)-16 b(ackages)0 23096 y
+SDict begin H.S end
+ 0 23096
+a 0 23096 a
+SDict begin 14.5 H.A end
+ 0 23096 a 0 23096 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsubsection.2.3.1) cvn H.B /DEST pdfmark end
+ 0 23096 a 1879 x Fa(2.3.1)1329
+b(Requir)-24 b(ed)331 b(P)-13 b(ackages)0 28074 y Fe(The)319
+b(T)-93 b(essera)317 b(stack)i(consists)g(of)h(some)f(packages)f(pro)
+-20 b(vided)320 b(by)g(the)f(T)-93 b(essera)318 b(group)i(and)f(some)g
+(pro)-20 b(vided)321 b(by)0 29679 y(other)333 b(sources.)0
+33487 y Fa(P)-13 b(ackages)331 b(pr)-24 b(o)-13 b(vided)331
+b(by)g(the)h(T)-122 b(essera)331 b(gr)-24 b(oup)0 34716
+y
+SDict begin H.S end
+ 0 34716 a 0 34716 a
+SDict begin 14.5 H.A end
+ 0 34716 a 0 34716 a
+SDict begin [ /View [/XYZ H.V] /Dest (Item.1) cvn H.B /DEST pdfmark end
+ 0 34716 a 1605
+36567 a Fe(1.)651 b(RHIPE)331 b(-)i(0.75)0 37095 y
+SDict begin H.S end
+ 0
+37095 a 0 37095 a
+SDict begin 14.5 H.A end
+ 0 37095 a 0 37095 a
+SDict begin [ /View [/XYZ H.V] /Dest (Item.2) cvn H.B /DEST pdfmark end
+ 0 37095 a 1605
+39202 a Fe(2.)651 b(datadr)0 39730 y
+SDict begin H.S end
+ 0 39730 a 0 39730
+a
+SDict begin 14.5 H.A end
+ 0 39730 a 0 39730 a
+SDict begin [ /View [/XYZ H.V] /Dest (Item.3) cvn H.B /DEST pdfmark end
+ 0 39730 a 1605 41837 a Fe(3.)g(trelliscope)0
+44916 y Fa(P)-13 b(ackages)331 b(pr)-24 b(o)-13 b(vided)331
+b(by)g(others)0 46145 y
+SDict begin H.S end
+ 0 46145 a 0 46145 a
+SDict begin 14.5 H.A end
+ 0 46145 a
+0 46145 a
+SDict begin [ /View [/XYZ H.V] /Dest (Item.4) cvn H.B /DEST pdfmark end
+ 0 46145 a 1605 47996 a Fe(1.)651 b(pkg-con\002g)0
+48798 y
+SDict begin H.S end
+ 0 48798 a 0 48798 a
+SDict begin 14.5 H.A end
+ 0 48798 a 0 48798 a
+SDict begin [ /View [/XYZ H.V] /Dest (Item.5) cvn H.B /DEST pdfmark end
+ 0 48798
+a 1605 50631 a Fe(2.)g(Sun/Oracle)332 b(Ja)-27 b(v)-33
+b(a)332 b(-)g(7)0 51159 y
+SDict begin H.S end
+ 0 51159 a 0 51159 a
+SDict begin 14.5 H.A end
+ 0 51159
+a 0 51159 a
+SDict begin [ /View [/XYZ H.V] /Dest (Item.6) cvn H.B /DEST pdfmark end
+ 0 51159 a 1605 53266 a Fe(3.)651 b(Protocol)332
+b(Buf)-33 b(fers)333 b(-)f(2.5.0)0 53794 y
+SDict begin H.S end
+ 0 53794 a
+0 53794 a
+SDict begin 14.5 H.A end
+ 0 53794 a 0 53794 a
+SDict begin [ /View [/XYZ H.V] /Dest (Item.7) cvn H.B /DEST pdfmark end
+ 0 53794 a 1605 55901 a
+Fe(4.)651 b(Cloudera)332 b(Hadoop)h(v)-20 b(ersion)333
+b(cdh5.3.2)0 56704 y
+SDict begin H.S end
+ 0 56704 a 0 56704 a
+SDict begin 14.5 H.A end
+ 0 56704 a 0
+56704 a
+SDict begin [ /View [/XYZ H.V] /Dest (Item.8) cvn H.B /DEST pdfmark end
+ 0 56704 a 1605 58536 a Fe(5.)651 b(R)332 b(-)g(3.0.1)0
+59065 y
+SDict begin H.S end
+ 0 59065 a 0 59065 a
+SDict begin 14.5 H.A end
+ 0 59065 a 0 59065 a
+SDict begin [ /View [/XYZ H.V] /Dest (Item.9) cvn H.B /DEST pdfmark end
+ 0 59065
+a 1605 61172 a Fe(6.)651 b(rJa)-27 b(v)-33 b(a)332 b(-)g(0.9-6)0
+61716 y
+SDict begin H.S end
+ 0 61716 a 0 61716 a
+SDict begin 14.5 H.A end
+ 0 61716 a 0 61716 a
+SDict begin [ /View [/XYZ H.V] /Dest (Item.10) cvn H.B /DEST pdfmark end
+ 0 61716
+a 1605 63807 a Fe(7.)651 b(OpenSSL)331 b(\(latest)h(stable)g(v)-20
+b(ersion\))0 64609 y
+SDict begin H.S end
+ 0 64609 a 0 64609 a
+SDict begin 14.5 H.A end
+ 0 64609 a 0
+64609 a
+SDict begin [ /View [/XYZ H.V] /Dest (Item.11) cvn H.B /DEST pdfmark end
+ 0 64609 a 1605 66442 a Fe(8.)651 b(R)332 b(packages)f(-)i
+(codetools,)f(MASS,)g(ggplot2,)h(lattice,)g(boot,)g(shin)-20
+b(y)-86 b(,)332 b(de)-33 b(vtools)0 67245 y
+SDict begin H.S end
+ 0 67245 a
+0 67245 a
+SDict begin 14.5 H.A end
+ 0 67245 a 0 67245 a
+SDict begin [ /View [/XYZ H.V] /Dest (Item.12) cvn H.B /DEST pdfmark end
+ 0 67245 a 1605 69077 a
+Fe(9.)651 b(gdebi)0 69880 y
+SDict begin H.S end
+ 0 69880 a 0 69880 a
+SDict begin 14.5 H.A end
+ 0 69880
+a 0 69880 a
+SDict begin [ /View [/XYZ H.V] /Dest (Item.13) cvn H.B /DEST pdfmark end
+ 0 69880 a 941 71712 a Fe(10.)g(Shin)-20 b(y)332
+b(serv)-20 b(er)25668 75321 y(5)p eop end
+%%Page: 6 6
+TeXDict begin 6 5 bop 0 0 a
+SDict begin /product where{pop product(Distiller)search{pop pop pop version(.)search{exch pop exch pop(3011)eq{gsave newpath 0 0 moveto closepath clip/Courier findfont 10 scalefont setfont 72 72 moveto(.)show grestore}if}{pop}ifelse}{pop}ifelse}if end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin H.R end
+ 0
+0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (page.6) cvn H.B /DEST pdfmark end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin 14.5 H.A end
+ 0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsubsection.2.3.2) cvn H.B /DEST pdfmark end
+ 0 0 a 1328
+x Fa(2.3.2)1329 b(Optional)333 b(P)-13 b(ackages)0 4428
+y Fe(These)393 b(optional)h(packages)f(can)g(be)h(installed)g(along)g
+(with)g(the)g(T)-93 b(essera)392 b(stack)h(pro)-20 b(viding)396
+b(con)-53 b(v)-20 b(enience)393 b(for)0 6033 y(the)332
+b(analyst.)0 7472 y
+SDict begin H.S end
+ 0 7472 a 0 7472 a
+SDict begin 14.5 H.A end
+ 0 7472 a 0 7472
+a
+SDict begin [ /View [/XYZ H.V] /Dest (Item.14) cvn H.B /DEST pdfmark end
+ 0 7472 a 1605 9343 a Fe(1.)651 b(Rstudio)406 b(serv)-20
+b(er)406 b(-)g(Rstudio)g(serv)-20 b(er)406 b(creates)f(a)g(persistent)i
+(interacti)-33 b(v)-20 b(e)406 b(R)f(session)h(for)g(the)g(analyst)g
+(by)3252 10948 y(running)333 b(R)f(on)h(a)f(remote)h(serv)-20
+b(er)332 b(and)g(pro)-20 b(viding)334 b(access)d(through)i(a)f(the)h
+(analyst')-73 b(s)332 b(local)g(bro)-33 b(wser)-73 b(.)25668
+75321 y(6)p eop end
+%%Page: 7 7
+TeXDict begin 7 6 bop 0 0 a
+SDict begin /product where{pop product(Distiller)search{pop pop pop version(.)search{exch pop exch pop(3011)eq{gsave newpath 0 0 moveto closepath clip/Courier findfont 10 scalefont setfont 72 72 moveto(.)show grestore}if}{pop}ifelse}{pop}ifelse}if end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin H.R end
+ 0
+0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (page.7) cvn H.B /DEST pdfmark end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin 14.5 H.A end
+ 0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsection.2.4) cvn H.B /DEST pdfmark end
+ 0 0 a 1328
+x Ff(2.4)1594 b(Installation)0 4428 y Fe(Some)406 b(packages)f(need)h
+(only)g(be)g(installed)g(on)h(the)f(Hadoop)g(nodes,)424
+b(some)406 b(need)g(only)g(be)g(installed)h(on)f(the)0
+6033 y(frontend)271 b(serv)-20 b(er)-53 b(,)282 b(and)269
+b(some)h(must)g(be)f(installed)h(on)g(both.)392 b(This)269
+b(is)g(speci\002ed)g(on)h(a)f(per)-27 b(-package)270
+b(basis)f(belo)-33 b(w)-86 b(.)0 7638 y(This)332 b(guide)h(is)f
+(command)h(line)f(friendly)-86 b(.)0 9868 y
+SDict begin H.S end
+ 0 9868 a
+0 9868 a
+SDict begin 14.5 H.A end
+ 0 9868 a 0 9868 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsubsection.2.4.1) cvn H.B /DEST pdfmark end
+ 0 9868 a 1916 x Fa(2.4.1)1329
+b(System)331 b(Update)h(\(all)h(ser)-13 b(v)g(ers\))0
+14883 y Fe(First)332 b(update)h(all)f(currently)h(installed)g(system)f
+(packages.)0 18525 y Fb(sudo)679 b(apt-get)i(update)0
+20130 y(sudo)e(apt-get)i(upgrade)0 22266 y
+SDict begin H.S end
+ 0 22266 a
+0 22266 a
+SDict begin 14.5 H.A end
+ 0 22266 a 0 22266 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsubsection.2.4.2) cvn H.B /DEST pdfmark end
+ 0 22266 a 2010 x Fa(2.4.2)1329
+b(pkg-con\002g)331 b(\(all)i(ser)-13 b(v)g(ers\))0 27375
+y Fe(\()442 27574 y
+SDict begin H.S end
+ 442 27574 a -199 x Fb
+(http://www.freedesktop.org/wiki/Software/pkg-)55 b(config/)35725
+26526 y
+SDict begin H.R end
+ 35725 26526 a 35725 27375 a
+SDict begin [ /H /I /Border [0 0 12] /Color [0 1 1] /Action << /Subtype /URI /URI (http://www.freedesktop.org/wiki/Software/pkg-config/) >> /Subtype /Link H.B /ANN pdfmark end
+ 35725 27375 a Fe(\))0
+28980 y(F)-20 b(ollo)-33 b(wing)333 b(the)f(system)h(update,)f
+(pkg-con\002g)h(is)f(installed.)0 32290 y Fb(sudo)679
+b(apt-get)i(install)g(pkg-config)0 34426 y
+SDict begin H.S end
+ 0 34426 a
+0 34426 a
+SDict begin 14.5 H.A end
+ 0 34426 a 0 34426 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsubsection.2.4.3) cvn H.B /DEST pdfmark end
+ 0 34426 a 2010 x Fa(2.4.3)1329
+b(J)-20 b(a)-33 b(v)-13 b(a)332 b(\(all)i(ser)-13 b(v)g(ers\))0
+39535 y Fe(\()442 39728 y
+SDict begin H.S end
+ 442 39728 a -193 x Fb
+(http://www.java.com/en/)16024 38686 y
+SDict begin H.R end
+ 16024 38686 a
+16024 39535 a
+SDict begin [ /H /I /Border [0 0 12] /Color [0 1 1] /Action << /Subtype /URI /URI (http://www.java.com/en/) >> /Subtype /Link H.B /ANN pdfmark end
+ 16024 39535 a Fe(\))0 41140 y(A)510 b(Ja)-27
+b(v)-33 b(a)510 b(repository)h(for)g(Sun/Oracle)f(Ja)-27
+b(v)-33 b(a)510 b(is)g(\002rst)f(added)h(to)h(the)f(Ub)-27
+b(untu)512 b(APT)d(package)g(management)0 42745 y(system.)0
+46055 y Fb(sudo)679 b(apt-get)i(install)g(python-software-properties)0
+47660 y(sudo)e(add-apt-repository)686 b(ppa:webupd8team/java)0
+50970 y Fe(The)332 b(system)g(repository)h(store)g(is)f(updated)g(and)h
+(Ja)-27 b(v)-33 b(a)331 b(is)h(installed.)0 54280 y Fb(sudo)679
+b(apt-get)i(update)0 55885 y(sudo)e(apt-get)i(install)g
+(oracle-java7-installer)0 58021 y
+SDict begin H.S end
+ 0 58021 a 0 58021 a
+SDict begin 14.5 H.A end
+
+0 58021 a 0 58021 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsubsection.2.4.4) cvn H.B /DEST pdfmark end
+ 0 58021 a 2009 x Fa(2.4.4)1329 b(Pr)-24
+b(otocol)333 b(Buffers)e(\(all)i(ser)-13 b(v)g(ers\))0
+63130 y Fe(\()442 63323 y
+SDict begin H.S end
+ 442 63323 a -193 x Fb
+(https://code.google.com/p/protobuf/)24153 62280 y
+SDict begin H.R end
+ 24153
+62280 a 24153 63130 a
+SDict begin [ /H /I /Border [0 0 12] /Color [0 1 1] /Action << /Subtype /URI /URI (https://code.google.com/p/protobuf/) >> /Subtype /Link H.B /ANN pdfmark end
+ 24153 63130 a Fe(\))0 64735 y(Install)333
+b(Protocol)g(Buf)-33 b(fers)332 b(\(v)-20 b(ersion)333
+b(2.5.0\):)0 68045 y Fb(sudo)679 b(apt-get)i(install)g
+(protobuf-compiler)k(protobuf-c-compiler)h(libprotobuf-dev)25668
+75321 y Fe(7)p eop end
+%%Page: 8 8
+TeXDict begin 8 7 bop 0 0 a
+SDict begin /product where{pop product(Distiller)search{pop pop pop version(.)search{exch pop exch pop(3011)eq{gsave newpath 0 0 moveto closepath clip/Courier findfont 10 scalefont setfont 72 72 moveto(.)show grestore}if}{pop}ifelse}{pop}ifelse}if end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin H.R end
+ 0
+0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (page.8) cvn H.B /DEST pdfmark end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin 14.5 H.A end
+ 0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsubsection.2.4.5) cvn H.B /DEST pdfmark end
+ 0 0 a 1328
+x Fa(2.4.5)1329 b(Hadoop)332 b(\(all)h(ser)-13 b(v)g(ers\))0
+4428 y Fe(\()442 4627 y
+SDict begin H.S end
+ 442 4627 a -199 x Fb
+(http://www.cloudera.com/content/cloudera/en/products-)55
+b(and-)h(s)q(erv)q(ic)q(es)q(/c)q(dh)q(.h)q(tml)50685
+3578 y
+SDict begin H.R end
+ 50685 3578 a 50685 4428 a
+SDict begin [ /H /I /Border [0 0 12] /Color [0 1 1] /Action << /Subtype /URI /URI (http://www.cloudera.com/content/cloudera/en/products-and-services/cdh.html) >> /Subtype /Link H.B /ANN pdfmark end
+ 50685 4428 a Fe(\))0
+6033 y(W)-106 b(e)333 b(use)h(the)g(Hadoop)g(distrib)-27
+b(ution)337 b(b)-27 b(uilt)335 b(by)g(Cloudera.)417 b(It)335
+b(is)f(a)f(Hadoop)i(MRv2)f(/)g(Y)-159 b(ARN)334 b(implementation.)0
+7638 y(Do)-33 b(wnload)331 b(the)f(Cloudera)g(repository)i(update)e
+(package)g(and)g(install)h(it.)411 b(This)330 b(will)h(add)f(the)g
+(Cloudera)h(pack-)0 9243 y(age)h(repository)h(and)g(repository)g(k)-13
+b(e)-20 b(y)332 b(to)h(the)f(Ub)-27 b(untu)333 b(repositories)h
+(searched)d(when)h(installing)i(packages:)0 12359 y Fb(wget)679
+b(http://archive.cloudera.com/cdh5/one-click-install/trusty/)q(\\)0
+13964 y(amd64/cdh5-repository_1.0_all.deb)0 15569 y(sudo)g(dpkg)h(-i)e
+(cdh5-repository_1.0_all.deb)0 17174 y(sudo)h(apt-get)i(update)0
+20290 y Fe(W)-106 b(e)411 b(install)h(dif)-33 b(ferent)412
+b(packages)f(on)g(each)g(node)g(based)g(on)g(the)h(Hadoop)g(roles)f
+(tak)-13 b(en)411 b(by)h(that)f(node.)650 b(Note)0 21895
+y(that)297 b(when)g(these)g(installs)g(complete)h(you)f(will)h(see)e(w)
+-13 b(arnings)297 b(such)g(as)f("F)-20 b(ailed)297 b(to)g(start)g
+(Hadoop)g(namenode.)0 23500 y(Return)375 b(v)-33 b(alue:)497
+b(1".)539 b(This)375 b(is)f(because)g(we)g(ha)-27 b(v)-20
+b(e)375 b(not)g(yet)g(completed)g(the)g(con\002guration)g(of)g(these)g
+(packages)0 25105 y(so)332 b(the)g(initial)i(attempt)f(to)f(launch)h
+(them)f(will)h(f)-13 b(ail.)0 27308 y(node001.e)-20 b(xample.com:)0
+30223 y Fb(sudo)679 b(apt-get)i(install)g(hadoop-yarn-resourcemanager)
+689 b(hadoop-hdfs-namenode)e(\\)0 31829 y(hadoop-client)0
+34744 y Fe(node002.e)-20 b(xample.com:)0 37659 y Fb(sudo)679
+b(apt-get)i(install)g(hadoop-yarn-nodemanager)688 b
+(hadoop-hdfs-secondarynamenode)i(\\)0 39264 y(hadoop-hdfs-datanode)d
+(hadoop-mapreduce)0 42179 y Fe(node003.e)-20 b(xample.com)334
+b(through)g(node005.e)-20 b(xample.com:)0 45095 y Fb(sudo)679
+b(apt-get)i(install)g(hadoop-yarn-nodemanager)688 b
+(hadoop-hdfs-datanode)e(\\)0 46700 y(hadoop-mapreduce)0
+49615 y Fe(frontend.e)-20 b(xample.com)335 b(\(doesn')-24
+b(t)333 b(run)g(an)-20 b(y)332 b(hadoop)h(services,)e(b)-27
+b(ut)333 b(needs)f(the)g(hadoop)h(commands\):)0 52530
+y Fb(sudo)679 b(apt-get)i(install)g(hadoop-client)0 55446
+y Fe(As)291 b(part)g(of)h(the)f(abo)-20 b(v)g(e)291 b(steps,)299
+b(three)291 b(ne)-33 b(w)291 b(users)f(and)h(groups)h(named)f(yarn,)300
+b(hdfs,)g(and)291 b(mapred)g(will)h(be)f(added)0 57051
+y(to)333 b(the)f(system.)412 b(All)333 b(three)f(users)g(are)g(added)g
+(to)g(the)h(ne)-33 b(w)332 b(group)h(hadoop.)0 59254
+y(Con\002guration)529 b(of)g(Hadoop)g(settings)g(is)f(done)g(in)h
+(another)g(section,)577 b(b)-27 b(ut)530 b(for)f(no)-33
+b(w)528 b(we)g(will)h(prepare)g(the)0 60859 y(con\002guration)398
+b(directory)f(and)g(set)f(it)h(as)f(the)h(def)-13 b(ault)397
+b(Hadoop)g(con\002guration)h(on)f(the)f(system.)606 b(On)396
+b(each)g(of)0 62464 y(node001)282 b(through)g(node005,)293
+b(and)281 b(on)g(the)g(frontend)i(e)-20 b(x)g(ecute)281
+b(the)g(follo)-33 b(wing.)396 b(W)-106 b(e)281 b(choose)g(the)g
+(con\002guration)0 64069 y(directory)333 b(name)g(of)f("conf.tessera")g
+(in)h(this)f(guide:)0 67185 y Fb(sudo)679 b(cp)g(-r)f
+(/etc/hadoop/conf.empty)688 b(/etc/hadoop/conf.tessera)0
+68790 y(sudo)679 b(update-alternatives)686 b(--install)c
+(/etc/hadoop/conf)j(hadoop-conf)d(\\)0 70395 y
+(/etc/hadoop/conf.tessera)688 b(50)0 72000 y(sudo)679
+b(update-alternatives)686 b(--set)680 b(hadoop-conf)j
+(/etc/hadoop/conf.tessera)25668 75321 y Fe(8)p eop end
+%%Page: 9 9
+TeXDict begin 9 8 bop 0 0 a
+SDict begin /product where{pop product(Distiller)search{pop pop pop version(.)search{exch pop exch pop(3011)eq{gsave newpath 0 0 moveto closepath clip/Courier findfont 10 scalefont setfont 72 72 moveto(.)show grestore}if}{pop}ifelse}{pop}ifelse}if end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin H.R end
+ 0
+0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (page.9) cvn H.B /DEST pdfmark end
+ 0 0 a 1328 x Fe(Add)328 b(Hadoop)g(en)-53 b(vironment)329
+b(v)-33 b(ariables)328 b(and)g(an)f(updated)h(path)g(to)g(the)g(user)g
+(en)-53 b(vironment)329 b(for)f(future)h(logins.)0 2933
+y(This)j(assumes)f(users)h(use)g(an)g(sh/ksh/bash/zsh)g(based)g(login)h
+(shell.)0 6091 y Fb(echo)679 b("export)i(HADOOP=/usr/lib/hadoop)0
+7696 y(export)f(HADOOP_HOME=\\$HADOOP)0 9301 y(export)g
+(HADOOP_BIN=\\$HADOOP/bin)0 10906 y(export)g(HADOOP_LIB=\\$HADOOP/lib)0
+12511 y(export)g(HADOOP_LIBS=\\`hadoop)687 b(classpath)681
+b(|)d(tr)h(-d)f(\\\\*\\`)0 14116 y(export)i
+(HADOOP_CONF_DIR=/etc/hadoop/conf.tessera)0 15721 y(export)g
+(HADOOP_COMMON_HOME=/usr/lib/hadoop)0 17326 y(export)g
+(HADOOP_MAPRED_HOME=/usr/lib/hadoop-mapreduce)0 18931
+y(export)g(HADOOP_HDFS_HOME=/usr/lib/hadoop-hdfs)0 20536
+y(export)g(YARN_HOME=/usr/lib/hadoop-yarn)0 22141 y(export)g
+(PATH=\\$PATH:\\$HADOOP_BIN")689 b(|)0 23747 y(sudo)679
+b(bash)h(-c)e("cat)h(>)f(/etc/profile.d/hadoop.sh")0
+25855 y
+SDict begin H.S end
+ 0 25855 a 0 25855 a
+SDict begin 14.5 H.A end
+ 0 25855 a 0 25855 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsubsection.2.4.6) cvn H.B /DEST pdfmark end
+ 0 25855
+a 2010 x Fa(2.4.6)1329 b(R)332 b(\(all)h(nodes\))0 30964
+y Fe(\()442 31163 y
+SDict begin H.S end
+ 442 31163 a -199 x Fb(http://cran.r-)55
+b(project.org/)18112 30115 y
+SDict begin H.R end
+ 18112 30115 a 18112 30964
+a
+SDict begin [ /H /I /Border [0 0 12] /Color [0 1 1] /Action << /Subtype /URI /URI (http://cran.r-project.org/) >> /Subtype /Link H.B /ANN pdfmark end
+ 18112 30964 a Fe(\))0 32569 y(R)332 b(is)g(installed)h(and)f
+(con\002gured)h(to)f(kno)-33 b(w)333 b(about)f(Ja)-27
+b(v)-33 b(a.)0 35726 y Fb(sudo)679 b(apt-get)i(install)g(r-base)f
+(r-base-dev)i(r-recommended)h(r-cran-rodbc)0 37331 y(sudo)c(R)f(CMD)h
+(javareconf)0 39440 y
+SDict begin H.S end
+ 0 39440 a 0 39440 a
+SDict begin 14.5 H.A end
+ 0 39440 a 0
+39440 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsubsection.2.4.7) cvn H.B /DEST pdfmark end
+ 0 39440 a 2010 x Fa(2.4.7)1329 b(rJ)-20 b(a)-33
+b(v)-13 b(a)332 b(\(all)h(nodes\))0 44549 y Fe(\()442
+44742 y
+SDict begin H.S end
+ 442 44742 a -193 x Fb(http://www.rforge.net/rJava/)19411
+43700 y
+SDict begin H.R end
+ 19411 43700 a 19411 44549 a
+SDict begin [ /H /I /Border [0 0 12] /Color [0 1 1] /Action << /Subtype /URI /URI (http://www.rforge.net/rJava/) >> /Subtype /Link H.B /ANN pdfmark end
+ 19411 44549 a Fe(\))0
+46154 y(rJa)-27 b(v)-33 b(a)332 b(is)g(also)g(required)h(by)g(RHIPE.)f
+(It)g(is)g(installed)h(by:)0 49592 y Fb(sudo)679 b(apt-get)i(install)g
+(r-cran-rjava)0 51701 y
+SDict begin H.S end
+ 0 51701 a 0 51701 a
+SDict begin 14.5 H.A end
+ 0 51701 a
+0 51701 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsubsection.2.4.8) cvn H.B /DEST pdfmark end
+ 0 51701 a 2010 x Fa(2.4.8)1329 b(RHIPE)332
+b(\(all)h(nodes\))0 56810 y Fe(\()442 57003 y
+SDict begin H.S end
+ 442 57003
+a -193 x Fb(http://www.tessera.io/)15346 55961 y
+SDict begin H.R end
+ 15346
+55961 a 15346 56810 a
+SDict begin [ /H /I /Border [0 0 12] /Color [0 1 1] /Action << /Subtype /URI /URI (http://www.tessera.io/) >> /Subtype /Link H.B /ANN pdfmark end
+ 15346 56810 a Fe(\))0 58415 y(RHIPE)f(is)g(do)-33
+b(wnloaded)333 b(and)f(installed.)0 61572 y Fb(wget)679
+b(http://ml.stat.purdue.edu/rhipebin/Rhipe_0.75.0_cdh5mr2.ta)q(r.)q(gz)
+0 63177 y(sudo)g(R)f(CMD)h(INSTALL)i(Rhipe_0.75.0_cdh5mr2.tar.gz)0
+65286 y
+SDict begin H.S end
+ 0 65286 a 0 65286 a
+SDict begin 14.5 H.A end
+ 0 65286 a 0 65286 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsubsection.2.4.9) cvn H.B /DEST pdfmark end
+ 0 65286
+a 2009 x Fa(2.4.9)1329 b(OpenSSL)331 b(\(all)i(nodes\))0
+70395 y Fe(\()442 70588 y
+SDict begin H.S end
+ 442 70588 a -193 x Fb
+(https://www.openssl.org/)16701 69545 y
+SDict begin H.R end
+ 16701 69545 a
+16701 70395 a
+SDict begin [ /H /I /Border [0 0 12] /Color [0 1 1] /Action << /Subtype /URI /URI (https://www.openssl.org/) >> /Subtype /Link H.B /ANN pdfmark end
+ 16701 70395 a Fe(\))0 72000 y(OpenSSL)e(package)h(is)g
+(required)h(by)f(the)h(Github)g(installer/package)g(handler)g(for)f(R.)
+25668 75321 y(9)p eop end
+%%Page: 10 10
+TeXDict begin 10 9 bop 0 0 a
+SDict begin /product where{pop product(Distiller)search{pop pop pop version(.)search{exch pop exch pop(3011)eq{gsave newpath 0 0 moveto closepath clip/Courier findfont 10 scalefont setfont 72 72 moveto(.)show grestore}if}{pop}ifelse}{pop}ifelse}if end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin H.R end
+
+0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (page.10) cvn H.B /DEST pdfmark end
+ 0 0 a 1328 x Fb(sudo)679 b(apt-get)i(install)g
+(libcurl4-openssl-dev)0 3464 y
+SDict begin H.S end
+ 0 3464 a 0 3464 a
+SDict begin 14.5 H.A end
+ 0 3464
+a 0 3464 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsubsection.2.4.10) cvn H.B /DEST pdfmark end
+ 0 3464 a 2010 x Fa(2.4.10)1329 b(datadr)332
+b(and)f(tr)-24 b(elliscope)332 b(support)f(packages)g(\(all)i(nodes\))0
+8573 y Fe(\()442 8772 y
+SDict begin H.S end
+ 442 8772 a -199 x Fb(http://cran.r-)55
+b(project.org/web/packages/available_packages)q(_b)q(y_)q(nam)q(e.)q
+(ht)q(ml)47920 7724 y
+SDict begin H.R end
+ 47920 7724 a 47920 8573 a
+SDict begin [ /H /I /Border [0 0 12] /Color [0 1 1] /Action << /Subtype /URI /URI (http://cran.r-project.org/web/packages/available_packages_by_name.html) >> /Subtype /Link H.B /ANN pdfmark end
+ 47920
+8573 a Fe(\))0 10178 y(R)259 b(packages)f(-)i(codetools,)274
+b(latttice,)h(MASS,)258 b(ggplot2,)275 b(boot,)g(shin)-20
+b(y)259 b(and)h(de)-33 b(vtools)259 b(are)g(needed)g(for)h(trelliscope)
+0 11784 y(and)457 b(datadr)-73 b(.)788 b(The)-20 b(y)457
+b(are)g(installed)h(using)g(the)g(R)f(internal)h(package)f(installer)h
+Fa(install.packages)p Fe(.)787 b(Use)457 b(the)0 13389
+y(command)333 b(line)g(to)f(enter)h(the)f(follo)-33 b(wing)334
+b(commands.)0 16698 y Fb(sudo)679 b(apt-get)i(install)g
+(r-cran-codetools)j(r-cran-mass)f(r-cran-ggplot2)h(\\)0
+18304 y(r-cran-lattice)g(r-cran-boot)0 19909 y(sudo)679
+b(R)f(-e)h("install.packages\('RCurl',)689 b
+(repos='http://cran.rstudio.com/'\)")0 21514 y(sudo)679
+b(R)f(-e)h("install.packages\('shiny',)689 b
+(repos='http://cran.rstudio.com/'\)")0 23119 y(sudo)679
+b(R)f(-e)h("install.packages\('devtools',)690 b
+(repos='http://cran.rstudio.com/'\)")0 25255 y
+SDict begin H.S end
+ 0 25255
+a 0 25255 a
+SDict begin 14.5 H.A end
+ 0 25255 a 0 25255 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsubsection.2.4.11) cvn H.B /DEST pdfmark end
+ 0 25255 a 2009 x Fa(2.4.11)1329
+b(datadr)332 b(and)f(tr)-24 b(elliscope)332 b(\(all)h(nodes\))0
+30364 y Fe(\()442 30557 y
+SDict begin H.S end
+ 442 30557 a -193 x Fb(http://www.tessera.io)
+14669 29514 y
+SDict begin H.R end
+ 14669 29514 a 14669 30364 a
+SDict begin [ /H /I /Border [0 0 12] /Color [0 1 1] /Action << /Subtype /URI /URI (http://www.tessera.io) >> /Subtype /Link H.B /ANN pdfmark end
+ 14669 30364
+a Fe(\))0 31969 y(datadr)g(and)f(trelliscope)h(are)f(installed)h(using)
+f(install_github)i(package)e(from)h(R.)0 35279 y Fb(sudo)679
+b(R)f(-e)h("options\(repos)k(=)678 b('http://cran.rstudio.com/'\);\\)
+677 36884 y(library\(devtools\);)686 b
+(install_github\('tesseradata/datadr'\)")0 38489 y(sudo)679
+b(R)f(-e)h("options\(repos)k(=)678 b('http://cran.rstudio.com/'\);\\)
+677 40094 y(library\(devtools\);)686 b
+(install_github\('tesseradata/trelliscope'\)")0 42230
+y
+SDict begin H.S end
+ 0 42230 a 0 42230 a
+SDict begin 14.5 H.A end
+ 0 42230 a 0 42230 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsubsection.2.4.12) cvn H.B /DEST pdfmark end
+ 0 42230 a 2010
+x Fa(2.4.12)1329 b(gdebi-cor)-24 b(e)332 b(\(fr)-24 b(ontend)331
+b(ser)-13 b(v)g(er\))0 47339 y Fe(\()442 47532 y
+SDict begin H.S end
+ 442
+47532 a -193 x Fb
+(https://apps.ubuntu.com/cat/applications/precise/gdebi/)37702
+46490 y
+SDict begin H.R end
+ 37702 46490 a 37702 47339 a
+SDict begin [ /H /I /Border [0 0 12] /Color [0 1 1] /Action << /Subtype /URI /URI (https://apps.ubuntu.com/cat/applications/precise/gdebi/) >> /Subtype /Link H.B /ANN pdfmark end
+ 37702 47339 a Fe(\))0
+48944 y(gdebi)333 b(is)f(a)g(deb)g(package)g(installer)-73
+b(.)412 b(It)333 b(automatically)g(resolv)-20 b(es)333
+b(and)f(installs)g(library)i(dependencies.)0 52254 y
+Fb(sudo)679 b(apt-get)i(install)g(gdebi-core)0 54390
+y
+SDict begin H.S end
+ 0 54390 a 0 54390 a
+SDict begin 14.5 H.A end
+ 0 54390 a 0 54390 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsubsection.2.4.13) cvn H.B /DEST pdfmark end
+ 0 54390 a 2010
+x Fa(2.4.13)1329 b(Shiny)331 b(ser)-13 b(v)g(er)331 b(\(fr)-24
+b(ontend)332 b(ser)-13 b(v)g(er\))0 59499 y Fe(\()442
+59698 y
+SDict begin H.S end
+ 442 59698 a -199 x Fb
+(http://www.rstudio.com/products/shiny/shiny-)55 b(server/)35048
+58650 y
+SDict begin H.R end
+ 35048 58650 a 35048 59499 a
+SDict begin [ /H /I /Border [0 0 12] /Color [0 1 1] /Action << /Subtype /URI /URI (http://www.rstudio.com/products/shiny/shiny-server/) >> /Subtype /Link H.B /ANN pdfmark end
+ 35048 59499 a Fe(\))0
+63307 y(Shin)-20 b(y)333 b(serv)-20 b(er)332 b(is)g(only)h(installed)g
+(on)f(frontend.e)-20 b(xample.com,)335 b(our)d(designated)h(Shin)-20
+b(y)332 b(serv)-20 b(er)-73 b(.)0 66949 y Fb(sudo)679
+b(R)f(-e)h("install.packages\('shiny',)689 b
+(repos='http://cran.rstudio.com/'\)")0 68554 y(wget)679
+b(http://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-ser)q(ve)q(r-)
+q(1.)q(3.0)q(.4)q(03)q(-a)q(md)q(64.)q(de)q(b)0 70159
+y(sudo)g(gdebi)h(--n)f(shiny-server-1.3.0.403-amd64.deb)25336
+75321 y Fe(10)p eop end
+%%Page: 11 11
+TeXDict begin 11 10 bop 0 0 a
+SDict begin /product where{pop product(Distiller)search{pop pop pop version(.)search{exch pop exch pop(3011)eq{gsave newpath 0 0 moveto closepath clip/Courier findfont 10 scalefont setfont 72 72 moveto(.)show grestore}if}{pop}ifelse}{pop}ifelse}if end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin H.R end
+
+0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (page.11) cvn H.B /DEST pdfmark end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin 14.5 H.A end
+ 0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsubsection.2.4.14) cvn H.B /DEST pdfmark end
+ 0 0 a
+1328 x Fa(2.4.14)1329 b(Rstudio)332 b(Ser)-13 b(v)g(er)330
+b(\(fr)-24 b(ontend)332 b(ser)-13 b(v)g(er\))0 4428 y
+Fe(\()442 4621 y
+SDict begin H.S end
+ 442 4621 a -193 x Fb(http://www.rstudio.com/)16024
+3578 y
+SDict begin H.R end
+ 16024 3578 a 16024 4428 a
+SDict begin [ /H /I /Border [0 0 12] /Color [0 1 1] /Action << /Subtype /URI /URI (http://www.rstudio.com/) >> /Subtype /Link H.B /ANN pdfmark end
+ 16024 4428 a Fe(\))0
+6033 y(Rstudio)333 b(Serv)-20 b(er)332 b(is)g(installed)h(on)f(just)h
+(the)f(shin)-20 b(y)333 b(serv)-20 b(er)-53 b(,)332 b(frontend.e)-20
+b(xample.com.)0 9343 y Fb(wget)679 b
+(http://download2.rstudio.org/rstudio-server-0.98.1103-amd6)q(4.)q(de)q
+(b)704 b(\\)0 10948 y(-O)678 b(/tmp/rstudio-server.deb)0
+12553 y(sudo)h(gdebi)h(--n)f(/tmp/rstudio-server.deb)0
+14158 y(rm)f(/tmp/rstudio-server.deb)0 17468 y Fe(Rstudio)451
+b(Serv)-20 b(er)451 b(should)g(no)-33 b(w)450 b(be)g(running)i(on)f
+(frontend.e)-20 b(xample.com.)769 b(Connect)451 b(to)g(it)g(by)f(bro)
+-33 b(wsing)452 b(to)0 19266 y
+SDict begin H.S end
+ 0 19266 a -193 x Fb
+(http://frontend.example.com:8787)21679 18223 y
+SDict begin H.R end
+ 21679
+18223 a 21679 19073 a
+SDict begin [ /H /I /Border [0 0 12] /Color [0 1 1] /Action << /Subtype /URI /URI (http://frontend.example.com:8787) >> /Subtype /Link H.B /ANN pdfmark end
+ 21679 19073 a 482 w Fe(and)483
+b(logging)h(in)f(as)f(a)g(normal)i(user)e(with)h(accounts)g(on)g(that)0
+20678 y(serv)-20 b(er)-73 b(.)412 b(This)332 b(may)g(require)h(\002re)
+-33 b(w)-13 b(all)332 b(changes.)25336 75321 y(11)p eop
+end
+%%Page: 12 12
+TeXDict begin 12 11 bop 0 0 a
+SDict begin /product where{pop product(Distiller)search{pop pop pop version(.)search{exch pop exch pop(3011)eq{gsave newpath 0 0 moveto closepath clip/Courier findfont 10 scalefont setfont 72 72 moveto(.)show grestore}if}{pop}ifelse}{pop}ifelse}if end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin H.R end
+
+0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (page.12) cvn H.B /DEST pdfmark end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin 14.5 H.A end
+ 0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsection.2.5) cvn H.B /DEST pdfmark end
+ 0 0 a
+1328 x Ff(2.5)1594 b(Con\002guration)0 4428 y Fe(Hadoop')-73
+b(s)368 b(HDFS)f(will)i(use)e(space)g(on)h(the)g(local)g(disks)f(on)h
+(node002)h(through)g(node005)g(to)f(create)f(a)h(single)0
+6033 y(lar)-24 b(ge)289 b(distrib)-27 b(uted)291 b(\002lesystem.)398
+b(In)289 b(our)h(e)-20 b(xample)289 b(we)g(will)h(say)e(each)h(of)g
+(node002)h(through)h(node005)e(has)g(four)0 7638 y(2TB)d(dri)-33
+b(v)-20 b(es)287 b(per)g(node,)296 b(for)287 b(a)g(total)g(of)g(32TB)g
+(across)f(the)h(four)g(serv)-20 b(ers.)397 b(These)285
+b(local)i(dri)-33 b(v)-20 b(es)287 b(must)g(be)g(already)0
+9243 y(been)366 b(formatted)i(by)f(Linux)g(as)f(normal)i(Linux)e
+(\002lesystems)g(\(e)-20 b(xt4,)376 b(e)-20 b(xt3,)376
+b(etc.\).)515 b(W)-106 b(e)366 b(will)h(further)h(say)e(these)0
+10848 y(\002lesystems)e(ha)-27 b(v)-20 b(e)365 b(been)g(mounted)h(with)
+g(the)f(same)f(mount)i(point)g(locations)f(on)h(all)f(nodes:)477
+b(/hadoop/disk1,)0 12453 y(/hadoop/disk2,)484 b(/hadoop/disk3,)h(and)
+453 b(/hadoop/disk4.)774 b(HDFS)452 b(actually)h(permits)h(dif)-33
+b(ferent)453 b(sized)g(dri)-33 b(v)-20 b(es)0 14058 y(and)372
+b(dif)-33 b(ferent)373 b(numbers)f(of)g(dri)-33 b(v)-20
+b(es)372 b(on)g(each)f(serv)-20 b(er)-53 b(,)382 b(b)-27
+b(ut)373 b(doing)f(so)g(requires)g(each)f(serv)-20 b(er)372
+b(to)g(ha)-27 b(v)-20 b(e)372 b(an)g(indi-)0 15663 y(vidually)395
+b(maintained)h(hdfs-site.xml)g(\002le,)409 b(described)395
+b(later)-73 b(.)598 b(If)395 b(possible,)410 b(k)-13
+b(eep)394 b(the)g(number)i(of)e(dri)-33 b(v)-20 b(es)395
+b(the)0 17269 y(same)432 b(on)g(each)g(node)g(for)h(easier)e
+(administration.)714 b(The)432 b(names)g(of)g(the)g(mount)i(points)e
+(aren')-24 b(t)433 b(special)f(and)0 18874 y(could)453
+b(be)g(an)-20 b(ything,)485 b(b)-27 b(ut)453 b(these)g(are)g(the)g
+(names)g(we)f(will)i(use)e(in)i(this)f(e)-20 b(xample.)774
+b(HDFS)452 b(creates)h(its)g(o)-33 b(wn)0 20479 y(directory)325
+b(structure)g(and)f(\002les)f(within)i(the)f(dri)-33
+b(v)-20 b(es)324 b(that)g(are)g(part)g(of)h(HDFS.)e(If)h(one)g(were)g
+(to)g(look)h(inside)f(one)0 22084 y(of)e(these)f(\002lesystems)g(after)
+h(Hadoop)g(is)f(running)i(and)f(\002les)e(ha)-27 b(v)-20
+b(e)322 b(been)g(written)g(to)g(HDFS,)f(one)h(w)-13 b(ould)322
+b(see)e(a)0 23689 y(\002le)332 b(and)g(directory)h(structure)g(with)f
+(computer)h(generated)g(directory)g(names)f(and)g(\002lenames)f(that)i
+(don')-24 b(t)333 b(cor)-27 b(-)0 25294 y(respond)365
+b(in)f(an)-20 b(y)365 b(w)-13 b(ay)363 b(to)i(their)g(HDFS)e
+(\002lenames)h(\(e)-20 b(g.)508 b(blk_1073742354,)375
+b(blk_1073742354_1530.meta,)0 26899 y(etc.\).)557 b(Access)379
+b(to)i(these)f(\002les)g(must)h(be)g(made)f(through)i(Hadoop.)558
+b(P)-20 b(aths)380 b(to)h(\002les)e(in)i(HDFS)f(be)-20
+b(gin)381 b(with)g(`)159 b(/)g(')0 28504 y(just)387 b(as)g(the)-20
+b(y)387 b(do)g(on)h(a)e(normal)j(Linux)e(\002lesystem,)400
+b(b)-27 b(ut)388 b(the)g(namespace)e(is)h(completely)h(independent)g
+(from)0 30109 y(all)372 b(other)g(\002les)e(on)i(the)g(nodes.)529
+b(This)371 b(means)h(the)f(directory)i(/tmp)f(on)g(HDFS)e(is)i
+(completely)g(dif)-33 b(ferent)373 b(from)0 31714 y(the)360
+b(normal)g(/tmp)h(visible)f(at)g(a)f(bash)g(prompt.)496
+b(Some)359 b(paths)h(in)g(the)f(con\002guration)i(belo)-33
+b(w)360 b(are)f(in)h(the)g(Linux)0 33319 y(\002lesystem)332
+b(namespace)f(an)h(some)h(are)f(in)g(the)g(HDFS)g(\002lesystem)f
+(namespace.)0 35522 y(The)376 b(frontend)i(serv)-20 b(er)376
+b(does)h(not)g(directly)g(participate)g(in)g(Hadoop)g(computation,)389
+b(HDFS)376 b(storage,)387 b(etc.)545 b(b)-27 b(ut)0 37127
+y(it)427 b(must)g(ha)-27 b(v)-20 b(e)427 b(kno)-33 b(wledge)427
+b(of)f(the)h(Hadoop)g(con\002guration)g(in)g(order)g(to)g(interact)g
+(with)g(Hadoop.)696 b(Thus)426 b(all)0 38733 y(Hadoop)333
+b(con\002guration)g(\002les)e(must)i(e)-20 b(xist)332
+b(on)h(the)f(frontend)i(in)e(addition)h(to)g(the)f(nodeNNN)h(serv)-20
+b(ers.)0 40935 y(The)322 b(amount)h(of)g(RAM)g(per)f(node)h(must)g(be)f
+(kno)-33 b(wn)323 b(for)h(some)e(con\002guration)i(settings,)g(so)f
+(lets)f(say)g(we)h(ha)-27 b(v)-20 b(e)0 42540 y(64GB)333
+b(per)f(node)g(in)h(our)g(e)-20 b(xample)332 b(con\002guration.)413
+b(W)-106 b(e)332 b(will)h(say)e(each)h(node)g(has)g(16)h(CPU)e(cores.)0
+44771 y
+SDict begin H.S end
+ 0 44771 a 0 44771 a
+SDict begin 14.5 H.A end
+ 0 44771 a 0 44771 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsubsection.2.5.1) cvn H.B /DEST pdfmark end
+ 0 44771
+a 1915 x Fa(2.5.1)1329 b(Hosts)333 b(File)f(or)g(DNS)f(entries)0
+49786 y Fe(The)538 b(hostnames)h(and)f(IP)g(addresses)g(of)h(all)g
+(machines)f(in)h(the)g(Hadoop)g(cluster)g(must)g(be)f(added)h(to)g(the)
+0 51391 y Fb(/etc/hosts)373 b Fe(\002le)367 b(on)i(each)f(machine)g(of)
+h(the)f(cluster)-53 b(,)378 b(or)368 b(be)h(kno)-33 b(w)368
+b(to)h(the)f(DNS)g(serv)-20 b(er)368 b(each)g(of)h(the)f(nodes)0
+52996 y(uses.)411 b(These)331 b(are)h(our)h(e)-20 b(xample)333
+b(hostnames)f(and)g(IP)g(addresses.)0 56638 y Fb(10.0.0.001)682
+b(node001.example.com)k(node001)0 58243 y(10.0.0.002)c
+(node002.example.com)k(node002)0 59848 y(10.0.0.003)c
+(node003.example.com)k(node003)0 61453 y(10.0.0.004)c
+(node004.example.com)k(node004)0 63058 y(10.0.0.005)c
+(node005.example.com)k(node005)0 64663 y(10.0.0.006)c
+(frontend.example.com)687 b(frontend)25336 75321 y Fe(12)p
+eop end
+%%Page: 13 13
+TeXDict begin 13 12 bop 0 0 a
+SDict begin /product where{pop product(Distiller)search{pop pop pop version(.)search{exch pop exch pop(3011)eq{gsave newpath 0 0 moveto closepath clip/Courier findfont 10 scalefont setfont 72 72 moveto(.)show grestore}if}{pop}ifelse}{pop}ifelse}if end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin H.R end
+
+0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (page.13) cvn H.B /DEST pdfmark end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin 14.5 H.A end
+ 0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsubsection.2.5.2) cvn H.B /DEST pdfmark end
+ 0 0 a
+1328 x Fa(2.5.2)1329 b(Fir)-24 b(ewalls)0 4428 y Fe(The)327
+b(ne)-33 b(w)327 b(netw)-13 b(ork)327 b(services)g(for)h(Hadoop,)h
+(including)f(access)e(to)h(\002les)g(in)g(HDFS,)g(will)h(be)f(visible)g
+(to)h(the)f(In-)0 6033 y(ternet)302 b(unless)f(already)h(block)-13
+b(ed)302 b(due)g(to)g(N)-46 b(A)-147 b(T)300 b(or)i(some)g(other)g
+(form)h(of)f(\002re)-33 b(w)-13 b(all)301 b(else)-33
+b(where)301 b(on)g(the)h(netw)-13 b(ork.)0 7638 y(It)375
+b(is)g(advised)g(that)g(a)g(host-based)g(\002re)-33 b(w)-13
+b(all)374 b(be)h(erected)g(using)g(iptables)g(on)g(each)g(of)g(the)g
+(nodes)g(and)g(the)g(fro-)0 9243 y(nend)275 b(serv)-20
+b(er)-73 b(.)393 b(It)276 b(w)-13 b(ould)275 b(permit)i(full)f
+(communication)h(for)e(all)h(ports)f(among)h(the)f(six)g(serv)-20
+b(ers)275 b(in)h(our)f(e)-20 b(xample:)0 10848 y(node001)406
+b(through)h(node005)g(and)e(the)h(frontend)h(serv)-20
+b(er)-73 b(.)632 b(It)407 b(w)-13 b(ould)406 b(restrict)g(access)e(to)i
+(these)f(serv)-20 b(ers)406 b(from)0 12453 y(e)-20 b(xternal)325
+b(hosts)g(based)f(on)h(your)g(local)g(needs.)409 b(F)-20
+b(or)324 b(e)-20 b(xample,)327 b(you)e(may)g(wish)g(to)g(permit)g(ssh)g
+(connections)g(to)0 14058 y(the)399 b(frontend)i(from)g(an)-20
+b(ywhere)399 b(in)h(the)f(w)-13 b(orld,)417 b(b)-27 b(ut)401
+b(allo)-33 b(w)399 b(ssh)g(to)h(the)f(nodeNNN)h(serv)-20
+b(ers)399 b(only)h(from)h(local)0 15663 y(subnets.)409
+b(Y)-146 b(ou)322 b(may)g(w)-13 b(ant)322 b(to)h(permit)g(Rstudio)g
+(Serv)-20 b(er)322 b(connections)h(to)f(the)g(frontend)i(\(port)f
+(8787\))g(from)h(just)0 17269 y(three)356 b(local)h(subnets)f(only)-86
+b(,)362 b(b)-27 b(ut)358 b(permit)f(no)f(other)h(netw)-13
+b(ork)357 b(access)e(to)h(an)-20 b(y)356 b(other)h(serv)-20
+b(ers.)484 b(Other)357 b(ports)f(you)0 18874 y(may)366
+b(wish)g(to)g(open)g(to)g(local)g(subnets)g(include)g(port)g(50070)h
+(on)f(node001)g(to)g(see)f(the)h(status)g(of)g(HDFS,)f(and)0
+20479 y(port)427 b(8088)h(on)e(node001)i(to)f(see)e(the)i(status)g(of)g
+(the)f(ResourceManager)-53 b(,)450 b(the)427 b(jobs)g(that)g(are)f
+(running,)452 b(ha)-27 b(v)-20 b(e)0 22084 y(been)332
+b(completed,)h(etc.)0 24286 y
+SDict begin H.S end
+ 0 24286 a 0 24286 a
+SDict begin 14.5 H.A end
+ 0 24286
+a 0 24286 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsubsection.2.5.3) cvn H.B /DEST pdfmark end
+ 0 24286 a 1916 x Fa(2.5.3)1329 b(Hadoop)332
+b(cor)-24 b(e-site.xml)0 29301 y Fe(The)344 b Fb(core-site.xml)351
+b Fe(\002le)344 b(is)h(placed)f(in)h Fb(/etc/hadoop/conf.tessera)356
+b Fe(on)345 b(e)-33 b(v)-20 b(ery)345 b(serv)-20 b(er)345
+b(in)g(the)g(cluster)0 30906 y(\(nodeNNN)371 b(and)f(frontend\).)527
+b(If)370 b(a)g(change)g(is)g(e)-33 b(v)-20 b(er)369 b(made)h(to)h(this)
+f(con\002g)g(\002le,)379 b(it)370 b(must)h(be)f(made)g(to)g(that)g
+(\002le)0 32511 y(on)332 b(e)-33 b(v)-20 b(ery)333 b(node)f(in)h(the)f
+(cluster)g(as)g(well.)0 35666 y Fb(<?xml)680 b(version="1.0"?>)0
+37271 y(<?xml-stylesheet)685 b(type="text/xsl")f
+(href="configuration.xsl"?>)0 38876 y(<configuration>)1355
+40481 y(<property>)2710 42086 y(<!--)679 b(This)g(is)g(the)g(NameNode)i
+(-->)2710 43692 y(<name>fs.defaultFS</name>)2710 45297
+y(<value>hdfs://node001.example.com:8020</value>)1355
+46902 y(</property>)0 48507 y(</configuration>)0 50615
+y
+SDict begin H.S end
+ 0 50615 a 0 50615 a
+SDict begin 14.5 H.A end
+ 0 50615 a 0 50615 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsubsection.2.5.4) cvn H.B /DEST pdfmark end
+ 0 50615 a 2009
+x Fa(2.5.4)1329 b(Hadoop)332 b(mapr)-24 b(ed-site.xml)0
+55724 y Fe(The)427 b Fb(mapred-site.xml)433 b Fe(\002le)427
+b(in)g(in)h Fb(/etc/hadoop/conf.tessera)438 b Fe(is)426
+b(con\002gured)i(to)f(tell)h(Hadoop)f(we)0 57329 y(are)370
+b(using)g(the)g(MRv2)h(/)f(Y)-159 b(ARN)369 b(frame)-33
+b(w)-13 b(ork.)527 b(This)369 b(\002le)h(should)h(be)e(copied)i(to)f
+(all)g(serv)-20 b(ers)370 b(\(nodeNNN)h(and)0 58934 y(frontend\).)0
+62369 y Fb(<?xml)680 b(version="1.0"?>)0 63975 y(<?xml-stylesheet)685
+b(type="text/xsl")f(href="configuration.xsl"?>)0 65580
+y(<configuration>)1355 67185 y(<property>)2710 68790
+y(<name>mapreduce.framework.name</name>)2710 70395 y
+(<value>yarn</value>)1355 72000 y(</property>)25336 75321
+y Fe(13)p eop end
+%%Page: 14 14
+TeXDict begin 14 13 bop 0 0 a
+SDict begin /product where{pop product(Distiller)search{pop pop pop version(.)search{exch pop exch pop(3011)eq{gsave newpath 0 0 moveto closepath clip/Courier findfont 10 scalefont setfont 72 72 moveto(.)show grestore}if}{pop}ifelse}{pop}ifelse}if end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin H.R end
+
+0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (page.14) cvn H.B /DEST pdfmark end
+ 0 0 a 1328 x Fb(</configuration>)0 3464 y
+SDict begin H.S end
+
+0 3464 a 0 3464 a
+SDict begin 14.5 H.A end
+ 0 3464 a 0 3464 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsubsection.2.5.5) cvn H.B /DEST pdfmark end
+ 0 3464 a 2010 x Fa(2.5.5)1329
+b(Hadoop)332 b(yar)-20 b(n-site.xml)0 8573 y Fe(The)315
+b Fb(yarn-site.xml)321 b Fe(\002le)315 b(in)h(in)f Fb
+(/etc/hadoop/conf.tessera)326 b Fe(is)316 b(used)f(to)g(con\002gure)h
+(Hadoop)g(settings)0 10178 y(related)272 b(to)h(temporary)g(storage,)
+285 b(number)273 b(of)f(CPU)g(cores)g(to)g(use)g(per)g(node,)285
+b(memory)273 b(per)f(node,)285 b(etc.)392 b(This)271
+b(\002le)0 11784 y(should)353 b(be)e(copied)i(to)f(all)g(serv)-20
+b(ers)352 b(\(nodeNNN)h(and)f(frontend\).)473 b(Changes)352
+b(to)g(this)g(\002le)g(can)f(ha)-27 b(v)-20 b(e)353 b(signi\002cant)0
+13389 y(performance)436 b(impact,)461 b(such)435 b(as)f(running)i(16)f
+(tasks)g(per)g(node)g(rather)g(than)h(running)g(2)f(per)g(node.)720
+b(T)-60 b(uning)0 14994 y(these)424 b(settings)h(optimally)h(is)f(be)
+-20 b(yond)425 b(the)g(scope)f(of)h(this)g(guide.)689
+b(In)425 b(our)g(e)-20 b(xample)425 b(cluster)-53 b(,)448
+b(the)425 b(hardw)-13 b(are)0 16599 y(con\002guration)350
+b(of)g(all)f(nodes)g(is)g(identical,)354 b(thus)349 b(the)g(same)g
+(yarn-site.xml)i(\002le)d(can)h(be)g(copied)g(around)h(to)g(all)0
+18204 y(nodes.)506 b(If)364 b(in)f(your)h(con\002guration)h(you)f(ha)
+-27 b(v)-20 b(e)363 b(some)h(nodes)f(with)h(dif)-33 b(ferent)365
+b(amounts)f(of)g(RAM)f(or)h(dif)-33 b(ferent)0 19809
+y(numbers)400 b(of)h(CPU)e(cores,)416 b(the)-20 b(y)400
+b(must)g(ha)-27 b(v)-20 b(e)400 b(an)g(indi)-33 b(vidually)401
+b(maintained)g(and)f(updated)g Fb(yarn-site.xml)0 21414
+y Fe(\002le)332 b(with)h(those)f(settings)g(con\002gured)h(dif)-33
+b(ferently)-86 b(.)0 25056 y Fb(<?xml)680 b(version="1.0"?>)0
+26661 y(<?xml-stylesheet)685 b(type="text/xsl")f
+(href="configuration.xsl"?>)0 28266 y(<configuration>)1355
+29871 y(<property>)2710 31476 y(<!--)679 b(This)g(should)i(match)e(the)
+g(name)g(of)g(the)g(resource)i(manager)f(in)f(your)g(local)h
+(deployment)i(-->)2710 33081 y
+(<name>yarn.resourcemanager.hostname</name>)2710 34687
+y(<value>node001.example.com</value>)1355 36292 y(</property>)1355
+39502 y(<property>)2710 41107 y
+(<name>yarn.nodemanager.aux-services</name>)2710 42712
+y(<value>mapreduce_shuffle</value>)1355 44317 y(</property>)1355
+47527 y(<property>)2710 49132 y(<!--)d(How)g(much)g(RAM)g(on)f(this)i
+(server)g(can)f(be)f(used)h(for)g(Hadoop)h(-->)2710 50738
+y(<!--)f(We)f(will)i(use)f(\(total)h(RAM)f(-)f(2GB\).)1357
+b(We)678 b(have)h(64GB)h(in)e(our)h(example,)i(so)d(use)h(62GB)g(-->)
+2710 52343 y(<name>yarn.nodemanager.resource.memory-mb</name>)2710
+53948 y(<value>62000</value>)1355 55553 y(</property>)1355
+58763 y(<property>)2710 60368 y(<!--)g(How)g(many)g(CPU)g(cores)h(on)e
+(this)h(server)i(can)d(be)h(used)g(for)g(Hadoop)h(-->)2710
+61973 y(<!--)f(We)f(will)i(use)f(them)g(all,)g(which)h(is)e(16)h(per)f
+(node)i(in)e(our)h(example)i(cluster)f(-->)2710 63578
+y(<name>yarn.nodemanager.resource.cpu-vcores</name>)2710
+65183 y(<value>16</value>)1355 66788 y(</property>)1355
+69999 y(<property>)2710 71604 y
+(<name>yarn.nodemanager.aux-services.mapreduce_shuffle.class)q(</)q(na)
+q(me)q(>)25336 75321 y Fe(14)p eop end
+%%Page: 15 15
+TeXDict begin 15 14 bop 0 0 a
+SDict begin /product where{pop product(Distiller)search{pop pop pop version(.)search{exch pop exch pop(3011)eq{gsave newpath 0 0 moveto closepath clip/Courier findfont 10 scalefont setfont 72 72 moveto(.)show grestore}if}{pop}ifelse}{pop}ifelse}if end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin H.R end
+
+0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (page.15) cvn H.B /DEST pdfmark end
+ 0 0 a 2710 1328 a Fb
+(<value>org.apache.hadoop.mapred.ShuffleHandler</value>)1355
+2933 y(</property>)1355 6144 y(<property>)2710 7749 y
+(<name>yarn.resourcemanager.scheduler.class</name>)2710
+9354 y(<value>org.apache.hadoop.yarn.server.resourcemanager.schedu)q
+(le)q(r.)q(fa)q(ir.)q(Fa)q(ir)q(Sc)q(he)q(dul)q(er)q(</)q(va)q(lu)q(e>)
+1355 10959 y(</property>)1355 14169 y(<property>)2710
+15774 y(<name>yarn.log-aggregation-enable</name>)2710
+17379 y(<value>true</value>)1355 18984 y(</property>)1355
+22195 y(<property>)2710 23800 y(<!--)679 b(List)g(of)g(directories)j
+(to)d(store)g(temporary)j(localized)g(files.)e(-->)2710
+25405 y(<!--)f(Spread)h(these)g(across)g(all)f(local)h(drives)g(on)e
+(all)h(nodes)h(-->)2710 27010 y
+(<name>yarn.nodemanager.local-dirs</name>)2710 28615
+y(<value>file:///hadoop/disk1/yarn/local,file:///hadoop/disk2)q(/y)q
+(ar)q(n/)q(loc)q(al)q(,)7452 30220 y
+(file:///hadoop/disk3/yarn/local,file:///hadoop/disk4/yarn/)q(loc)q(al)
+q(</)q(va)q(lu)q(e>)1355 31825 y(</property>)1355 35035
+y(<property>)2710 36640 y(<!--)f(Where)h(to)e(store)i(temporary)i
+(container)f(logs.)f(-->)2710 38245 y(<!--)f(Spread)h(these)g(across)g
+(all)f(local)h(drives)g(on)e(all)h(nodes)h(-->)2710 39851
+y(<name>yarn.nodemanager.log-dirs</name>)2710 41456 y
+(<value>file:///hadoop/disk1/yarn/log,file:///hadoop/disk2/y)q(ar)q(n/)
+q(lo)q(g,)7452 43061 y
+(file:///hadoop/disk3/yarn/log,file:///hadoop/disk4/yarn/lo)q(g</)q(va)
+q(lu)q(e>)1355 44666 y(</property>)1355 47876 y(<property>)2710
+49481 y(<!--)f(This)g(should)i(match)e(the)g(name)g(of)g(the)g
+(NameNode)i(in)d(your)h(local)h(deployment)i(-->)2710
+51086 y(<name>yarn.nodemanager.remote-app-log-dir</name>)2710
+52691 y(<value>hdfs://node001.example.com/var/log/hadoop-yarn/apps<)q
+(/v)q(al)q(ue)q(>)1355 54296 y(</property>)1355 57507
+y(<property>)2710 59112 y(<name>yarn.application.classpath</name>)2710
+60717 y(<value>)4742 62322 y($HADOOP_CONF_DIR,)4742 63927
+y($HADOOP_COMMON_HOME/*,$HADOOP_COMMON_HOME/lib/*,)4742
+65532 y($HADOOP_HDFS_HOME/*,$HADOOP_HDFS_HOME/lib/*,)4742
+67137 y($HADOOP_MAPRED_HOME/*,$HADOOP_MAPRED_HOME/lib/*,)4742
+68742 y($HADOOP_YARN_HOME/*,$HADOOP_YARN_HOME/lib/*)2710
+70347 y(</value>)1355 71952 y(</property>)25336 75321
+y Fe(15)p eop end
+%%Page: 16 16
+TeXDict begin 16 15 bop 0 0 a
+SDict begin /product where{pop product(Distiller)search{pop pop pop version(.)search{exch pop exch pop(3011)eq{gsave newpath 0 0 moveto closepath clip/Courier findfont 10 scalefont setfont 72 72 moveto(.)show grestore}if}{pop}ifelse}{pop}ifelse}if end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin H.R end
+
+0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (page.16) cvn H.B /DEST pdfmark end
+ 0 0 a 1328 x Fb(</configuration>)0 4943 y
+Fe(W)-106 b(e)286 b(reference)i(ne)-33 b(w)286 b(directories)i(abo)-20
+b(v)g(e)287 b(in)h(the)f(local)g(Linux)h(\002lesystem)e(into)i(which)g
+(logs)f(and)g(other)h(\002les)e(are)0 6548 y(placed.)650
+b(W)-106 b(e)411 b(must)i(create)e(these)g(directories)i(no)-33
+b(w)412 b(and)f(set)h(the)f(proper)i(o)-33 b(wner)-53
+b(,)432 b(group,)g(and)412 b(permissions.)0 8153 y(This)332
+b(must)h(be)f(done)g(on)g(node001)h(-)g(node005:)0 11767
+y Fb(sudo)679 b(mkdir)h(-p)e(/hadoop/disk1/yarn/local)689
+b(/hadoop/disk2/yarn/local)0 13372 y(sudo)679 b(mkdir)h(-p)e
+(/hadoop/disk3/yarn/local)689 b(/hadoop/disk4/yarn/local)0
+14977 y(sudo)679 b(mkdir)h(-p)e(/hadoop/disk1/yarn/log)688
+b(/hadoop/disk2/yarn/log)0 16582 y(sudo)679 b(mkdir)h(-p)e
+(/hadoop/disk3/yarn/log)688 b(/hadoop/disk4/yarn/log)0
+18187 y(sudo)679 b(chown)h(-R)e(yarn.yarn)k(/hadoop/disk1/yarn/local)
+688 b(/hadoop/disk2/yarn/local)0 19792 y(sudo)679 b(chown)h(-R)e
+(yarn.yarn)k(/hadoop/disk3/yarn/local)688 b(/hadoop/disk4/yarn/local)0
+21397 y(sudo)679 b(chown)h(-R)e(yarn.yarn)k(/hadoop/disk1/yarn/log)687
+b(/hadoop/disk2/yarn/log)0 23003 y(sudo)679 b(chown)h(-R)e(yarn.yarn)k
+(/hadoop/disk3/yarn/log)687 b(/hadoop/disk4/yarn/log)0
+25135 y
+SDict begin H.S end
+ 0 25135 a 0 25135 a
+SDict begin 14.5 H.A end
+ 0 25135 a 0 25135 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsubsection.2.5.6) cvn H.B /DEST pdfmark end
+ 0 25135
+a 2009 x Fa(2.5.6)1329 b(Hadoop)332 b(secondary)f(namenode)f(\002le)i
+(masters)0 30244 y Fe(The)353 b(\002le)h Fb
+(/etc/hadoop/conf.tessera/masters)368 b Fe(must)355 b(contain)f(the)g
+(hostname)g(of)h(the)f(secondary)g(na-)0 31849 y(menode.)412
+b(This)332 b(\002le)g(should)h(be)f(copied)g(to)h(all)f(serv)-20
+b(ers.)412 b(F)-20 b(or)332 b(our)h(e)-20 b(xample,)333
+b(it)f(contains)h(just)f(one)g(line:)0 35463 y Fb(node002.example.com)0
+37595 y
+SDict begin H.S end
+ 0 37595 a 0 37595 a
+SDict begin 14.5 H.A end
+ 0 37595 a 0 37595 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsubsection.2.5.7) cvn H.B /DEST pdfmark end
+ 0 37595
+a 2010 x Fa(2.5.7)1329 b(Hadoop)332 b(hdfs-site.xml)0
+42704 y Fe(The)473 b Fb(hdfs-site.xml)479 b Fe(\002le)473
+b(is)h(used)f(to)h(con\002gure)g(the)f(Hadoop)h(\002le)f(system)h
+(\(HDFS\).)f(This)g(\002le)g(should)0 44309 y(be)422
+b(copied)h(to)f(the)g Fb(/etc/hadoop/conf.tessera)434
+b Fe(directory)423 b(on)f(all)h(nodes)f(\(nodeNNN)h(and)f(frontend\).)0
+45915 y(As)362 b(with)i Fb(yarn-site.xml)p Fe(,)376 b(if)363
+b(your)g(number)h(of)f(disks)f(and)h(size)f(of)h(disk)g(v)-33
+b(aries)362 b(among)h(nodes,)370 b(you)363 b(must)0 47520
+y(independently)333 b(maintain)h(copies)e(of)g Fb(hdfs-site.xml)338
+b Fe(on)333 b(each)e(node.)0 51134 y Fb(<?xml)680 b(version="1.0"?>)0
+52739 y(<?xml-stylesheet)685 b(type="text/xsl")f
+(href="configuration.xsl"?>)0 54344 y(<configuration>)1355
+55949 y(<property>)2710 57554 y(<!--)1357 b(Number)680
+b(of)e(times)i(each)f(HDFS)g(block)h(is)f(replicated.)1360
+b(Default)680 b(is)f(3.)f(-->)2710 59159 y
+(<name>dfs.replication</name>)2710 60764 y(<value>3</value>)1355
+62369 y(</property>)1355 65580 y(<property>)2710 67185
+y(<!--)h(Size)g(in)g(bytes)h(of)e(each)h(HDFS)g(block.)1358
+b(Should)680 b(be)f(a)f(power)h(of)g(2.)f(-->)2710 68790
+y(<!--)1357 b(We)678 b(use)h(2^27)g(-->)2710 70395 y
+(<name>dfs.blocksize</name>)2710 72000 y(<value>134217728</value>)25336
+75321 y Fe(16)p eop end
+%%Page: 17 17
+TeXDict begin 17 16 bop 0 0 a
+SDict begin /product where{pop product(Distiller)search{pop pop pop version(.)search{exch pop exch pop(3011)eq{gsave newpath 0 0 moveto closepath clip/Courier findfont 10 scalefont setfont 72 72 moveto(.)show grestore}if}{pop}ifelse}{pop}ifelse}if end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin H.R end
+
+0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (page.17) cvn H.B /DEST pdfmark end
+ 0 0 a 1355 1328 a Fb(</property>)1355 4539
+y(<!--)679 b(Where)h(the)f(namenode)i(stores)f(HDFS)f(metadata)i(on)e
+(its)g(local)g(drives)i(-->)1355 6144 y(<!--)e(These)h(are)f(Linux)h
+(filesystem)i(paths)d(that)h(must)f(already)i(exist.)f(-->)1355
+7749 y(<property>)2710 9354 y(<name>dfs.namenode.name.dir</name>)2710
+10959 y(<value>file:///hadoop/disk1/dfs/nn,file:///hadoop/disk2/dfs)q
+(/n)q(n,)7452 12564 y
+(file:///hadoop/disk3/dfs/nn,file:///hadoop/disk4/dfs/nn</v)q(alu)q(e>)
+1355 14169 y(</property>)1355 17379 y(<!--)f(Where)h(the)f(secondary)i
+(namenode)g(stores)g(HDFS)e(metadata)i(on)d(its)h(local)h(drives)g(-->)
+1355 18984 y(<!--)f(These)h(are)f(Linux)h(filesystem)i(paths)d(that)h
+(must)f(already)i(exist.)f(-->)1355 20589 y(<property>)2710
+22195 y(<name>dfs.namenode.checkpoint.dir</name>)2710
+23800 y(<value>file:///hadoop/disk1/dfs/nn,file:///hadoop/disk2/dfs)q
+(/n)q(n,)7452 25405 y
+(file:///hadoop/disk3/dfs/nn,file:///hadoop/disk4/dfs/nn</v)q(alu)q(e>)
+1355 27010 y(</property>)1355 30220 y(<property>)2710
+31825 y(<!--)f(Where)h(each)f(datanode)i(stores)f(HDFS)g(blocks)g(on)e
+(its)h(local)h(drives.)h(-->)2710 33430 y(<!--)e(These)h(are)f(Linux)g
+(filesystem)j(paths)e(that)f(must)h(already)g(exist.)h(-->)2710
+35035 y(<name>dfs.datanode.data.dir</name>)2710 36640
+y(<value>file:///hadoop/disk1/dfs/dn,file:///hadoop/disk2/dfs)q(/d)q
+(n,)7452 38245 y
+(file:///hadoop/disk3/dfs/dn,file:///hadoop/disk4/dfs/dn</v)q(alu)q(e>)
+1355 39851 y(</property>)1355 43061 y(<property>)2710
+44666 y(<!--)e(This)g(should)i(match)e(the)g(name)g(of)g(the)g
+(NameNode)i(in)d(your)h(local)h(deployment)i(-->)2710
+46271 y(<name>dfs.namenode.http-address</name>)2710 47876
+y(<value>node001.example.com:50070</value>)1355 49481
+y(</property>)1355 52691 y(<property>)3387 54296 y
+(<name>dfs.permissions.superusergroup</name>)3387 55901
+y(<value>hadoop</value>)1355 57507 y(</property>)1355
+59112 y(<property>)2710 60717 y
+(<name>dfs.client.read.shortcircuit</name>)2710 62322
+y(<value>true</value>)1355 63927 y(</property>)1355 65532
+y(<property>)2710 67137 y
+(<name>dfs.client.read.shortcircuit.streams.cache.size</name)q(>)2710
+68742 y(<value>1000</value>)1355 70347 y(</property>)1355
+71952 y(<property>)25336 75321 y Fe(17)p eop end
+%%Page: 18 18
+TeXDict begin 18 17 bop 0 0 a
+SDict begin /product where{pop product(Distiller)search{pop pop pop version(.)search{exch pop exch pop(3011)eq{gsave newpath 0 0 moveto closepath clip/Courier findfont 10 scalefont setfont 72 72 moveto(.)show grestore}if}{pop}ifelse}{pop}ifelse}if end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin H.R end
+
+0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (page.18) cvn H.B /DEST pdfmark end
+ 0 0 a 2710 1328 a Fb
+(<name>dfs.client.read.shortcircuit.streams.cache.expiry.ms<)q(/n)q(am)
+q(e>)2710 2933 y(<value>10000</value>)1355 4539 y(</property>)1355
+7749 y(<property>)2710 9354 y(<!--)679 b(Leave)h(the)f(dn._PORT)i(as)d
+(is,)h(do)f(not)h(try)g(to)f(make)i(this)f(a)f(number)i(-->)2710
+10959 y(<name>dfs.domain.socket.path</name>)2710 12564
+y(<value>/var/run/hadoop-hdfs/dn._PORT</value>)1355 14169
+y(</property>)0 15774 y(</configuration>)0 19416 y Fe(W)-106
+b(e)304 b(must)g(pre-create)h(the)f(local)h(metadata)f(storage)g
+(directories)h(on)g(the)f(NameNode)h(\(node001\),)311
+b(and)304 b(on)h(the)0 21021 y(Secondary)332 b(NameNode)g(\(node002\):)
+0 24663 y Fb(sudo)679 b(mkdir)h(-p)e(/hadoop/disk1/dfs/nn)687
+b(/hadoop/disk2/dfs/nn)0 26268 y(sudo)679 b(mkdir)h(-p)e
+(/hadoop/disk3/dfs/nn)687 b(/hadoop/disk4/dfs/nn)0 27873
+y(sudo)679 b(chown)h(-R)e(hdfs.hdfs)k(/hadoop/disk1/dfs)j
+(/hadoop/disk2/dfs)0 29478 y(sudo)679 b(chown)h(-R)e(hdfs.hdfs)k
+(/hadoop/disk3/dfs)j(/hadoop/disk4/dfs)0 31083 y(sudo)679
+b(chmod)h(700)f(/hadoop/disk1/dfs)685 b(/hadoop/disk2/dfs)g
+(/hadoop/disk3/dfs)h(/hadoop/disk4/dfs)0 34725 y Fe(W)-106
+b(e)332 b(must)g(pre-create)h(the)f(local)g(storage)h(directories)g(on)
+f(the)g(datanodes,)h(node002)g(through)g(node005:)0 38367
+y Fb(sudo)679 b(mkdir)h(-p)e(/hadoop/disk1/dfs/dn)687
+b(/hadoop/disk2/dfs/dn)0 39972 y(sudo)679 b(mkdir)h(-p)e
+(/hadoop/disk3/dfs/dn)687 b(/hadoop/disk4/dfs/dn)0 41577
+y(sudo)679 b(chown)h(-R)e(hdfs.hdfs)k(/hadoop/disk1/dfs)j
+(/hadoop/disk2/dfs)0 43183 y(sudo)679 b(chown)h(-R)e(hdfs.hdfs)k
+(/hadoop/disk3/dfs)j(/hadoop/disk4/dfs)0 44788 y(sudo)679
+b(chmod)h(700)f(/hadoop/disk1/dfs)685 b(/hadoop/disk2/dfs)0
+46393 y(sudo)679 b(chmod)h(700)f(/hadoop/disk3/dfs)685
+b(/hadoop/disk4/dfs)25336 75321 y Fe(18)p eop end
+%%Page: 19 19
+TeXDict begin 19 18 bop 0 0 a
+SDict begin /product where{pop product(Distiller)search{pop pop pop version(.)search{exch pop exch pop(3011)eq{gsave newpath 0 0 moveto closepath clip/Courier findfont 10 scalefont setfont 72 72 moveto(.)show grestore}if}{pop}ifelse}{pop}ifelse}if end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin H.R end
+
+0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (page.19) cvn H.B /DEST pdfmark end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin 14.5 H.A end
+ 0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsection.2.6) cvn H.B /DEST pdfmark end
+ 0 0 a
+1328 x Ff(2.6)1594 b(Hadoop)399 b(Pr)-29 b(e-run)398
+b(Setup)0 4428 y Fe(At)412 b(this)g(point)g(the)g(con\002guration)h
+(\002les)d(created)i(in)g Fb(/etc/hadoop/conf.tessera)422
+b Fe(on)412 b(node001)g(should)0 6033 y(be)478 b(copied)h(to)g(all)g
+(other)g(nodes.)851 b(An)-20 b(y)478 b(future)i(changes)e(to)h(an)-20
+b(y)478 b(con\002guration)i(\002les)e(should)h(be)f(done)h(on)0
+7638 y(node001)333 b(and)f(then)h(copied)f(from)h(there)g(to)f(all)h
+(other)g(nodes.)0 9841 y(Note:)590 b(In)421 b(the)g(e)-33
+b(v)-20 b(ent)421 b(that)g(some)g(nodes)f(ha)-27 b(v)-20
+b(e)421 b(dif)-33 b(ferent)422 b(number)g(of)f(dri)-33
+b(v)-20 b(es,)444 b(or)421 b(the)g(paths)g(to)g(those)g(dri)-33
+b(v)-20 b(es)0 11446 y(dif)-33 b(fer)-53 b(,)463 b(or)437
+b(the)-20 b(y)437 b(ha)-27 b(v)-20 b(e)436 b(a)g(dif)-33
+b(ferent)438 b(number)f(of)g(CPUs,)461 b(dif)-33 b(ferent)438
+b(amounts)f(of)f(RAM,)h(etc.)724 b(then)436 b(separate,)0
+13051 y(independent)333 b Fb(hdfs-site.xml)338 b Fe(and)332
+b Fb(yarn-site.xml)338 b Fe(\002les)332 b(may)g(be)g(necessary)g(on)g
+(each)g(node.)0 15254 y(Ne)-20 b(xt)398 b(we)g(format)i(the)e(ne)-33
+b(w)398 b(HDFS)f(\002lesystem)h(before)g(actually)h(starting)g(the)f
+(NameNode)g(service)g(for)h(the)0 16859 y(\002rst)332
+b(time.)413 b(This)331 b(is)i(done)f(on)g(the)h(NameNode)f(\(node001\))
+i(only)-86 b(.)412 b(It)333 b(must)f(be)g(done)h(as)e(the)i(user)f
+("hdfs":)0 20311 y Fb(sudo)679 b(-u)g(hdfs)g(hdfs)g(namenode)i(-format)
+0 23762 y Fe(Manually)333 b(start)f(hdfs)h(\002rst)f(by)g(starting)h
+(the)f(NameNode)h(service)f(on)g(node001:)0 27214 y Fb(sudo)679
+b(service)i(hadoop-hdfs-namenode)687 b(start)0 30665
+y Fe(Then)290 b(start)h(the)f(datanode)h(service)f(on)h(node002)g(-)g
+(node005)g(by)f(typing)i(this)f(on)f(each)g(of)h(them)g(one)g(at)f(a)g
+(time:)0 34117 y Fb(sudo)679 b(service)i(hadoop-hdfs-datanode)687
+b(start)0 37569 y Fe(Once)412 b(the)g(NameNode)h(service)f(is)g
+(running)i(on)e(node001)h(and)g(the)f(DataNode)g(service)g(is)h
+(running)g(on)g(the)0 39174 y(other)530 b(nodes,)579
+b(it)531 b(is)e(time)h(to)g(create)g(ne)-33 b(w)529 b(folders)i(in)f
+(HDFS)e(for)j(Hadoop)f(to)g(use)f(and)h(set)f(permissions)0
+40779 y(correctly)-86 b(.)412 b(Note)333 b(these)f(are)g(HDFS)f(paths,)
+h(NO)-53 b(T)332 b(normal)h(Linux)g(\002lesystem)f(paths:)0
+44231 y Fb(sudo)679 b(-u)g(hdfs)g(hadoop)h(fs)f(-mkdir)h(-p)e
+(/tmp/hadoop-yarn/staging)0 45836 y(sudo)h(-u)g(hdfs)g(hadoop)h(fs)f
+(-chmod)h(-R)e(1777)h(/tmp)0 47441 y(sudo)g(-u)g(hdfs)g(hadoop)h(fs)f
+(-mkdir)h(-p)e(/user/history)0 49046 y(sudo)h(-u)g(hdfs)g(hadoop)h(fs)f
+(-chmod)h(-R)e(1777)h(/user/history)0 50651 y(sudo)g(-u)g(hdfs)g
+(hadoop)h(fs)f(-chown)h(mapred:hadoop)j(/user/history)0
+52256 y(sudo)c(-u)g(hdfs)g(hadoop)h(fs)f(-mkdir)h(-p)e
+(/var/log/hadoop-yarn)0 53861 y(sudo)h(-u)g(hdfs)g(hadoop)h(fs)f
+(-chown)h(yarn:mapred)i(/var/log/hadoop-yarn)0 57313
+y Fe(The)479 b(administrator)i(much)f(mak)-13 b(e)479
+b(some)g(choices)g(about)h(where)g(users)f(will)h(be)f(storing)h(their)
+g(\002les,)516 b(what)0 58918 y(permissions)331 b(should)g(e)-20
+b(xist)331 b(on)g(the)g(/user)g(directory)-86 b(,)332
+b(etc.)411 b(If)331 b(pri)-33 b(v)g(ac)-20 b(y)331 b(is)f(important,)j
+(the)e(administrator)h(must)0 60523 y(create)368 b(user)h(directories)g
+(in)g(HDFS)f(indi)-33 b(vidually)371 b(for)e(e)-33 b(v)-20
+b(ery)369 b(user)f(on)h(the)g(system)f(and)h(set)f(the)h(permissions)0
+62128 y(on)311 b(those)f(directories)h(accordingly)-86
+b(.)406 b(F)-20 b(or)310 b(e)-20 b(xample,)316 b(to)310
+b(create)g(a)h(pri)-33 b(v)g(ate)310 b(storage)h(location)g(for)g
+(users)f(joe)h(and)0 63733 y(bob,)333 b(the)f(adminsitrator)i(w)-13
+b(ould)333 b(type:)0 67185 y Fb(sudo)679 b(-u)g(hdfs)g(hadoop)h(fs)f
+(-mkdir)h(/user/joe)h(/user/bob)0 68790 y(sudo)e(-u)g(hdfs)g(hadoop)h
+(fs)f(-chown)h(joe)f(/user/joe)0 70395 y(sudo)g(-u)g(hdfs)g(hadoop)h
+(fs)f(-chown)h(bob)f(/user/bob)0 72000 y(sudo)g(-u)g(hdfs)g(hadoop)h
+(fs)f(-chmod)1357 b(700)679 b(/user/joe)j(/user/bob)25336
+75321 y Fe(19)p eop end
+%%Page: 20 20
+TeXDict begin 20 19 bop 0 0 a
+SDict begin /product where{pop product(Distiller)search{pop pop pop version(.)search{exch pop exch pop(3011)eq{gsave newpath 0 0 moveto closepath clip/Courier findfont 10 scalefont setfont 72 72 moveto(.)show grestore}if}{pop}ifelse}{pop}ifelse}if end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin H.R end
+
+0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (page.20) cvn H.B /DEST pdfmark end
+ 0 0 a 1328 x Fe(This)359 b(w)-13 b(ould)360
+b(permit)h(joe)e(and)h(only)g(joe)f(to)h(read,)366 b(write,)h(and)360
+b(create)f(\002les)f(in)i Fb(/user/joe)p Fe(.)498 b(Only)360
+b(bob)f(could)0 2933 y(read,)332 b(write,)h(and)f(create)g(\002les)g
+(in)g Fb(/user/bob)p Fe(.)0 5136 y(In)354 b(a)g(research)f(group)i
+(where)f(all)g(users)f(are)h(permitted)h(to)f(see)f(\002les)g(created)g
+(by)h(all)g(other)h(users,)k(the)354 b(easiest)0 6741
+y(approach)470 b(is)g(just)g(to)g(set)g(permissions)g(such)g(that)g(an)
+-20 b(yone)470 b(can)g(create)f(ne)-33 b(w)470 b(directories)h(inside)f
+(the)g(/user)0 8346 y(directory)333 b(themselv)-20 b(es.)412
+b(T)-106 b(o)332 b(do)h(this,)f(the)g(administrator)j(w)-13
+b(ould)332 b(set)g(the)g(permissions)h(lik)-13 b(e)333
+b(this:)0 11988 y Fb(sudo)679 b(-u)g(hdfs)g(hadoop)h(fs)f(-chmod)h
+(1777)f(/user)0 15630 y Fe(Then)407 b(an)h(indi)-33 b(vidual)409
+b(user)-53 b(,)426 b(lik)-13 b(e)408 b(bob,)427 b(could)408
+b(create)f(his)g(o)-33 b(wn)408 b(directory)h(where)f(he)f(can)g(store)
+h(data,)426 b(rather)0 17235 y(than)359 b(ha)-27 b(ving)359
+b(the)g(adminsitrator)h(create)e(directories)i(for)f(e)-33
+b(v)-20 b(eryone)358 b(indi)-33 b(vidually)-86 b(.)493
+b(Bob)358 b(could)h(just)g(log)g(into)0 18840 y(the)332
+b(frontend)i(serv)-20 b(er)332 b(and)g(type)h(this)f(himself:)0
+22482 y Fb(hadoop)680 b(fs)f(-mkdir)h(/user/bob)0 24618
+y
+SDict begin H.S end
+ 0 24618 a 0 24618 a
+SDict begin 14.5 H.A end
+ 0 24618 a 0 24618 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsection.2.7) cvn H.B /DEST pdfmark end
+ 0 24618 a 2397
+x Ff(2.7)1594 b(Starting)398 b(the)g(Hadoop)i(Cluster)0
+30115 y Fe(Con\002guration)271 b(settings)f(and)f(en)-53
+b(vironment)271 b(v)-33 b(araibles)270 b(ha)-27 b(v)-20
+b(e)270 b(been)f(changed)h(such)f(that)h(rebooting)h(all)f(serv)-20
+b(ers)0 31720 y(should)328 b(cause)e(all)i(Hadoop)f(services)g(to)g
+(automatically)i(start)e(and)h(the)f(en)-53 b(vironment)329
+b(to)e(be)g(correctly)h(set)f(for)0 33325 y(all)394 b(ne)-33
+b(w)393 b(logins.)596 b(Do)394 b(that)g(no)-33 b(w)393
+b(by)h(rebooting)h(node001)f(through)h(node005,)410 b(and)393
+b(the)h(frontend)h(serv)-20 b(er)-53 b(,)409 b(by)0 34930
+y(typing)333 b(this)g(on)f(each)g(node:)0 38572 y Fb(sudo)679
+b(reboot)0 40543 y
+SDict begin H.S end
+ 0 40543 a 0 40543 a
+SDict begin 14.5 H.A end
+ 0 40543 a 0 40543
+a
+SDict begin [ /View [/XYZ H.V] /Dest (subsection.2.8) cvn H.B /DEST pdfmark end
+ 0 40543 a 2562 x Ff(2.8)1594 b(Checking)398 b(the)h(status)f(of)g
+(the)h(Hadoop)g(Cluster)0 46204 y Fe(Y)-146 b(ou)414
+b(can)f(see)g(the)h(status)g(of)g(the)g(ResourceManager)-53
+b(,)433 b(the)414 b(jobs)g(that)g(are)g(running,)435
+b(ha)-27 b(v)-20 b(e)415 b(been)e(completed,)0 47810
+y(etc.)523 b(by)369 b(bro)-33 b(wsing)370 b(to)10783
+48003 y
+SDict begin H.S end
+ 10783 48003 a -193 x Fb(http://node001.example.com:8088)31785
+46960 y
+SDict begin H.R end
+ 31785 46960 a 31785 47810 a
+SDict begin [ /H /I /Border [0 0 12] /Color [0 1 1] /Action << /Subtype /URI /URI (http://node001.example.com:8088) >> /Subtype /Link H.B /ANN pdfmark end
+ 31785 47810 a Fe(.)522
+b(This)369 b(may)h(require)g(\002re)-33 b(w)-13 b(all)368
+b(settings)i(to)0 49415 y(be)418 b(adjusted)g(before)g(this)g(is)g
+(visible)h(to)f(your)g(bro)-33 b(wser)-73 b(.)670 b(Clicking)419
+b(on)f(the)g(Nodes)f(link)i(in)f(the)g(left)h(sidebar)0
+51020 y(should)333 b(sho)-33 b(w)332 b(that)g(node002)h(through)h
+(node005)f(are)f(running)h(and)g(reporting)g(in.)0 53223
+y(T)-106 b(o)295 b(see)g(the)h(status)g(of)g(HDFS,)f(which)h(nodes)g
+(are)g(up,)303 b(ho)-33 b(w)296 b(much)g(space)f(is)h(used)g(and)f(a)
+-27 b(v)-33 b(ailable,)304 b(etc.,)f(bro)-33 b(wse)0
+54828 y(to)1384 55021 y
+SDict begin H.S end
+ 1384 55021 a -193 x Fb
+(http://node001.example.com:50070)23062 53978 y
+SDict begin H.R end
+ 23062
+53978 a 23062 54828 a
+SDict begin [ /H /I /Border [0 0 12] /Color [0 1 1] /Action << /Subtype /URI /URI (http://node001.example.com:50070) >> /Subtype /Link H.B /ANN pdfmark end
+ 23062 54828 a Fe(.)467 b(This)350
+b(may)h(also)f(require)h(\002re)-33 b(w)-13 b(all)350
+b(settings)h(to)f(be)h(adjusted)0 56433 y(before)508
+b(this)g(is)f(visible)h(to)g(your)g(bro)-33 b(wser)-73
+b(.)938 b(Clicking)508 b(the)g(Datanodes)f(link)h(should)g(sho)-33
+b(w)507 b(that)h(node002)0 58038 y(through)334 b(node005)e(are)g
+(running)i(and)e(reoprting)i(in.)25336 75321 y(20)p eop
+end
+%%Page: 21 21
+TeXDict begin 21 20 bop 0 0 a
+SDict begin /product where{pop product(Distiller)search{pop pop pop version(.)search{exch pop exch pop(3011)eq{gsave newpath 0 0 moveto closepath clip/Courier findfont 10 scalefont setfont 72 72 moveto(.)show grestore}if}{pop}ifelse}{pop}ifelse}if end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin H.R end
+
+0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (page.21) cvn H.B /DEST pdfmark end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin 14.5 H.A end
+ 0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsection.2.9) cvn H.B /DEST pdfmark end
+ 0 0 a
+1328 x Ff(2.9)1594 b(Notes)0 2244 y
+SDict begin H.S end
+ 0 2244 a 0 2244 a
+SDict begin 14.5 H.A end
+
+0 2244 a 0 2244 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsubsection.2.9.1) cvn H.B /DEST pdfmark end
+ 0 2244 a 2184 x Fa(2.9.1)1329 b(RAID)332
+b(and)f(Redundancy)f(Design)i(under)e(Hadoop/HDFS)1937
+7439 y Fc(\017)651 b Fe(RAID)447 b(con\002gurations)i(are)e(usually)h
+(not)g(recommended)h(for)f(HDFS)e(data)i(dri)-33 b(v)-20
+b(es.)758 b(HDFS)447 b(already)3252 9044 y(handles)299
+b(f)-13 b(ault)301 b(tolerance)f(by)g(distrib)-27 b(uting)302
+b(the)e(blocks)g(it)g(writes)g(to)g(local)g(dri)-33 b(v)-20
+b(es)300 b(among)g(all)g(nodes)g(for)3252 10649 y(both)337
+b(performance)h(and)f(redundanc)-20 b(y)-86 b(.)426 b(RAID)337
+b(w)-13 b(on')-24 b(t)337 b(impro)-20 b(v)g(e)339 b(performance,)g(and)
+d(could)i(e)-33 b(v)-20 b(en)336 b(slo)-33 b(w)3252 12254
+y(things)333 b(do)-33 b(wn.)412 b(In)332 b(some)h(con\002gurations)f
+(it)h(will)g(reduce)f(o)-20 b(v)g(erall)333 b(HDFS)f(capacity)-86
+b(.)1937 14877 y Fc(\017)651 b Fe(The)583 b(def)-13 b(ault)584
+b(block)g(redundanc)-20 b(y)584 b(setting)g(for)h(HDFS)d(is)i(three)g
+(replicates,)646 b(as)583 b(speci\002ed)g(by)h(the)3252
+16482 y Fb(dfs.replication)390 b Fe(v)-33 b(ariable)383
+b(in)g Fb(hdfs-site.xml)p Fe(.)571 b(This)383 b(means)g(that)g(each)g
+(data)g(block)h(is)f(copied)3252 18087 y(to)431 b(three)h(dri)-33
+b(v)-20 b(es,)456 b(optimally)434 b(on)d(three)h(dif)-33
+b(ferent)432 b(nodes.)710 b(Hadoop)432 b(has)f(sho)-33
+b(wn)431 b(high)h(a)-27 b(v)-33 b(ailability)433 b(is)3252
+19692 y(possible)343 b(with)g(three)g(replicates.)444
+b(The)343 b(do)-33 b(wnside)343 b(is)g(the)g(total)g(capacity)g(of)g
+(HDFS)f(is)h(di)-33 b(vided)344 b(by)f(the)3252 21297
+y(number)362 b(of)h(replicates)e(used.)501 b(This)361
+b(means)h(our)g(32)g(TB)f(e)-20 b(xample)362 b(cluster)g(with)h(three)e
+(replicates)h(can)3252 22903 y(only)440 b(hold)g(10.67)g(TB)e(of)i
+(data.)733 b(Decreasing)439 b Fb(dfs.replication)446
+b Fe(belo)-33 b(w)440 b(3)f(is)g(not)h(recommended)3252
+24508 y(and)387 b(should)h(be)g(a)-27 b(v)g(oided.)579
+b(Increasing)388 b(it)g(abo)-20 b(v)g(e)388 b(3)g(could)g(increase)f
+(performance)i(for)f(lar)-24 b(ge)388 b(clusters)3252
+26113 y(under)332 b(certain)h(w)-13 b(orkloads,)333 b(b)-27
+b(ut)333 b(at)f(the)g(cost)g(of)h(capacity)-86 b(.)0
+28295 y
+SDict begin H.S end
+ 0 28295 a 0 28295 a
+SDict begin 14.5 H.A end
+ 0 28295 a 0 28295 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsubsection.2.9.2) cvn H.B /DEST pdfmark end
+ 0 28295
+a 1915 x Fa(2.9.2)1329 b(R)332 b(P)-13 b(ackage)331 b(Design)1937
+33221 y Fc(\017)651 b Fe(Most)300 b(R)g(packages)g(can)g(be)g
+(completely)i(pro)-20 b(vided)301 b(by)g(the)f(system)h(administrator)h
+(by)f(installing)g(them)3252 34826 y(as)519 b(root,)569
+b(which)521 b(implicitly)h(places)e(them)h(in)g(a)f(system)g(wide)h
+(accessible)e(location,)568 b(for)522 b(e)-20 b(xample)3252
+36431 y Fb(/usr/lib/R/library)340 b Fe(or)333 b Fb
+(/usr/local/lib64/R/library)p Fe(.)1937 39054 y Fc(\017)651
+b Fe(Alternately)-86 b(,)326 b(the)f(system)f(administrator)i(can)e
+(install)h(just)g(the)f(core)g(def)-13 b(ault)325 b(R)f(packages)g(at)g
+(a)g(system)3252 40660 y(wide)351 b(location)g(and)g(allo)-33
+b(w)351 b(indi)-33 b(vidual)353 b(users)d(to)h(install)h(speci\002c)e
+(R)g(library)j(packages)d(in)h(their)g(home)3252 42265
+y(directory)-86 b(.)672 b(This)418 b(permits)i(users)e(the)h(\003e)-20
+b(xibility)420 b(to)f(easily)g(change)f(v)-20 b(ersions)419
+b(of)g(packages)f(the)-20 b(y)419 b(are)3252 43870 y(using)332
+b(and)g(update)h(them)g(when)f(the)-20 b(y)333 b(choose.)0
+46052 y
+SDict begin H.S end
+ 0 46052 a 0 46052 a
+SDict begin 14.5 H.A end
+ 0 46052 a 0 46052 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsubsection.2.9.3) cvn H.B /DEST pdfmark end
+ 0 46052
+a 1915 x Fa(2.9.3)1329 b(RHIPE_HADOOP_TMP_FOLDER)333
+b(en)-53 b(vir)-24 b(onment)331 b(v)-13 b(ariable)1937
+50978 y Fc(\017)651 b Fe(It)412 b(has)f(been)h(observ)-20
+b(ed)412 b(that)g(some)g(v)-20 b(ersions)412 b(of)g(Linux,)432
+b(such)412 b(as)f(Red)h(Hat)f(Enterprise)i(Linux,)432
+b(may)3252 52583 y(ha)-27 b(v)-20 b(e)430 b(an)g(issue)f(with)i(RHIPE)e
+(where)h(it)h(will)f(gi)-33 b(v)-20 b(e)431 b(f)-13 b(alse)429
+b(errors)i(about)f(being)h(unable)f(to)g(write)h(\002les)3252
+54188 y(in)458 b(HDFS,)g(e)-33 b(v)-20 b(en)458 b(where)g(the)h
+(directory)g(in)g(question)g(is)f(clearly)h(writable.)791
+b(This)458 b(can)g(be)h(corrected)3252 55793 y(by)501
+b(creating)g(a)g(directory)h(some)-33 b(where)501 b(in)g(HDFS)f(that)h
+(is)g(readable)g(only)g(by)g(that)h(user)-53 b(,)543
+b(and)501 b(then)3252 57398 y(setting)359 b(the)g
+(RHIPE_HADOOP_TMP_FOLDER)e(en)-53 b(vironment)360 b(v)-33
+b(ariable)359 b(to)g(point)h(to)g(that)f(HDFS)3252 59003
+y(directory)-86 b(.)413 b(The)331 b(user)h(bob)h(for)g(e)-20
+b(xample,)332 b(w)-13 b(ould)333 b(type)g(this)f(on)h(frontend:)3252
+62201 y Fb(hadoop)680 b(fs)e(-mkdir)i(-p)f(/user/bob/tmp)3252
+63806 y(hadoop)h(fs)e(-chmod)i(700)f(/user/bob/tmp)3252
+67004 y Fe(He)350 b(w)-13 b(ould)351 b(then)f(add)h(this)f(to)h(his)g
+(en)-53 b(vironment)352 b(by)e(including)i(it)f(in)g(his)f(.bashrc)g
+(or)h(.bash_pro\002le,)k(or)3252 68609 y(whate)-33 b(v)-20
+b(er)332 b(location)h(is)f(appropriate)h(for)g(his)g(shell:)3252
+71807 y Fb(export)680 b(RHIPE_HADOOP_TMP_FOLDER=/user/bob/tmp)25336
+75321 y Fe(21)p eop end
+%%Page: 22 22
+TeXDict begin 22 21 bop 0 0 a
+SDict begin /product where{pop product(Distiller)search{pop pop pop version(.)search{exch pop exch pop(3011)eq{gsave newpath 0 0 moveto closepath clip/Courier findfont 10 scalefont setfont 72 72 moveto(.)show grestore}if}{pop}ifelse}{pop}ifelse}if end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin H.R end
+
+0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (page.22) cvn H.B /DEST pdfmark end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin 14.5 H.A end
+ 0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsubsection.2.9.4) cvn H.B /DEST pdfmark end
+ 0 0 a
+1328 x Fa(2.9.4)1329 b(Consider)331 b(using)g(HDFS)h(High)h(A)-133
+b(v)-13 b(ailability)334 b(rather)d(than)h(a)g(Secondary)f(NameNode)0
+4428 y Fe(The)273 b(primary)h(role)g(of)f(the)h(Secondary)f(NameNode)g
+(is)g(to)g(perform)i(periodic)f(checkpointing)g(so)f(the)h(NameN-)0
+6033 y(ode)424 b(doesn')-24 b(t)425 b(ha)-27 b(v)-20
+b(e)424 b(to,)448 b(which)424 b(mak)-13 b(es)424 b(reboots)g(of)h(the)f
+(cluster)h(go)f(much)g(more)h(quickly)-86 b(.)688 b(The)424
+b(Secondary)0 7638 y(NameNode)316 b(could)g(also)f(be)h(used)f(to)h
+(reconstruct)h(the)e(majority)j(of)e(HDFS)e(if)j(the)e(NameNode)h(were)
+g(to)g(ha)-27 b(v)-20 b(e)0 9243 y(a)376 b(catastrophic)g(f)-13
+b(ailure,)388 b(b)-27 b(ut)376 b(through)i(a)d(manual,)388
+b(imperfect)377 b(process)e(prone)i(to)f(error)-73 b(.)544
+b(F)-20 b(or)376 b(a)g(more)h(rob)-27 b(ust,)0 10848
+y(f)-13 b(ault)271 b(tolerant)h(Hadoop)f(con\002guration,)284
+b(consider)271 b(using)g(a)f(High)h(A)-98 b(v)-33 b(ailability)272
+b(HDFS)e(con\002guration,)284 b(which)0 12453 y(uses)411
+b(a)g(Standby)h(NameNode)g(rather)g(than)g(a)f(Secondary)g(NameNode,)
+432 b(and)412 b(can)f(be)g(con\002gured)h(for)g(auto-)0
+14058 y(matic)394 b(f)-13 b(ailo)-20 b(v)g(er)395 b(in)f(the)g(e)-33
+b(v)-20 b(ent)394 b(of)g(a)g(NameNode)g(f)-13 b(ailure.)598
+b(This)393 b(con\002guration)i(is)f(more)g(comple)-20
+b(x,)410 b(requires)0 15663 y(the)382 b(use)g(of)h(Zook)-13
+b(eeper)-53 b(,)394 b(three)382 b(or)h(more)g(JournalNode)g(hosts)f
+(\(these)g(can)g(be)g(re)-20 b(gular)383 b(nodes\),)395
+b(and)382 b(another)0 17269 y(node)415 b(dedicated)g(to)h(act)e(as)h
+(the)g(Standby)g(NameNode.)661 b(The)414 b(documentation)i(at)f
+(cloudera.com)h(describes)0 18874 y(this)333 b(in)f(more)h(detail.)
+25336 75321 y(22)p eop end
+%%Page: 23 23
+TeXDict begin 23 22 bop 0 0 a
+SDict begin /product where{pop product(Distiller)search{pop pop pop version(.)search{exch pop exch pop(3011)eq{gsave newpath 0 0 moveto closepath clip/Courier findfont 10 scalefont setfont 72 72 moveto(.)show grestore}if}{pop}ifelse}{pop}ifelse}if end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin H.R end
+
+0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (page.23) cvn H.B /DEST pdfmark end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin 14.5 H.A end
+ 0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (section.3) cvn H.B /DEST pdfmark end
+ 0 0 a
+1328 x Fg(3)1913 b(Installing)478 b(R)g(P)-19 b(ackages)479
+b(and)f(Examples)h(f)-48 b(or)479 b(Users)0 3091 y
+SDict begin H.S end
+ 0
+3091 a 0 3091 a
+SDict begin 14.5 H.A end
+ 0 3091 a 0 3091 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsection.3.1) cvn H.B /DEST pdfmark end
+ 0 3091 a 2202 x Ff(3.1)1594
+b(Backgr)-29 b(ound)0 8393 y Fe(At)377 b(this)h(point,)389
+b(the)378 b(T)-93 b(essera)376 b(stack,)388 b(including)378
+b(Hadoop)g(\(a)f(Y)-159 b(ARN)377 b(based)g(distrib)-27
+b(ution,)391 b(such)377 b(as)f(Cloudera)0 9998 y(CDH5.x\),)306
+b(R,)298 b(and)g(RHIPE)f(should)i(be)f(installed.)401
+b(Ho)-33 b(we)g(v)-20 b(er)-53 b(,)305 b(at)298 b(some)g(sites)g(the)g
+(administrator)i(may)e(choose)0 11603 y(to)449 b(only)g(maintain)g
+(Hadoop,)479 b(Ja)-27 b(v)-33 b(a,)477 b(Protocol)449
+b(Buf)-33 b(fers,)478 b(and)448 b(R)h(and)f(rely)h(on)g(the)f(end)h
+(users)f(to)h(install)g(the)0 13208 y(v)-33 b(arious)333
+b(R)f(packages,)f(lik)-13 b(e)332 b(RHIPE)g(and)g(rJa)-27
+b(v)-33 b(a)332 b(to)h(their)g(o)-33 b(wn)332 b(personal)h(accounts.)0
+15411 y(Ideally)-86 b(,)487 b(the)456 b(v)-20 b(ersions)456
+b(of)g(Linux)g(R,)f(and)h(Ja)-27 b(v)-33 b(a,)486 b(are)456
+b(the)g(same)f(on)h(both)g(the)g(front-end)h(R)f(session)f(serv)-20
+b(er)0 17016 y(and)478 b(the)f(Hadoop)h(cluster)g(nodes.)848
+b(Ja)-27 b(v)-33 b(a)478 b(in)g(particular)g(plays)g(a)f(critical)i
+(roll)f(in)g(RHIPE,)f(and)h(Ja)-27 b(v)-33 b(a)477 b(lik)-13
+b(es)0 18621 y(homogeneity)-86 b(.)0 20852 y
+SDict begin H.S end
+ 0 20852
+a 0 20852 a
+SDict begin 14.5 H.A end
+ 0 20852 a 0 20852 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsection.3.2) cvn H.B /DEST pdfmark end
+ 0 20852 a 2302 x Ff(3.2)1594
+b(Install)398 b(and)i(Push)0 26254 y Fe(If)i(the)g(administrator)i(has)
+e(not)g(already)g(installed)g(RHIPE,)g(you)g(\002rst)g(\002rst)f(do)-33
+b(wnload)403 b(the)f(package)f(\002le)h(by)0 27859 y(typing:)0
+31501 y Fb(wget)679 b
+(http://ml.stat.purdue.edu/rhipebin/Rhipe_0.75.1.4_cdh5.tar)q(.g)q(z)0
+35143 y Fe(Then)332 b(launch)g(R)g(and)h(type)f(the)g(follo)-33
+b(wing)334 b(to)f(install)g(rJa)-27 b(v)-33 b(a)332 b(and)g(RHIPE:)0
+38785 y Fb(install.packages\("rJava"\))0 40390 y
+(install.packages\("Rhipe_0.75.1.4_cdh5.tar.gz",)698
+b(repos=NULL,)683 b(type="source"\))0 44032 y Fe(RHIPE)411
+b(is)h(no)-33 b(w)412 b(installed.)652 b(Each)412 b(time)g(you)h(start)
+f(an)g(R)g(session)f(and)h(you)h(w)-13 b(ant)412 b(RHIPE)f(to)i(be)e(a)
+-27 b(v)-33 b(ailable,)0 45637 y(type:)0 49279 y Fb(library\(Rhipe\))0
+50884 y(rhinit\(\))0 54526 y Fe(As)342 b(a)g(one-time)h
+(con\002guration)g(step,)i(you)d(push)h(all)f(the)g(R)g(packages)g(you)
+g(ha)-27 b(v)-20 b(e)343 b(installed)g(on)f(the)g(R)g(session)0
+56131 y(serv)-20 b(er)-53 b(,)362 b(including)357 b(RHIPE,)f(onto)h
+(the)f(cluster)g(HDFS.)f(First,)362 b(you)356 b(need)g(the)g(system)g
+(administrator)i(to)f(con-)0 57736 y(\002gure)376 b(a)f(directory)i(in)
+f(HDFS)e(that)i(is)g(writable)g(by)g(you.)543 b(W)-106
+b(e)375 b(will)h(assume)g(the)f(administrator)j(has)d(created)0
+59341 y(for)451 b(you)f(the)g(writable)g(directory)h
+Fb(/yourloginname)456 b Fe(using)451 b(your)f(login)h(name,)479
+b(and)450 b(has)f(done)h(the)g(same)0 60946 y(thing)389
+b(for)f(other)g(users.)578 b(Suppose)387 b(in)h Fb(/yourloginname)394
+b Fe(you)388 b(w)-13 b(ant)387 b(to)h(create)f(a)g(directory)i
+Fb(bin)g Fe(on)f(HDFS)0 62551 y(where)378 b(you)g(will)h(push)f(your)g
+(installations)h(on)f(the)g(R)g(session)f(serv)-20 b(er)-73
+b(.)549 b(Y)-146 b(ou)379 b(can)e(do)h(this)g(and)g(carry)g(out)h(the)0
+64156 y(push)332 b(by)0 67798 y Fb(rhmkdir\("/yourloginname/bin"\))0
+69403 y(hdfs.setwd\("/yourloginname/bin"\))0 71008 y
+(bashRhipeArchive\("R.Pkg"\))25336 75321 y Fe(23)p eop
+end
+%%Page: 24 24
+TeXDict begin 24 23 bop 0 0 a
+SDict begin /product where{pop product(Distiller)search{pop pop pop version(.)search{exch pop exch pop(3011)eq{gsave newpath 0 0 moveto closepath clip/Courier findfont 10 scalefont setfont 72 72 moveto(.)show grestore}if}{pop}ifelse}{pop}ifelse}if end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin H.R end
+
+0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (page.24) cvn H.B /DEST pdfmark end
+ 0 0 a 1328 x Fb(rhmkdir\(\))376 b Fe(creates)c(your)h
+(directory)g Fb(bin)h Fe(in)e(the)h(directory)g Fb(yourloginname)p
+Fe(.)538 b Fb(hdfs.setwd\(\))377 b Fe(declares)0 2933
+y Fb(/yourloginname/bin)274 b Fe(to)266 b(be)g(the)g(directory)h(with)g
+(your)g(choice)e(of)i(installations.)391 b Fb(bashRhipeArchive\(\))0
+4539 y Fe(creates)332 b(the)g(actual)g(archi)-33 b(v)-20
+b(e)332 b(of)h(your)g(installations)g(and)f(names)g(it)h(as)e
+Fb(R.Pkg)p Fe(.)0 6741 y(Each)g(time)i(your)g(R)f(code)g(will)h
+(require)g(the)g(installations)g(on)f(the)h(HDFS,)e(you)i(must)f(in)h
+(your)g(R)f(session)f(run)0 10140 y Fb(library\(Rhipe\))684
+b(rhinit\(\))0 11745 y(rhoptions\(zips)g(=)678 b
+("/yourloginname/bin/R.Pkg.tar.gz"\))0 13351 y(rhoptions\(runner)685
+b(=)678 b("sh)h(./R.Pkg/library/Rhipe/bin/RhipeMapReduce.sh"\))0
+15454 y
+SDict begin H.S end
+ 0 15454 a 0 15454 a
+SDict begin 14.5 H.A end
+ 0 15454 a 0 15454 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsection.3.3) cvn H.B /DEST pdfmark end
+ 0 15454
+a 2397 x Ff(3.3)1594 b(Example:)494 b(Housing)399 b(Data)0
+19071 y
+SDict begin H.S end
+ 0 19071 a 0 19071 a
+SDict begin 14.5 H.A end
+ 0 19071 a 0 19071 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsubsection.3.3.1) cvn H.B /DEST pdfmark end
+ 0 19071
+a 1879 x Fa(3.3.1)1329 b(The)331 b(Data)0 24050 y Fe(The)459
+b(housing)i(data)e(consist)h(of)g(7)g(monthly)h(v)-33
+b(ariables)460 b(on)g(housing)g(sales)f(from)i(Oct)e(2008)i(to)f(Mar)f
+(2014,)0 25655 y(which)349 b(is)g(66)g(months.)462 b(The)348
+b(measurements)h(are)g(for)g(2883)h(counties)e(in)i(48)f(U.S.)f
+(states,)k(e)-20 b(xcluding)350 b(Ha)-20 b(w)-13 b(aii)0
+27260 y(and)379 b(Alaska,)391 b(and)379 b(also)f(for)i(the)f(District)h
+(of)g(Columbia)g(which)f(we)g(treat)g(as)g(a)f(state)h(with)h(one)f
+(county)-86 b(.)552 b(The)0 28865 y(data)252 b(were)h(deri)-33
+b(v)-20 b(ed)253 b(from)g(sales)f(of)h(housing)g(units)g(from)h
+(Quandl')-73 b(s)253 b(Zillo)-33 b(w)253 b(Housing)g(Data)f(\(www)-86
+b(.quandl.com/c/housing\).)0 30470 y(A)319 b(housing)i(unit)f(is)f(a)h
+(house,)i(an)d(apartment,)k(a)c(mobile)i(home,)h(a)d(group)i(of)f
+(rooms,)j(or)d(a)f(single)h(room)g(that)g(is)0 32075
+y(occupied)332 b(or)h(intended)g(to)f(be)g(occupied)h(as)e(a)h
+(separate)g(li)-33 b(ving)333 b(quarter)-73 b(.)0 34278
+y(The)332 b(v)-33 b(ariables)332 b(are)1937 37406 y Fc(\017)651
+b Fb(FIPS)p Fe(:)334 b(FIPS)d(county)i(code,)f(an)g(unique)h
+(identi\002er)f(for)h(each)f(U.S.)g(county)1937 40057
+y Fc(\017)651 b Fb(county)p Fe(:)414 b(county)333 b(name)1937
+42708 y Fc(\017)651 b Fb(state)p Fe(:)414 b(state)332
+b(abbre)-33 b(viation)1937 45360 y Fc(\017)651 b Fb(date)p
+Fe(:)414 b(time)332 b(of)h(sale)f(measured)g(in)g(months,)i(from)f(1)f
+(to)h(66)1937 48011 y Fc(\017)651 b Fb(units)p Fe(:)414
+b(number)333 b(of)g(units)f(sold)1937 50662 y Fc(\017)651
+b Fb(listing)p Fe(:)415 b(monthly)334 b(median)e(listing)i(price)e
+(\(dollars)h(per)g(square)f(foot\))1937 53314 y Fc(\017)651
+b Fb(selling)p Fe(:)415 b(monthly)334 b(median)e(selling)h(price)g
+(\(dollars)g(per)f(square)g(foot\))0 56441 y(Man)-20
+b(y)332 b(observ)-33 b(ations)333 b(of)f(the)h(last)f(three)g(v)-33
+b(ariables)332 b(are)g(missing:)413 b(units)333 b(68\045,)f(listing)h
+(7\045,)f(and)g(selling)h(68\045.)0 58644 y(The)296 b(number)h(of)f
+(measurements)g(\(including)i(missing\),)304 b(is)296
+b(7)g(x)h(66)f(x)g(2883)h(=)f(1,331,946.)401 b(So)296
+b(this)g(is)g(in)g(f)-13 b(act)296 b(a)0 60249 y(small)276
+b(dataset)g(that)g(could)g(be)g(analyzed)f(in)h(the)g(standard)g
+(serial)g(R.)g(Ho)-33 b(we)g(v)-20 b(er)-53 b(,)287 b(we)276
+b(can)f(use)g(them)i(to)f(illustrate)0 61854 y(ho)-33
+b(w)298 b(RHIPE)g(R)f(commands)i(implement)g(Di)-33 b(vide)299
+b(and)f(Recombine.)401 b(W)-106 b(e)297 b(simply)i(pretend)g(the)f
+(data)g(are)g(lar)-24 b(ge)0 63459 y(and)306 b(comple)-20
+b(x,)312 b(break)306 b(into)h(subsets,)k(and)305 b(continuing)j(on)e
+(with)h(D&R.)f(The)g(small)g(size)f(let')-73 b(s)306
+b(you)h(easily)f(pick)0 65064 y(up)357 b(the)f(data,)363
+b(follo)-33 b(w)357 b(along)g(using)g(the)f(R)g(commands)h(in)g(the)g
+(tutorial,)364 b(and)356 b(e)-20 b(xplore)357 b(RHIPE)f(yourself)h
+(with)0 66670 y(other)333 b(RHIPE)e(R)i(commands.)0 68872
+y("housing.txt")314 b(is)e(a)-27 b(v)-33 b(ailable)313
+b(in)g(our)g(T)-93 b(esseradata)312 b(Github)h(repository)h(of)f(the)g
+(RHIPE)f(documentation,)318 b(or)313 b(at:)0 72000 y
+Fb(https://raw.githubusercontent.com/tesseradata/docs-RHIPE/g)q(h-p)q
+(ag)q(es)q(/h)q(ou)q(sin)q(g.)q(tx)q(t)25336 75321 y
+Fe(24)p eop end
+%%Page: 25 25
+TeXDict begin 25 24 bop 0 0 a
+SDict begin /product where{pop product(Distiller)search{pop pop pop version(.)search{exch pop exch pop(3011)eq{gsave newpath 0 0 moveto closepath clip/Courier findfont 10 scalefont setfont 72 72 moveto(.)show grestore}if}{pop}ifelse}{pop}ifelse}if end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin H.R end
+
+0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (page.25) cvn H.B /DEST pdfmark end
+ 0 0 a 1328 x Fe(The)376 b(\002le)f(is)h(a)g(table)g(with)h
+(190,278)g(ro)-33 b(ws)376 b(\(66)h(months)g(x)f(2883)g(counties\))h
+(and)f(7)g(columns)h(\(the)g(v)-33 b(ariables\).)0 2933
+y(The)386 b(\002elds)g(in)h(each)g(ro)-33 b(w)387 b(are)f(separated)h
+(by)g(a)f(comma,)401 b(and)387 b(there)g(are)f(no)h(headers)g(in)g(the)
+g(\002rst)f(line.)576 b(Here)0 4539 y(are)332 b(the)g(\002rst)g(fe)-33
+b(w)332 b(lines)h(of)f(the)h(\002le:)0 7622 y Fb
+(01001,Autauga,AL,1,27,96.616541353383,99.1324)0 9227
+y(01001,Autauga,AL,2,28,96.856993190152,95.8209)0 10832
+y(01001,Autauga,AL,3,16,98.055555555556,96.3528)0 12437
+y(01001,Autauga,AL,4,23,97.747480735033,95.2189)0 14042
+y(01001,Autauga,AL,5,22,97.747480735033,92.7127)0 16103
+y
+SDict begin H.S end
+ 0 16103 a 0 16103 a
+SDict begin 14.5 H.A end
+ 0 16103 a 0 16103 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsubsection.3.3.2) cvn H.B /DEST pdfmark end
+ 0 16103 a 2009
+x Fa(3.3.2)1329 b(Write)333 b(housing)-20 b(.txt)332
+b(to)g(the)g(HDFS)0 21212 y Fe(T)-106 b(o)323 b(get)g(started,)i(we)e
+(need)g(to)g(mak)-13 b(e)323 b Fb(housing.txt)328 b Fe(a)-27
+b(v)-33 b(ailable)323 b(as)g(a)g(te)-20 b(xt)323 b(\002le)g(within)h
+(the)f(HDFS)f(\002le)h(system.)0 22817 y(This)302 b(puts)h(it)h(in)f(a)
+f(place)h(where)g(it)g(can)f(be)h(read)g(into)g(R,)g(form)h(subsets,)k
+(and)303 b(write)g(the)g(subsets)g(to)g(the)g(HDFS.)0
+24422 y(This)351 b(is)g(similar)h(to)g(what)f(we)g(do)g(using)h(R)f(in)
+h(the)f(standard)g(serial)h(w)-13 b(ay;)360 b(if)352
+b(we)f(ha)-27 b(v)-20 b(e)351 b(a)g(te)-20 b(xt)352 b(\002le)e(to)i
+(read)f(into)0 26027 y(R,)342 b(we)f(mo)-20 b(v)g(e)343
+b(put)f(it)g(in)g(a)g(place)f(where)h(we)g(can)f(read)h(it)g(into)h(R,)
+e(for)i(e)-20 b(xample,)345 b(in)d(the)g(w)-13 b(orking)343
+b(directory)f(of)0 27632 y(the)332 b(R)g(session.)0 29835
+y(T)-106 b(o)346 b(set)g(this)h(up,)k(the)346 b(system)h(administrator)
+h(must)f(do)g(tw)-13 b(o)347 b(tasks.)455 b(On)346 b(the)h(R)f(session)
+g(serv)-20 b(er)-53 b(,)351 b(set)346 b(up)h(a)f(login)0
+31440 y(directory)471 b(where)f(you)g(ha)-27 b(v)-20
+b(e)470 b(write)g(permission;)540 b(let')-73 b(s)470
+b(call)g(it)g Fb(yourloginname)476 b Fe(in,)504 b(say)-86
+b(,)504 b Fb(/home)p Fe(.)827 b(In)470 b(the)0 33045
+y(HDFS,)378 b(the)h(administrator)i(does)e(a)f(similar)i(thing,)392
+b(creates,)e(say)-86 b(,)390 b Fb(/yourloginname)385
+b Fe(which)379 b(is)g(in)g(the)g(root)0 34650 y(directory)-86
+b(.)0 36853 y(Y)-146 b(our)340 b(\002rst)g(step,)h(as)f(for)g(the)g
+(standard)g(R)g(case,)g(is)g(to)g(cop)-13 b(y)340 b Fb(housing.txt)345
+b Fe(to)340 b(a)f(directory)i(on)f(the)g(R-session)0
+38458 y(serv)-20 b(er)341 b(where)g(your)g(R)g(session)f(is)h(running.)
+439 b(Suppose)340 b(in)i(your)f(login)h(directory)g(you)f(ha)-27
+b(v)-20 b(e)341 b(created)g(a)f(direc-)0 40063 y(tory)333
+b Fb(/housing)j Fe(for)d(your)g(analysis)f(of)g(the)h(housing)g(data.)
+411 b(Y)-146 b(ou)333 b(can)f(cop)-13 b(y)332 b Fb(housing.txt)337
+b Fe(to)0 43146 y Fb("/home/yourloginname/housing/")0
+46229 y Fe(The)361 b(ne)-20 b(xt)361 b(step)g(is)g(to)h(get)f
+Fb(housing.txt)366 b Fe(onto)c(the)f(HDFS)g(as)f(a)h(te)-20
+b(xt)362 b(\002le,)368 b(so)361 b(we)g(can)g(read)g(it)g(into)h(R)f(on)
+h(the)0 47834 y(cluster)-73 b(.)487 b(There)357 b(are)g(Hadoop)h
+(commands)g(that)g(could)f(be)g(used)g(directly)i(to)e(cop)-13
+b(y)357 b(the)h(\002le,)363 b(b)-27 b(ut)358 b(our)g(promise)0
+49439 y(to)331 b(you)f(is)h(that)f(you)h(ne)-33 b(v)-20
+b(er)331 b(need)f(to)g(use)g(Hadoop)h(commands.)412 b(There)330
+b(is)g(a)g(RHIPE)g(function,)i Fb(rhput\(\))i Fe(that)0
+51045 y(will)f(do)f(it)h(for)g(you.)0 54128 y Fb
+(rhput\("/home/yourloginname/housing/housing.txt",)699
+b("/yourloginname/housing/housing.txt"\))0 57211 y Fe(The)409
+b Fb(rhput\(\))j Fe(function)e(tak)-13 b(es)408 b(tw)-13
+b(o)410 b(ar)-24 b(guments.)643 b(The)409 b(\002rst)g(is)g(the)g(path)g
+(name)g(of)h(the)f(R)g(serv)-20 b(er)409 b(\002le)g(to)g(be)0
+58816 y(copied.)469 b(The)351 b(second)g(ar)-24 b(gument)352
+b(is)f(the)h(path)f(name)g(HDFS)g(where)g(the)g(\002le)g(will)h(be)f
+(written.)470 b(Note)352 b(that)f(for)0 60421 y(the)291
+b(HDFS,)f(in)g(the)h(directory)h Fb(/yourloginname)297
+b Fe(there)291 b(is)f(a)h(directory)g Fb(housing)p Fe(.)402
+b(Y)-146 b(ou)290 b(might)i(ha)-27 b(v)-20 b(e)291 b(created)0
+62026 y Fb(housing)335 b Fe(already)e(with)g(the)f(command)0
+65109 y Fb(rhmkdir\(/yourloginname/housing\))0 68192
+y Fe(If)h(not,)g(then)f Fb(rhput\(\))j Fe(creates)d(the)g(directory)i
+(for)e(you.)0 70395 y(W)-106 b(e)336 b(can)h(con\002rm)g(that)h(the)f
+(housing)h(data)f(te)-20 b(xt)337 b(\002le)g(has)f(been)h(written)h(to)
+f(the)g(HDFS)g(with)g(the)g Fb(rhexists\(\))0 72000 y
+Fe(function.)25336 75321 y(25)p eop end
+%%Page: 26 26
+TeXDict begin 26 25 bop 0 0 a
+SDict begin /product where{pop product(Distiller)search{pop pop pop version(.)search{exch pop exch pop(3011)eq{gsave newpath 0 0 moveto closepath clip/Courier findfont 10 scalefont setfont 72 72 moveto(.)show grestore}if}{pop}ifelse}{pop}ifelse}if end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin H.R end
+
+0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (page.26) cvn H.B /DEST pdfmark end
+ 0 0 a 1328 x Fb
+(rhexists\("/yourloginname/housing/housing.txt"\))0 2933
+y([1])679 b(TRUE)0 6306 y Fe(W)-106 b(e)465 b(can)g(use)g
+Fb(rhls\(\))k Fe(to)c(get)h(more)g(information)i(about)e(\002les)f(on)h
+(the)g(HDFS.)f(It)h(is)f(similar)i(to)f(the)f(Unix)0
+7911 y(command)333 b Fb(ls)p Fe(.)413 b(F)-20 b(or)332
+b(e)-20 b(xample,)0 11284 y Fb(rhls\("/yourloginname/housing"\))1355
+12889 y(permission)6102 b(owner)4067 b(group)3389 b(size)6777
+b(modtime)0 14494 y(1)678 b(-rw-rw-rw-)k(yourloginname)h(supergroup)f
+(7.683)e(mb)e(2014-09-17)683 b(11:11)20324 16099 y(file)0
+17705 y(/yourloginname/housing/housing.txt)0 19804 y
+SDict begin H.S end
+
+0 19804 a 0 19804 a
+SDict begin 14.5 H.A end
+ 0 19804 a 0 19804 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsubsection.3.3.3) cvn H.B /DEST pdfmark end
+ 0 19804 a 2010
+x Fa(3.3.3)1329 b(Read)332 b(and)f(Di)-13 b(vide)332
+b(by)g(County)0 24913 y Fe(Our)294 b(di)-33 b(vision)295
+b(method)g(for)f(the)g(housing)h(data)e(will)i(be)f(to)g(di)-33
+b(vide)294 b(by)g(county)-86 b(,)302 b(so)294 b(there)g(will)g(be)g
+(2883)g(subsets.)0 26518 y(Each)425 b(subset)g(will)h(be)f(a)g
+Fb(data.frame)430 b Fe(object)c(with)g(4)f(column)h(v)-33
+b(ariables:)599 b Fb(date)p Fe(,)450 b Fb(units)p Fe(,)h
+Fb(listing)p Fe(,)h(and)0 28123 y Fb(selling)p Fe(.)414
+b Fb(FIPS)p Fe(,)333 b Fb(state)p Fe(,)f(and)f Fb(county)i
+Fe(are)d(not)g(column)i(v)-33 b(ariables)330 b(because)f(each)h(has)g
+(only)h(one)f(v)-33 b(alue)330 b(for)0 29729 y(each)i(county;)h(their)g
+(v)-33 b(alues)331 b(are)h(added)h(to)f(the)g Fb(data.frame)337
+b Fe(as)332 b(attrib)-27 b(utes.)0 31931 y(The)290 b(\002rst)g(step)g
+(is)g(to)h(read)f(each)g(line)g(of)h(the)g(\002le)e Fb(housing.txt)296
+b Fe(into)291 b(R.)f(By)g(con)-53 b(v)-20 b(ention,)300
+b(RHIPE)290 b(tak)-13 b(es)289 b(each)0 33537 y(line)380
+b(of)h(a)e(te)-20 b(xt)381 b(\002le)e(to)i(be)f(a)f(k)-13
+b(e)-20 b(y-v)-33 b(alue)380 b(pair)-73 b(.)556 b(The)380
+b(line)g(number)h(is)f(the)g(k)-13 b(e)-20 b(y)-86 b(.)555
+b(The)379 b(v)-33 b(alue)380 b(is)g(the)g(data)g(for)h(the)0
+35142 y(line,)333 b(in)f(our)h(case)e(the)h(7)h(observ)-33
+b(ations)332 b(of)h(the)f(7)g(v)-33 b(ariables)333 b(of)f(the)h(data)f
+(for)h(one)f(month)h(and)f(one)h(county)-86 b(.)0 37344
+y(Each)328 b(line)h(is)g(read)g(as)f(part)h(of)g(Map)g(R)g(code)f
+(written)i(by)f(the)g(user)-73 b(.)411 b(The)328 b(Map)h(input)g(k)-13
+b(e)-20 b(y-v)-33 b(alue)329 b(pairs)g(are)g(the)0 38950
+y(abo)-20 b(v)g(e)352 b(line)h(k)-13 b(e)-20 b(y-v)-33
+b(alue)352 b(pairs.)472 b(Each)351 b(line)i(also)f(has)f(a)h(Map)g
+(output)h(k)-13 b(e)-20 b(y-v)-33 b(alue)352 b(pair)-73
+b(.)472 b(The)352 b(k)-13 b(e)-20 b(y)352 b(identi\002es)g(the)0
+40555 y(county)-86 b(.)417 b Fb(FIPS)335 b Fe(could)f(ha)-27
+b(v)-20 b(e)334 b(been)f(enough)h(to)g(do)g(this,)h(b)-27
+b(ut)334 b(it)g(is)g(speci\002ed)e(as)h(a)h(character)f(v)-20
+b(ector)334 b(with)h(three)0 42160 y(elements:)446 b(the)349
+b(3-v)-20 b(ector)350 b(v)-33 b(alues)348 b(of)i Fb(FIPS)p
+Fe(,)h Fb(state)p Fe(,)k(and)349 b Fb(county)p Fe(.)465
+b(This)349 b(is)f(done)i(so)e(that)i(later)f(all)g(three)g(can)0
+43765 y(be)400 b(added)h(to)g(the)g(subset)f Fb(data.frame)p
+Fe(.)622 b(The)400 b(output)i(v)-33 b(alue)400 b(for)i(each)e(output)i
+(k)-13 b(e)-20 b(y)400 b(is)h(the)f(observ)-33 b(ations)401
+b(of)0 45370 y Fb(date)p Fe(,)334 b Fb(units)p Fe(,)g
+Fb(listing)p Fe(,)i(and)c Fb(selling)j Fe(from)f(the)e(line)h(for)g
+(that)f(k)-13 b(e)-20 b(y)-86 b(.)0 47573 y(The)436 b(Map)g(output)h(k)
+-13 b(e)-20 b(y-v)-33 b(alue)437 b(pairs)f(are)h(the)f(input)h(k)-13
+b(e)-20 b(y-v)-33 b(alue)437 b(pairs)f(for)i(the)e(Reduce)g(R)g(code)g
+(written)i(by)0 49178 y(the)352 b(user)-73 b(.)473 b(Reduce)352
+b(assembles)f(these)h(into)h(groups)g(by)g(k)-13 b(e)-20
+b(y)-86 b(,)357 b(that)352 b(is,)358 b(the)352 b(county)-86
+b(.)473 b(Then)352 b(the)g(Reduce)g(R)g(code)0 50783
+y(is)389 b(applied)h(to)g(the)f(output)h(v)-33 b(alues)389
+b(of)h(each)f(group)h(collecti)-33 b(v)-20 b(ely)390
+b(to)g(create)e(the)i(subset)f Fb(data.frame)394 b Fe(object)0
+52388 y(for)358 b(each)e(county)-86 b(.)486 b(Each)356
+b(ro)-33 b(w)357 b(is)f(the)h(v)-33 b(alue)357 b(of)g(one)g(Reduce)f
+(input)i(k)-13 b(e)-20 b(y-v)-33 b(alue)357 b(pair:)462
+b(observ)-33 b(ations)357 b(of)g Fb(date)p Fe(,)0 53993
+y Fb(units)p Fe(,)420 b Fb(listing)p Fe(,)h(and)401 b
+Fb(selling)j Fe(for)d(one)g(housing)h(unit.)618 b Fb(FIPS)p
+Fe(,)403 b Fb(state)p Fe(,)420 b(and)401 b Fb(county)i
+Fe(are)e(added)g(to)g(the)0 55598 y Fb(data.frame)337
+b Fe(as)332 b(attrib)-27 b(utes.)414 b(Finally)-86 b(,)333
+b(Reduce)f(writes)h(each)f(subset)g Fb(data.frame)337
+b Fe(object)c(to)g(a)f(directory)i(in)0 57203 y(the)425
+b(HDFS)g(speci\002ed)f(by)i(the)f(user)-73 b(.)692 b(The)425
+b(subsets)f(are)i(written)g(as)f(Reduce)g(output)h(k)-13
+b(e)-20 b(y-v)-33 b(alue)426 b(pairs.)691 b(The)0 58808
+y(output)333 b(k)-13 b(e)-20 b(ys)332 b(are)g(the)g(the)h(v)-33
+b(alues)331 b(of)i Fb(FIPS)p Fe(.)h(The)e(output)h(v)-33
+b(alues)332 b(are)g(the)g(county)h Fb(data.frame)k Fe(objects.)0
+61011 y Fa(The)331 b(RHIPE)h(Manager:)412 b(rhwatch\(\))0
+63214 y Fe(W)-106 b(e)311 b(be)-20 b(gin)313 b(with)f(the)g(RHIPE)f(R)h
+(function)h Fb(rhwatch\(\))p Fe(.)409 b(It)313 b(runs)f(the)g(R)g(code)
+f(you)i(write)f(to)g(specify)g(Map)g(and)0 64819 y(Reduce)328
+b(operations,)i(tak)-13 b(es)327 b(your)i(speci\002cation)f(of)h(input)
+g(and)f(output)i(\002les,)e(and)g(manages)g(k)-13 b(e)-20
+b(y-v)-33 b(alue)329 b(pairs)0 66424 y(for)k(you.)0 68627
+y(The)f(code)g(for)h(the)f(county)h(di)-33 b(vision)333
+b(is)0 72000 y Fb(mr1)679 b(<-)f(rhwatch\()25336 75321
+y Fe(26)p eop end
+%%Page: 27 27
+TeXDict begin 27 26 bop 0 0 a
+SDict begin /product where{pop product(Distiller)search{pop pop pop version(.)search{exch pop exch pop(3011)eq{gsave newpath 0 0 moveto closepath clip/Courier findfont 10 scalefont setfont 72 72 moveto(.)show grestore}if}{pop}ifelse}{pop}ifelse}if end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin H.R end
+
+0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (page.27) cvn H.B /DEST pdfmark end
+ 0 0 a 1355 1328 a Fb(map)4066 b(=)678 b(map1,)1355
+2933 y(reduce)2035 b(=)678 b(reduce1,)1355 4539 y(input)2712
+b(=)678 b(rhfmt\("/yourloginname/housing/housing.txt",)697
+b(type)679 b(=)f("text"\),)1355 6144 y(output)2035 b(=)678
+b(rhfmt\("/yourloginname/housing/byCounty",)696 b(type)679
+b(=)f("sequence"\),)1355 7749 y(readback)j(=)d(FALSE)0
+9354 y(\))0 12859 y Fe(Ar)-24 b(guments)419 b Fb(map)h
+Fe(and)e Fb(reduce)j Fe(tak)-13 b(e)417 b(your)i(Map)f(and)g(Reduce)g
+(R)g(code,)439 b(which)419 b(will)g(be)f(described)g(belo)-33
+b(w)-86 b(.)0 14464 y Fb(input)381 b Fe(speci\002es)c(the)i(input)g(to)
+g(be)f(the)h(te)-20 b(xt)379 b(\002le)f(in)h(the)f(HDFS)g(that)h(we)f
+(put)h(there)g(earlier)g(using)g Fb(rhput\(\))p Fe(.)0
+16069 y(The)293 b(\002le)g(supplies)h(input)g(k)-13 b(e)-20
+b(y-v)-33 b(alue)294 b(pairs)g(for)g(the)f(Map)h(code.)399
+b Fb(output)296 b Fe(speci\002es)c(the)i(\002le)f(name)g(into)i(which)0
+17674 y(\002nal)381 b(output)i(k)-13 b(e)-20 b(y-v)-33
+b(alue)382 b(pairs)f(of)h(the)g(Reduce)f(code)h(that)g(are)f(written)i
+(to)e(the)h(HDFS.)f Fb(rhwatch\(\))386 b Fe(creates)0
+19279 y(this)333 b(\002le)e(if)i(it)g(does)e(not)i(e)-20
+b(xist,)333 b(or)f(o)-20 b(v)g(erwrites)333 b(it)g(if)g(it)f(does)g
+(not.)0 21482 y(In)273 b(our)g(di)-33 b(vision)274 b(by)f(county)g
+(here,)285 b(the)273 b(Reduce)f(recombination)i(outputs)g(are)e(the)h
+(2883)g(county)g Fb(data.frame)0 23087 y Fe(R)389 b(objects.)584
+b(The)-20 b(y)390 b(are)f(a)g Fb(list)i Fe(object)f(that)g(describes)f
+(the)h(k)-13 b(e)-20 b(y-v)-33 b(alue)389 b(pairs:)527
+b Fb(FIPS)392 b Fe(k)-13 b(e)-20 b(y)389 b(and)g Fb(data.frame)0
+24692 y Fe(v)-33 b(alue.)431 b(There)339 b(is)f(one)h
+Fb(list)h Fe(element)g(per)e(pair;)343 b(that)c(element)g(is)g(itself)g
+(a)f(list)i(with)f(tw)-13 b(o)339 b(elements,)h(the)f
+Fb(FIPS)0 26297 y Fe(k)-13 b(e)-20 b(y)332 b(and)g(then)h(the)f
+Fb(data.frame)337 b Fe(v)-33 b(alue.)0 28500 y(The)302
+b(Reduce)h Fb(list)i Fe(output)f(can)e(also)h(be)g(written)h(to)f(the)g
+(R)g(global)h(en)-53 b(vironment)304 b(of)g(the)f(R)g(session.)401
+b(One)303 b(use)0 30105 y(of)h(this)f(is)h(analytic)f(recombination)i
+(in)f(the)f(R)g(session)g(when)h(the)f(outputs)h(are)f(a)g(small)h
+(enough)g(dataset.)402 b(Y)-146 b(ou)0 31710 y(can)302
+b(do)h(this)g(with)h(the)f(ar)-24 b(gument)303 b Fb(readback)p
+Fe(.)406 b(If)303 b Fb(TRUE)p Fe(,)i(the)e(list)g(is)g(also)f(written)i
+(to)f(the)g(global)g(en)-53 b(vironment.)0 33315 y(If)333
+b Fb(FALSE)p Fe(,)h(it)f(is)f(not.)412 b(If)333 b(F)-98
+b(ALSE,)330 b(it)j(can)f(be)g(written)h(latter)g(using)g(the)f(RHIPE)g
+(R)g(function)h Fb(rhread\(\))p Fe(.)0 36820 y Fb(countySubsets)683
+b(<-)c(rhread\("/yourloginname/housing/byCounty"\))0
+40325 y Fe(Suppose)411 b(you)h(just)g(w)-13 b(ant)411
+b(to)h(look)h(o)-20 b(v)g(er)412 b(the)f Fb(byCounty)k
+Fe(\002le)c(on)h(the)g(HDFS)f(just)g(to)h(see)f(if)h(all)g(is)f(well,)
+432 b(b)-27 b(ut)0 41930 y(that)333 b(this)f(can)g(be)g(done)g(by)h
+(looking)g(at)f(a)g(small)h(number)g(of)g(k)-13 b(e)-20
+b(y-v)-33 b(alue)332 b(pairs,)g(say)g(10.)412 b(The)332
+b(code)g(for)h(this)g(is)0 45435 y Fb(countySubsets)683
+b(<-)c(rhread\("/yourloginname/housing/byCounty",)696
+b(max)679 b(=)f(10\))0 47040 y(Read)h(10)g(objects\(31.39)k(KB\))c(in)f
+(0.04)i(seconds)0 50545 y Fe(Then)332 b(you)g(can)g(look)h(at)f(the)h
+(list)f(of)h(length)g(10)f(in)h(v)-33 b(arious)332 b(w)-13
+b(as)332 b(such)g(as)0 54049 y Fb(keys)679 b(<-)g
+(unlist\(lapply\(countySubsets,)690 b("[[",)680 b(1\)\))0
+55654 y(keys)0 57260 y([1])f("01013")h("01031")h("01059")g("01077")f
+("01095")h("01103")g("01121")f("04001")h("05019")g("05037")0
+60764 y(attributes\(countySubsets[[1]][[2]]\))0 62369
+y($names)0 63975 y([1])e("date")8810 b("units")8132 b("listing")8811
+b("selling")0 65580 y($row.names)677 67185 y([1])1357
+b(1)e(2)g(3)h(4)f(5)h(6)f(7)g(8)h(9)678 b(10)g(11)g(12)h(13)f(14)g(15)h
+(16)f(17)h(18)f(19)g(20)h(21)f(22)g(23)h(24)0 68790 y([25])g(25)g(26)f
+(27)g(28)h(29)f(30)h(31)f(32)g(33)h(34)f(35)g(36)h(37)f(38)g(39)h(40)f
+(41)h(42)f(43)g(44)h(45)f(46)g(47)h(48)0 70395 y([49])g(49)g(50)f(51)g
+(52)h(53)f(54)h(55)f(56)g(57)h(58)f(59)g(60)h(61)f(62)g(63)h(64)f(65)h
+(66)0 72000 y($state)25336 75321 y Fe(27)p eop end
+%%Page: 28 28
+TeXDict begin 28 27 bop 0 0 a
+SDict begin /product where{pop product(Distiller)search{pop pop pop version(.)search{exch pop exch pop(3011)eq{gsave newpath 0 0 moveto closepath clip/Courier findfont 10 scalefont setfont 72 72 moveto(.)show grestore}if}{pop}ifelse}{pop}ifelse}if end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin H.R end
+
+0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (page.28) cvn H.B /DEST pdfmark end
+ 0 0 a 1328 x Fb([1])679 b("AL")0 2933 y($FIPS)0
+4539 y([1])g("01013")0 6144 y($county)0 7749 y([1])g("Butler")0
+9354 y($class)0 10959 y([1])g("data.frame")0 14122 y
+Fa(Map)332 b(R)g(Code)g Fe(The)f(Map)h(R)g(code)g(for)h(the)g(county)f
+(di)-33 b(vision)333 b(is)0 17286 y Fb(map1)679 b(<-)g(expression\({)
+1355 18891 y(lapply\(seq_along\(map.keys\),)690 b(function\(r\))682
+b({)2710 20496 y(line)d(=)f(strsplit\(map.values[[r]],)689
+b(","\)[[1]])2710 22101 y(outputkey)681 b(<-)e(line[1:3])2710
+23706 y(outputvalue)j(<-)d(data.frame\()4065 25311 y(date)g(=)f
+(as.numeric\(line[4]\),)4065 26916 y(units)h(=)1356 b
+(as.numeric\(line[5]\),)4065 28521 y(listing)680 b(=)e
+(as.numeric\(line[6]\),)4065 30126 y(selling)i(=)e
+(as.numeric\(line[7]\),)4065 31731 y(stringsAsFactors)685
+b(=)677 b(FALSE)2710 33336 y(\))1355 34942 y(rhcollect\(outputkey,)687
+b(outputvalue\))1355 36547 y(}\))0 38152 y(}\))0 41315
+y Fe(Map)311 b(has)g(input)h(k)-13 b(e)-20 b(y-v)-33
+b(alue)312 b(pairs,)j(and)d(output)g(k)-13 b(e)-20 b(y-v)-33
+b(alue)312 b(pairs.)405 b(Each)311 b(pair)g(has)g(an)g(identi\002er)-53
+b(,)316 b(the)c(k)-13 b(e)-20 b(y)-86 b(,)315 b(and)0
+42920 y(numeric-cate)-20 b(gorical)435 b(information,)460
+b(the)433 b(v)-33 b(alue.)714 b(The)433 b(Map)f(R)h(code)g(is)g
+(applied)g(to)g(each)g(input)h(k)-13 b(e)-20 b(y-v)-33
+b(alue)0 44525 y(pair)-53 b(,)339 b(producing)f(one)f(output)i(k)-13
+b(e)-20 b(y-v)-33 b(alue)337 b(pair)-73 b(.)427 b(Each)336
+b(application)i(of)g(the)f(Map)g(code)g(to)g(a)g(k)-13
+b(e)-20 b(y-v)-33 b(alue)337 b(pair)h(is)0 46130 y(carried)381
+b(out)f(by)h(a)e(mapper)-53 b(,)393 b(and)380 b(there)h(are)f(man)-20
+b(y)380 b(mappers)h(running)g(in)g(parallel)g(without)g(communication)0
+47735 y(\(embarrassingly)334 b(parallel\))f(until)g(the)f(Map)g(job)h
+(completes.)0 49938 y(RHIPE)353 b(creates)h(input)h(k)-13
+b(e)-20 b(y-v)-33 b(alue)354 b(pair)g Fb(list)i Fe(objects,)j
+Fb(map.keys)f Fe(and)c Fb(map.values)p Fe(,)364 b(based)353
+b(on)h(informa-)0 51543 y(tion)253 b(that)g(it)g(has.)385
+b(Let)252 b Fb(r)h Fe(be)f(an)h(inte)-20 b(ger)253 b(from)h(1)e(to)h
+(the)g(number)g(of)g(input)g(k)-13 b(e)-20 b(y-v)-33
+b(alue)253 b(pairs.)386 b Fb(map.values[[r]])0 53148
+y Fe(is)359 b(the)g(v)-33 b(alue)359 b(for)h(k)-13 b(e)-20
+b(y)359 b Fb(map.keys[[r]])p Fe(.)499 b(The)358 b(housing)i(data)f
+(inputs)h(come)f(from)i(a)e(te)-20 b(xt)359 b(\002le)g(in)g(the)h
+(HDFS,)0 54754 y(housing.txt,)435 b(By)412 b(RHIPE)h(con)-53
+b(v)-20 b(ention,)434 b(for)413 b(a)f(te)-20 b(xt)414
+b(\002le,)432 b(each)412 b(Map)h(input)h(k)-13 b(e)-20
+b(y)412 b(is)h(a)f(te)-20 b(xt)414 b(\002le)e(line)h(number)-53
+b(,)0 56359 y(and)366 b(the)g(corresponding)i(Map)e(input)h(v)-33
+b(alue)366 b(is)g(the)g(observ)-33 b(ations)366 b(in)h(the)f(line,)375
+b(read)366 b(into)h(R)f(as)f(a)h(single)g(te)-20 b(xt)0
+57964 y(string.)413 b(In)332 b(our)h(case)e(each)h(line)h(v)-33
+b(alue)332 b(is)g(the)g(observ)-33 b(ations)333 b(of)f(the)g(7)h
+(county)g(v)-33 b(ariables)332 b(for)h(the)f(line.)0
+60167 y(This)492 b(Map)h(code)f(is)h(really)g(a)g("for)g(loop")g(with)h
+Fb(r)f Fe(as)f(the)h(looping)h(v)-33 b(ariable,)533 b(b)-27
+b(ut)494 b(is)e(done)h(by)g Fb(lapply\(\))0 61772 y Fe(because)360
+b(it)g(is)h(in)g(general)f(f)-13 b(aster)360 b(than)h
+Fb(for)679 b(r)f(in)g(1:length\(map.keys\))p Fe(.)505
+b(The)360 b(loop)h(proceeds)g(through)0 63377 y(the)506
+b(input)i(k)-13 b(e)-20 b(ys,)549 b(speci\002ed)506 b(by)g(the)h
+(\002rst)f(ar)-24 b(gument)507 b(of)g Fb(lapply)p Fe(.)937
+b(The)506 b(second)g(ar)-24 b(gument)508 b(of)e(the)h(abo)-20
+b(v)g(e)0 64982 y Fb(lapply)335 b Fe(de\002nes)c(the)h(Map)g(e)-20
+b(xpression)333 b(with)g(the)f(ar)-24 b(gument)333 b
+Fb(r)p Fe(,)g(an)f(inde)-20 b(x)333 b(for)g(the)f(Map)g(k)-13
+b(e)-20 b(ys)332 b(and)g(v)-33 b(alues.)0 67185 y(The)336
+b(function)h Fb(strsplit\(\))k Fe(splits)336 b(each)g(character)-27
+b(-string)337 b(line)g(input)g(v)-33 b(alue)336 b(into)h(the)f(indi)-33
+b(vidual)338 b(observ)-33 b(a-)0 68790 y(tions)442 b(of)g(the)f(te)-20
+b(xt)442 b(line.)740 b(The)441 b(result,)469 b Fb(line)p
+Fe(,)h(is)441 b(a)g Fb(list)j Fe(of)d(length)h(one)g(whose)f(element)h
+(is)f(a)g Fb(character)0 70395 y(vector)380 b Fe(whose)d(elements)g
+(are)g(the)g(line)h(observ)-33 b(ations.)547 b(In)377
+b(our)h(case,)387 b(the)378 b(observ)-33 b(ations)377
+b(are)g(a)g Fb(character)0 72000 y(vector)335 b Fe(of)d(length)h(7,)g
+(in)f(order:)413 b Fb(FIPS)p Fe(,)334 b Fb(county)p Fe(,)h
+Fb(state)p Fe(,)f Fb(date)p Fe(,)h Fb(units)p Fe(,)f
+Fb(listing)p Fe(,)h Fb(selling)p Fe(.)25336 75321 y(28)p
+eop end
+%%Page: 29 29
+TeXDict begin 29 28 bop 0 0 a
+SDict begin /product where{pop product(Distiller)search{pop pop pop version(.)search{exch pop exch pop(3011)eq{gsave newpath 0 0 moveto closepath clip/Courier findfont 10 scalefont setfont 72 72 moveto(.)show grestore}if}{pop}ifelse}{pop}ifelse}if end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin H.R end
+
+0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (page.29) cvn H.B /DEST pdfmark end
+ 0 0 a 1328 x Fe(Ne)-20 b(xt)318 b(we)g(turn)g(to)g(the)g
+(Map)g(output)h(k)-13 b(e)-20 b(y-v)-33 b(alue)317 b(pairs.)408
+b Fb(outputkey)322 b Fe(for)c(each)f(te)-20 b(xt)318
+b(line)h(is)e(a)h(character)f(v)-20 b(ector)0 2933 y(of)451
+b(length)g(3)g(with)g Fb(FIPS)p Fe(,)h Fb(county)p Fe(,)483
+b(and)450 b Fb(state)p Fe(.)769 b Fb(utputvalue)455 b
+Fe(is)450 b(a)g Fb(data.frame)455 b Fe(with)c(one)g(ro)-33
+b(w)450 b(and)h(4)0 4539 y(columns,)333 b(the)f(observ)-33
+b(ations)333 b(of)f Fb(date)p Fe(,)i Fb(units)p Fe(,)h
+Fb(listing)p Fe(,)g(and)e Fb(selling)p Fe(,)i(each)c(a)h
+Fb(numeric)k Fe(object.)0 6741 y(The)f(ar)-24 b(gument)337
+b(of)f Fb(data.frame)p Fe(,)341 b Fb(stringsAsFactors)p
+Fe(,)i(is)336 b(is)f(gi)-33 b(v)-20 b(en)336 b(the)g(v)-33
+b(alue)336 b Fb(FALSE)p Fe(.)h(This)f(lea)-27 b(v)-20
+b(es)335 b(char)-27 b(-)0 8346 y(acter)332 b(v)-20 b(ectors)332
+b(in)h(the)f Fb(data.frame)337 b Fe(as)332 b(is,)g(and)g(does)g(on)g
+(con)-53 b(v)-20 b(ert)333 b(to)g(a)e Fb(factor)p Fe(.)0
+10549 y(The)426 b(RHIPE)f(function)j Fb(rhcollect\(\))j
+Fe(forms)c(a)f(Map)g(output)i(k)-13 b(e)-20 b(y-v)-33
+b(alue)426 b(pair)h(for)g(each)f(line,)450 b(and)427
+b(writes)0 12154 y(the)332 b(results)h(to)f(the)h(HDFS)e(as)g(a)h(k)-13
+b(e)-20 b(y-v)-33 b(alue)333 b(pair)f Fb(list)i Fe(object.)0
+14357 y Fa(Reduce)d(R)h(Code)f Fe(The)h(Reduce)g(R)g(code)g(for)h(the)f
+(county)h(di)-33 b(vision)333 b(is)0 17999 y Fb(reduce1)681
+b(<-)d(expression\()1355 19604 y(pre)h(=)f({)2710 21209
+y(reduceoutputvalue)685 b(<-)678 b(data.frame\(\))1355
+22814 y(},)1355 24420 y(reduce)i(=)e({)2710 26025 y(reduceoutputvalue)
+685 b(<-)678 b(rbind\(reduceoutputvalue,)689 b(do.call\(rbind,)684
+b(reduce.values\)\))1355 27630 y(},)1355 29235 y(post)679
+b(=)f({)2710 30840 y(reduceoutputkey)684 b(<-)679 b(reduce.key[1])2710
+32445 y(attr\(reduceoutputvalue,)688 b("location"\))682
+b(<-)d(reduce.key[1:3])2710 34050 y(names\(attr\(reduceoutputvalue,)691
+b("location"\)\))682 b(<-)d(c\("FIPS","county","state"\))2710
+35655 y(rhcollect\(reduceoutputkey,)689 b(reduceoutputvalue\))1355
+37260 y(})0 38865 y(\))0 42507 y Fe(The)275 b(output)i(k)-13
+b(e)-20 b(y-v)-33 b(alue)276 b(pairs)g(of)g(Map)f(are)h(the)g(input)g
+(k)-13 b(e)-20 b(y-v)-33 b(alue)276 b(pairs)g(to)g(Reduce.)393
+b(The)275 b(\002rst)h(task)f(of)h(Reduce)0 44112 y(is)334
+b(to)h(group)g(its)f(input)i(k)-13 b(e)-20 b(y-v)-33
+b(alue)334 b(pairs)h(by)f(unique)h(k)-13 b(e)-20 b(y)-86
+b(.)418 b(The)334 b(Reduce)f(R)i(code)f(is)g(applied)h(to)f(the)h(k)-13
+b(e)-20 b(y-v)-33 b(alue)0 45717 y(pairs)501 b(of)g(each)g(group)g(by)g
+(a)g(reducer)-73 b(.)918 b(The)501 b(number)g(of)h(groups)f(v)-33
+b(aries)501 b(in)g(applications)h(from)g(just)f(one,)0
+47323 y(with)411 b(a)f(single)h(Reduce)f(output,)431
+b(to)411 b(man)-20 b(y)-86 b(.)647 b(F)-20 b(or)410 b(multiple)i
+(groups,)431 b(the)411 b(reducers)f(run)h(in)g(parallel,)431
+b(without)0 48928 y(communication,)334 b(until)f(the)g(Reduce)e(job)i
+(completes.)0 51130 y(RHIPE)393 b(creates)g(tw)-13 b(o)394
+b(list)h(objects)f Fb(reduce.key)k Fe(and)c Fb(reduce.values)p
+Fe(.)603 b(Each)393 b(element)h(of)g Fb(reduce.key)0
+52736 y Fe(is)345 b(the)g(k)-13 b(e)-20 b(y)345 b(for)h(one)f(group,)k
+(and)c(the)g(corresponding)h(element)g(of)f Fb(reduce.values)351
+b Fe(has)344 b(the)h(v)-33 b(alues)345 b(for)h(the)0
+54341 y(group)356 b(to)f(which)g(the)g(Reduce)g(code)g(is)f(applied.)
+481 b(No)-33 b(w)355 b(in)g(our)h(case,)j(the)c(k)-13
+b(e)-20 b(y)355 b(is)g(county)h(and)f(the)g(v)-33 b(alues)354
+b(are)0 55946 y(the)332 b(observ)-33 b(ations)333 b(of)g
+Fb(date)p Fe(,)h Fb(units)p Fe(,)g Fb(listing)p Fe(,)h(and)e
+Fb(selling)i Fe(for)e(the)f(all)h(housing)f(units)h(in)g(the)f(county)
+-86 b(.)0 58149 y(Note)315 b(the)f(Reduce)g(code)g(has)g(a)g(certain)h
+(structure:)404 b(e)-20 b(xpressions)314 b Fb(pre)p Fe(,)320
+b Fb(reduce)p Fe(,)g(and)315 b Fb(post)p Fe(.)408 b(In)314
+b(our)h(case)f Fb(pre)0 59754 y Fe(initializes)254 b
+Fb(reduceoutputvalue)260 b Fe(to)254 b(a)e Fb(data.frame\(\))p
+Fe(.)391 b Fb(reduce)256 b Fe(assembles)c(the)h(county)h
+Fb(data.frame)k Fe(as)0 61359 y(the)253 b(reducer)f(recei)-33
+b(v)-20 b(es)252 b(the)h(v)-33 b(alues)252 b(through)i
+Fb(rbind\(reduceoutputvalue,)688 b(do.call\(rbind,)c(reduce.values\)\))
+p Fe(;)0 62964 y(this)410 b(uses)e Fb(rbind\(\))413 b
+Fe(to)c(add)g(ro)-33 b(ws)410 b(to)f(the)h Fb(data.frame)j
+Fe(object.)644 b Fb(post)411 b Fe(operates)e(further)i(on)e(the)h
+(result)f(of)0 64569 y Fb(reduce)p Fe(.)441 b(In)342
+b(our)f(case)f(it)i(\002rst)e(assigns)h(the)g(observ)-33
+b(ation)342 b(of)f Fb(FIPS)i Fe(as)d(the)h(k)-13 b(e)-20
+b(y)-86 b(.)438 b(Then)341 b(it)g(adds)g Fb(FIPS)p Fe(,)p
+Fb(county)p Fe(,)0 66174 y(and)493 b Fb(state)h Fe(as)e
+Fb(attributes)p Fe(.)898 b(Finally)492 b(the)h(RHIPE)f(function)i
+Fb(rhcollect\(\))j Fe(forms)c(a)g(Reduce)f(output)0 67779
+y(k)-13 b(e)-20 b(y-v)-33 b(alue)332 b(pair)h Fb(list)p
+Fe(,)h(and)e(writes)h(it)f(to)h(the)f(HDFS.)25336 75321
+y(29)p eop end
+%%Page: 30 30
+TeXDict begin 30 29 bop 0 0 a
+SDict begin /product where{pop product(Distiller)search{pop pop pop version(.)search{exch pop exch pop(3011)eq{gsave newpath 0 0 moveto closepath clip/Courier findfont 10 scalefont setfont 72 72 moveto(.)show grestore}if}{pop}ifelse}{pop}ifelse}if end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin H.R end
+
+0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (page.30) cvn H.B /DEST pdfmark end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin 14.5 H.A end
+ 0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (subsubsection.3.3.4) cvn H.B /DEST pdfmark end
+ 0 0 a
+1328 x Fa(3.3.4)1329 b(Compute)331 b(County)h(Min,)g(Median,)f(Max)0
+4428 y Fe(W)-53 b(ith)332 b(the)f(county)h(di)-33 b(vision)332
+b(subsets)e(no)-33 b(w)332 b(in)f(the)g(HDFS)g(we)g(will)g(illustrate)i
+(using)e(them)h(to)f(carry)h(out)f(D&R)0 6033 y(with)395
+b(a)e(v)-20 b(ery)394 b(simple)h(recombination)g(procedure)g(based)e
+(on)i(a)e(summary)i(statistic)f(for)h(each)e(county)h(of)h(the)0
+7638 y(v)-33 b(ariable)407 b Fb(listing)p Fe(.)640 b(W)-106
+b(e)406 b(do)h(this)h(for)f(simplicity)i(of)e(e)-20 b(xplanation)408
+b(of)g(ho)-33 b(w)407 b(RHIPE)f(w)-13 b(orks.)637 b(Ho)-33
+b(we)g(v)-20 b(er)-53 b(,)425 b(we)0 9243 y(emphasize)306
+b(that)g(in)h(practice,)312 b(initial)307 b(analysis)f(w)-13
+b(ould)306 b(almost)h(al)-13 b(w)g(ays)305 b(in)-53 b(v)-27
+b(olv)-20 b(e)308 b(comprehensi)-33 b(v)-20 b(e)307 b(analysis)e(of)0
+10848 y(both)333 b(the)f(detailed)h(data)f(for)h(all)f(subset)g(v)-33
+b(ariables)332 b(and)h(summary)g(statistics)f(based)g(on)g(the)g
+(detailed)h(data.)0 13051 y(Our)299 b(summary)h(statistic)f(consists)g
+(of)g(the)g(minimum,)308 b(median,)e(and)299 b(maximum)h(of)f
+Fb(listing)p Fe(,)309 b(one)299 b(summary)0 14656 y(for)441
+b(each)f(county)-86 b(.)738 b(Map)440 b(R)g(code)h(computes)f(the)h
+(statistic.)737 b(The)440 b(output)i(k)-13 b(e)-20 b(y)440
+b(of)h(Map,)468 b(and)440 b(therefore)i(the)0 16261 y(input)317
+b(k)-13 b(e)-20 b(y)316 b(for)h(Reduce)f(is)g Fb(state)p
+Fe(.)409 b(The)316 b(Reduce)g(R)g(code)g(creates)g(a)g
+Fb(data.frame)321 b Fe(for)c(each)e(state)h(where)h(the)0
+17866 y(columns)427 b(are)g Fb(FIPS)p Fe(,)i Fb(county)p
+Fe(,)453 b Fb(min)p Fe(,)e Fb(median)p Fe(,)j(and)426
+b Fb(max)p Fe(.)697 b(So)427 b(our)g(e)-20 b(xample)427
+b(illustrates)h(a)e(scenario)h(where)0 19471 y(we)393
+b(create)g(summary)h(statistics,)409 b(and)393 b(then)g(analyze)g(the)h
+(results.)595 b(This)393 b(is)g(an)g(analytic)h(recombination.)596
+b(In)0 21077 y(addition,)338 b(we)d(suppose)g(that)h(in)g(this)g
+(scenario)g(the)f(summary)i(statistic)f(dataset)f(is)g(small)h(enough)g
+(to)g(analyze)0 22682 y(in)381 b(the)g(standard)g(serial)g(R.)g(This)g
+(is)f(not)i(uncommon)g(in)f(practice)g(e)-33 b(v)-20
+b(en)381 b(when)g(the)g(ra)-20 b(w)381 b(data)g(are)f(v)-20
+b(ery)382 b(lar)-24 b(ge)0 24287 y(and)332 b(comple)-20
+b(x.)0 26490 y Fa(The)331 b(RHIPE)h(Manager:)412 b(rhwatch\(\))0
+28692 y Fe(Here)332 b(is)g(the)g(code)g(for)h Fb(rhwatch\(\))p
+Fe(.)0 32054 y Fb(CountyStats)682 b(<-)d(rhwatch\()1355
+33659 y(map)4066 b(=)678 b(map2,)1355 35264 y(reduce)2035
+b(=)678 b(reduce2,)1355 36869 y(input)2712 b(=)678 b
+(rhfmt\("/yourloginname/housing/byCounty",)696 b(type)679
+b(=)f("sequence"\),)1355 38474 y(output)2035 b(=)678
+b(rhfmt\("/yourloginname/housing/CountyStats",)697 b(type)679
+b(=)f("sequence"\),)1355 40079 y(readback)j(=)d(TRUE)0
+41684 y(\))0 45046 y Fe(Our)403 b(Map)f(and)g(Reduce)g(code,)420
+b Fb(map2)404 b Fe(and)f Fb(reduce2)p Fe(,)423 b(is)402
+b(gi)-33 b(v)-20 b(en)403 b(to)f(the)h(ar)-24 b(guments)403
+b Fb(map)h Fe(and)e Fb(reduce)p Fe(.)625 b(The)0 46651
+y(code)332 b(will)h(be)f(will)h(be)f(discussed)g(later)-73
+b(.)0 48854 y(The)447 b(input)i(k)-13 b(e)-20 b(y-v)-33
+b(alue)448 b(pairs)g(for)h(Map,)476 b(gi)-33 b(v)-20
+b(en)449 b(to)f(the)g(ar)-24 b(gument)449 b Fb(input)p
+Fe(,)479 b(are)447 b(our)i(county)f(subsets)g(which)0
+50459 y(were)289 b(written)h(to)f(the)g(HDFS)f(directory)i
+Fb(/yourloginname/housing)299 b Fe(as)288 b(the)h(k)-13
+b(e)-20 b(y-v)-33 b(alue)289 b(pairs)g Fb(list)i Fe(object)0
+52064 y Fb(byCounty)p Fe(.)663 b(The)414 b(\002nal)h(output)h(k)-13
+b(e)-20 b(y-v)-33 b(alue)415 b(pairs)g(for)g(Reduce,)435
+b(speci\002ed)414 b(by)h(the)g(ar)-24 b(gument)416 b
+Fb(output)p Fe(,)438 b(will)0 53669 y(be)353 b(written)h(to)g(the)f
+Fb(list)i Fe(object)f Fb(CountyStats)k Fe(in)353 b(the)h(same)f
+(directory)h(as)f(the)g(subsets.)474 b(The)353 b(k)-13
+b(e)-20 b(ys)353 b(are)g(the)0 55274 y(states,)332 b(and)g(the)g(v)-33
+b(alues)332 b(are)g(the)g Fb(data.frame)337 b Fe(objects)332
+b(for)h(the)f(states.)0 57477 y(The)510 b(ar)-24 b(gument)513
+b Fb(readback)h Fe(is)d(gi)-33 b(v)-20 b(en)511 b(the)g(v)-33
+b(alue)511 b(TR)-53 b(UE,)510 b(which)i(means)e Fb(CountyStats)516
+b Fe(is)511 b(also)g(written)0 59082 y(to)464 b(the)f(R)h(global)g(en)
+-53 b(vironment)465 b(of)f(the)f(R)h(session.)805 b(W)-106
+b(e)463 b(do)g(this)h(because)f(our)h(scenario)f(is)h(that)g(analytic)0
+60687 y(recombination)334 b(is)e(done)g(in)h(R.)0 62890
+y(The)304 b(ar)-24 b(gument)307 b Fb(mapred.reduce.tasks)313
+b Fe(is)305 b(gi)-33 b(v)-20 b(en)305 b(the)g(v)-33 b(alue)305
+b(10,)311 b(as)304 b(in)h(our)h(use)f(of)g(it)g(to)h(create)e(the)h
+(county)0 64495 y(subsets.)0 66698 y Fa(The)331 b(Map)h(R)g(Code)0
+68901 y Fe(The)g(Map)g(R)g(code)g(is)0 72000 y Fb(map2)679
+b(<-)g(expression\({)25336 75321 y Fe(30)p eop end
+%%Page: 31 31
+TeXDict begin 31 30 bop 0 0 a
+SDict begin /product where{pop product(Distiller)search{pop pop pop version(.)search{exch pop exch pop(3011)eq{gsave newpath 0 0 moveto closepath clip/Courier findfont 10 scalefont setfont 72 72 moveto(.)show grestore}if}{pop}ifelse}{pop}ifelse}if end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin H.R end
+
+0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (page.31) cvn H.B /DEST pdfmark end
+ 0 0 a 1355 1328 a Fb(lapply\(seq_along\(map.keys\),)690
+b(function\(r\))682 b({)2710 2933 y(outputvalue)g(<-)d(data.frame\()
+4065 4539 y(FIPS)g(=)f(map.keys[[r]],)4065 6144 y(county)i(=)e
+(attr\(map.values[[r]],)687 b("location"\)["county"],)4065
+7749 y(min)679 b(=)e(min\(map.values[[r]]$listing,)691
+b(na.rm)679 b(=)f(TRUE\),)4065 9354 y(median)i(=)e
+(median\(map.values[[r]]$listing,)691 b(na.rm)680 b(=)e(TRUE\),)4065
+10959 y(max)h(=)e(max\(map.values[[r]]$listing,)691 b(na.rm)679
+b(=)f(TRUE\),)4065 12564 y(stringsAsFactors)685 b(=)677
+b(FALSE)2710 14169 y(\))2710 15774 y(outputkey)k(<-)e
+(attr\(map.values[[r]],)687 b("location"\)["state"])2710
+17379 y(rhcollect\(outputkey,)f(outputvalue\))1355 18984
+y(}\))0 20589 y(}\))0 23598 y(map.keys)324 b Fe(is)c(the)h(Map)f(input)
+h(k)-13 b(e)-20 b(ys,)323 b(the)d(county)h(subset)f(identi\002ers)h
+Fb(FIPS)p Fe(.)h Fb(map.values)j Fe(is)320 b(the)h(Map)f(input)0
+25203 y(v)-33 b(alues,)384 b(the)375 b(county)f(subset)g
+Fb(data.frame)379 b Fe(objects.)538 b(The)373 b Fb(lapply\(\))378
+b Fe(loop)d(goes)f(through)h(all)g(subsets,)384 b(and)0
+26808 y(the)317 b(looping)i(v)-33 b(ariable)318 b(is)f
+Fb(r)p Fe(.)407 b(Each)317 b(stage)g(of)g(the)h(loop)g(creates)f(one)g
+(output)h(k)-13 b(e)-20 b(y-v)-33 b(alue)318 b(pair)-53
+b(,)321 b Fb(outputkey)g Fe(and)0 28414 y Fb(outputvalue)p
+Fe(.)509 b Fb(outputkey)367 b Fe(is)c(the)g(observ)-33
+b(ation)364 b(of)f Fb(state)p Fe(.)506 b Fb(outputvalue)368
+b Fe(is)363 b(a)g Fb(data.frame)k Fe(with)d(one)0 30019
+y(ro)-33 b(w)253 b(that)g(has)f(the)g(v)-33 b(ariables)253
+b Fb(FIPS)p Fe(,)h Fb(county)p Fe(,)271 b Fb(min)p Fe(,)f
+Fb(median)p Fe(,)h(and)253 b Fb(max)g Fe(for)h(county)f
+Fb(FIPS)p Fe(.)h Fb(rhcollect\(outputkey,)0 31624 y(outputvalue\))338
+b Fe(emits)332 b(the)g(pairs)h(to)f(reducers,)h(becoming)g(the)f
+(Reduce)g(input)h(k)-13 b(e)-20 b(y-v)-33 b(alue)332
+b(pairs.)0 33827 y Fa(The)f(Reduce)g(R)h(Code)g Fe(The)g(Reduce)f(R)h
+(code)g(for)h(the)g Fb(listing)i Fe(summary)e(statistic)f(is)0
+37067 y Fb(reduce2)681 b(<-)d(expression\()1355 38672
+y(pre)h(=)f({)2710 40277 y(reduceoutputvalue)685 b(<-)678
+b(data.frame\(\))1355 41882 y(},)1355 43488 y(reduce)i(=)e({)2710
+45093 y(reduceoutputvalue)685 b(<-)678 b(rbind\(reduceoutputvalue,)689
+b(do.call\(rbind,)684 b(reduce.values\)\))1355 46698
+y(},)1355 48303 y(post)679 b(=)f({)2710 49908 y(rhcollect\(reduce.key,)
+687 b(reduceoutputvalue\))1355 51513 y(})0 53118 y(\))0
+56359 y Fe(The)342 b(\002rst)h(task)g(of)g(Reduce)g(is)g(to)g(group)h
+(its)f(input)h(k)-13 b(e)-20 b(y-v)-33 b(alue)343 b(pairs)h(by)f
+(unique)g(k)-13 b(e)-20 b(y)-86 b(,)346 b(in)d(this)g(case)f(by)i
+Fb(state)p Fe(.)0 57964 y(The)332 b(Reduce)f(R)i(code)f(is)g(applied)g
+(to)h(the)f(k)-13 b(e)-20 b(y-v)-33 b(alue)332 b(pairs)h(of)f(each)g
+(group)h(by)g(a)f(reducer)-73 b(.)0 60167 y(Expression)337
+b Fb(pre)p Fe(,)i(initializes)e Fb(reduceoutputvalue)345
+b Fe(to)337 b(a)f Fb(data.frame\(\))p Fe(.)431 b Fb(reduce)339
+b Fe(assembles)d(the)h(state)0 61772 y Fb(data.frame)257
+b Fe(as)252 b(the)g(reducer)h(recei)-33 b(v)-20 b(es)252
+b(the)h(v)-33 b(alues)252 b(through)i Fb(rbind\(reduceoutputvalue,)688
+b(do.call\(rbind,)0 63377 y(reduce.values\)\))p Fe(;)389
+b(this)365 b(uses)g Fb(rbind\(\))j Fe(to)e(add)f(ro)-33
+b(ws)365 b(to)h(the)f Fb(data.frame)370 b Fe(object.)511
+b Fb(post)367 b Fe(operates)e(fur)-27 b(-)0 64982 y(ther)397
+b(on)h(the)f(result)g(of)g Fb(reduce)p Fe(;)433 b Fb(rhcollect\(\))401
+b Fe(forms)d(a)f(Reduce)f(output)j(k)-13 b(e)-20 b(y-v)-33
+b(alue)397 b(pair)g(for)h(each)e(state.)0 66587 y(RHIPE)332
+b(then)g(writes)h(the)f(Reduce)g(output)h(k)-13 b(e)-20
+b(y-v)-33 b(alue)332 b(pairs)h(to)f(the)h(HDFS.)0 68790
+y(Recall)328 b(that)g(we)f(told)i(RHIPE)e(in)i Fb(rhwatch\(\))i
+Fe(to)e(also)e(write)i(the)f(Reduce)f(output)i(to)f Fb(CountyStats)333
+b Fe(in)328 b(both)0 70395 y(the)348 b(R)g(serv)-20 b(er)348
+b(global)g(en)-53 b(vironment.)460 b(There,)352 b(we)347
+b(can)h(ha)-27 b(v)-20 b(e)348 b(a)f(look)i(at)f(the)f(results)h(to)h
+(mak)-13 b(e)347 b(sure)h(all)g(is)g(well.)0 72000 y(W)-106
+b(e)332 b(can)f(look)i(at)f(a)g(summary)25336 75321 y(31)p
+eop end
+%%Page: 32 32
+TeXDict begin 32 31 bop 0 0 a
+SDict begin /product where{pop product(Distiller)search{pop pop pop version(.)search{exch pop exch pop(3011)eq{gsave newpath 0 0 moveto closepath clip/Courier findfont 10 scalefont setfont 72 72 moveto(.)show grestore}if}{pop}ifelse}{pop}ifelse}if end
+ 0 0 a 0 0 a
+SDict begin H.S end
+ 0 0 a 0 0 a
+SDict begin H.R end
+
+0 0 a 0 0 a
+SDict begin [ /View [/XYZ H.V] /Dest (page.32) cvn H.B /DEST pdfmark end
+ 0 0 a 1328 x Fb(str\(CountyStats\))0 2933
+y(List)679 b(of)g(49)677 4539 y($)f(:List)i(of)e(2)1355
+6144 y(..$)h(:)f(Named)h(chr)g("AL")1355 7749 y(..)f(..-)h(attr\(*,)i
+("names"\)=)g(chr)e("state")1355 9354 y(..$)g(:'data.frame':)2716
+b(64)678 b(obs.)i(of)1355 b(5)678 b(variables:)1355 10959
+y(..)g(..$)h(FIPS)1357 b(:)678 b(chr)h([1:64])h("01055")g("01053")h
+("01051")g("01049")f(...)1355 12564 y(..)e(..$)h(county:)i(chr)e
+([1:64])h("Etowah")h("Escambia")h("Elmore")f("DeKalb")g(...)1355
+14169 y(..)d(..$)h(min)2034 b(:)678 b(num)h([1:64])h(62.1)f(60.4)g
+(94.7)h(59.2)f(41.2)g(...)1355 15774 y(..)f(..$)h(median:)i(num)e
+([1:64])h(67.6)f(66.2)g(99.2)h(71.9)f(50.6)g(...)1355
+17379 y(..)f(..$)h(max)2034 b(:)678 b(num)h([1:64])h(77.8)f(79.8)g
+(102.2)h(82.3)f(60.4)h(...)677 18984 y($)e(:List)i(of)e(2)1355
+20589 y(..$)h(:)f(Named)h(chr)g("AR")1355 22195 y(..)f(..-)h(attr\(*,)i
+("names"\)=)g(chr)e("state")1355 23800 y(..$)g(:'data.frame':)2716
+b(71)678 b(obs.)i(of)1355 b(5)678 b(variables:)1355 25405
+y(..)g(..$)h(FIPS)1357 b(:)678 b(chr)h([1:71])h("05025")g("05023")h
+("05021")g("05019")f(...)1355 27010 y(..)e(..$)h(county:)i(chr)e
+([1:71])h("Cleveland")i("Cleburne")g("Clay")f("Clark")f(...)1355
+28615 y(..)e(..$)h(min)2034 b(:)678 b(num)h([1:71])h(46.2)f(99.9)g
+(28.1)h(61.6)f(58.5)g(...)1355 30220 y(..)f(..$)h(median:)i(num)e
+([1:71])h(60.2)f(108.2)h(38.7)f(67.3)g(82.1)h(...)1355
+31825 y(..)e(..$)h(max)2034 b(:)678 b(num)h([1:71])h(73.5)f(125)g(48.8)
+g(72.7)g(117.4)h(...)0 33430 y(......)0 37072 y Fe(W)-106
+b(e)332 b(can)f(look)i(at)f(the)h(\002rst)f(k)-13 b(e)-20
+b(y-v)-33 b(alue)332 b(pair)0 40714 y Fb(CountyStats[[1]][[2]])0
+42319 y([[1]])0 43924 y(state)677 45529 y("AL")0 49171
+y Fe(W)-106 b(e)332 b(can)f(look)i(at)f(the)h Fb(data.frame)j
+Fe(for)d(state)f("AL")0 52813 y Fb(head\(CountyStats[[1]][[2]]\))5420
+54418 y(min)2711 b(median)4745 b(max)1356 b(FIPS)3389
+b(county)0 56023 y(1)1355 b(34.88372)k(51.88628)g(73.46257)681
+b(01093)3389 b(Marion)0 57628 y(2)1355 b(94.66667)k(99.20582)681
+b(102.23077)h(01051)3389 b(Elmore)0 59233 y(3)1355 b(83.93817)k
+(88.59977)g(94.67041)681 b(01031)3389 b(Coffee)0 60839
+y(4)1355 b(92.87617)k(97.53306)681 b(105.71429)h(01125)d(Tuscaloosa)0
+62444 y(5)1355 b(60.34774)k(72.46377)g(93.53741)681 b(01027)4744
+b(Clay)0 64049 y(6)678 b(108.97167)j(119.66207)h(128.13390)g(01117)3389
+b(Shelby)25336 75321 y Fe(32)p eop end
+%%Trailer
+
+userdict /end-hook known{end-hook}if
+%%EOF

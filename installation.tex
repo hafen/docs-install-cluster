@@ -1,0 +1,280 @@
+\section{Tessera Stack Cluster Installation Guide}
+\subsection{Introduction}
+This is a guide to installing the Tessera stack consisting of
+Hadoop\textregistered, RHIPE, datadr, trelliscope and other supporting
+packages on a multi-node cluster.  This guide is intended to be used
+by the Systems Administrator to quickly install and configure the
+software necessary to run the full Tessera stack.  It is not focused
+on tuning and optimally configuring the Tessera stack.  It simplifies
+and generalizes certain aspects of the installation.  The Systems
+Administrator is encouraged to consult individual package
+documentation for further tuning later.  In this guide we use assume
+Ubuntu\textregistered Linux version 14.04 is the operating system
+installed on he cluster.
+
+\subsection{Example Configuration}
+Running the Tessera stack on a Hadoop cluster requires each Hadoop node to be configured to fill one or more of the roles of ResourceManager, NameNode, Secondary NameNode, DataNode, and NodeManager. The role descriptions are as follows.
+
+\begin{itemize}
+\item NameNode - Manages the directory tree and metadata of the Hadoop File System (HDFS), a distributed virtual file system that allows data to be replicated and stored across many nodes in the cluster. 
+\item SecondaryNameNode - Offloads HDFS checkpoint support for the NameNode.  It is not a NameNode failover or backup as the name may imply.
+\item ResourceManager - Schedules and issues map reduce jobs for NodeManagers across the cluster.
+\item DataNode - Stores data on the local drives of nodes as part of the distributed HDFS.  DataNodes are almost always also NodeManagers.
+\item NodeManager - Executes the map and reduce jobs issued by the ResourceManager. NodeManagers are almost always also DataNodes.
+\end{itemize}
+
+There can be just one NameNode, one ResourceManager, and one Secondary
+NameNode, but there will be many DataNodes and NodeManagers.  The node
+acting as NameNode cannot also be the Secondary NameNode, but could
+perform one or more of other roles of ResourceManager, DataNode, and
+NodeManager with a potential  performance penalty.  Most cluster nodes
+will be compute nodes with multiple hard drives and thus will run both
+the DataNode and NodeManager services.
+
+For our example we will have a single front-end server that acts as the
+R-session server.  It is where we will run R, which in turn runs RHIPE.
+The front-end server is aware of our Hadoop configuration and can issue
+Hadoop commands, though it isn't technically a Hadoop node itself. The
+front-end server will also be our Shiny server and optional Rstudio
+server.  We will have five nodes in our example Hadoop cluster.  Each of
+the Hadoop nodes in the cluster has a fully qualified domain
+name of the form \verb|nodeNNN.example.com|. In our example,
+
+\begin{itemize}
+\item \verb|node001.example.com| will be the NameNode and the ResourceManager.
+\item \verb|node002.example.com| will be the Secondary NameNode, a NodeManager, and a DataNode. 
+\item \verb|node003.example.com| to \verb|node005.example.com| will be NodeManagers and DataNodes. 
+\item \verb|frontend.example.com| will be the front end R-session server, the Shiny server, and optional Rstudio Server.
+\end{itemize}
+
+\subsection{Packages}
+\subsubsection{Required Packages}
+The Tessera stack consists of some packages provided by the Tessera group and some provided by other sources. \\
+
+\textbf{Packages provided by the Tessera group}
+\begin{enumerate}
+\item RHIPE - 0.75
+\item datadr
+\item trelliscope
+\end{enumerate}
+\textbf{Packages provided by others}
+\begin{enumerate}
+\item pkg-config
+\item Sun/Oracle Java - 7
+\item Protocol Buffers - 2.5.0 
+\item Cloudera Hadoop version cdh5.3.2
+\item R - 3.0.1
+\item rJava - 0.9-6 
+\item OpenSSL (latest stable version)
+\item R packages - codetools, MASS, ggplot2, lattice, boot, shiny, devtools
+\item gdebi
+\item Shiny server
+\end{enumerate}
+
+\subsubsection{Optional Packages}
+These optional packages can be installed along with the Tessera stack providing convenience for the analyst. 
+\begin{enumerate}
+\item Rstudio server - Rstudio server creates a persistent interactive R session for the analyst by running R on a remote server and providing access through a the analyst's local browser.
+\end{enumerate}
+
+\newpage
+
+\subsection{Installation}
+Some packages need only be installed on the Hadoop nodes, some need only
+be installed on the frontend server, and some must be installed on both.
+This is specified on a per-package basis below. This guide is command
+line friendly.
+
+
+\subsubsection{System Update (all servers)}
+First update all currently installed system packages.
+
+\begin{verbatim}
+sudo apt-get update
+sudo apt-get upgrade
+\end{verbatim}
+
+\subsubsection{pkg-config (all servers)} (\url{http://www.freedesktop.org/wiki/Software/pkg-config/})\\
+Following the system update, pkg-config is installed.
+\begin{verbatim}
+sudo apt-get install pkg-config
+\end{verbatim}
+
+\subsubsection{Java (all servers)} (\url{http://www.java.com/en/})\\
+A Java repository for Sun/Oracle Java is first added to the Ubuntu APT package management system.
+\begin{verbatim}
+sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:webupd8team/java
+\end{verbatim}
+The system repository store is updated and Java is installed.
+\begin{verbatim}
+sudo apt-get update
+sudo apt-get install oracle-java7-installer
+\end{verbatim}
+
+%%%%%%%%%%%%%%%%%% Don't do this?
+%Java environment variables are added to the user environment for future logins.
+%\begin{verbatim}
+%echo "export JAVA_HOME=/usr/lib/jvm/java-7-oracle
+%export JAVA_BIN=\$JAVA_HOME/bin
+%export PATH=\$PATH:\$JAVA_HOME:\$JAVA_BIN" |
+%sudo bash -c "cat > /etc/profile.d/java.sh"
+%\end{verbatim}
+%%%%%%
+
+\subsubsection{Protocol Buffers (all servers)} (\url{https://code.google.com/p/protobuf/})\\
+Install Protocol Buffers (version 2.5.0):
+\begin{verbatim}
+sudo apt-get install protobuf-compiler protobuf-c-compiler libprotobuf-dev
+\end{verbatim}
+
+\subsubsection{Hadoop (all servers)} (\url{http://www.cloudera.com/content/cloudera/en/products-and-services/cdh.html})\\
+We use the Hadoop distribution built by Cloudera.  It is a Hadoop MRv2 /
+YARN implementation.  Download the Cloudera repository update package and
+install it.  This will add the Cloudera package repository and repository
+key to the Ubuntu repositories searched when installing packages:
+
+\begin{verbatim}
+wget http://archive.cloudera.com/cdh5/one-click-install/trusty/\
+amd64/cdh5-repository_1.0_all.deb
+sudo dpkg -i cdh5-repository_1.0_all.deb
+sudo apt-get update
+\end{verbatim}
+
+We install different packages on each node based on the Hadoop roles
+taken by that node.  Note that when these installs complete you will see
+warnings such as "Failed to start Hadoop namenode. Return value: 1".
+This is because we have not yet completed the configuration of these
+packages so the initial attempt to launch them will fail.
+
+node001.example.com:
+\begin{verbatim}
+sudo apt-get install hadoop-yarn-resourcemanager hadoop-hdfs-namenode \
+hadoop-client
+\end{verbatim}
+
+node002.example.com:
+\begin{verbatim}
+sudo apt-get install hadoop-yarn-nodemanager hadoop-hdfs-secondarynamenode \
+hadoop-hdfs-datanode hadoop-mapreduce 
+\end{verbatim}
+
+node003.example.com through node005.example.com:
+\begin{verbatim}
+sudo apt-get install hadoop-yarn-nodemanager hadoop-hdfs-datanode \
+hadoop-mapreduce
+\end{verbatim}
+
+frontend.example.com (doesn't run any hadoop services, but needs the hadoop commands):
+\begin{verbatim}
+sudo apt-get install hadoop-client
+\end{verbatim}
+
+As part of the above steps, three new users and groups named yarn, hdfs,
+and mapred will be added to the system.  All three users are added to
+the new group hadoop.
+
+Configuration of Hadoop settings is done in another section, but for now
+we will prepare the configuration directory and set it as the default
+Hadoop configuration on the system.  On each of node001 through node005,
+and on the frontend execute the following.  We choose the configuration
+directory name of "conf.tessera" in this guide:
+
+\begin{verbatim}
+sudo cp -r /etc/hadoop/conf.empty /etc/hadoop/conf.tessera
+sudo update-alternatives --install /etc/hadoop/conf hadoop-conf \
+/etc/hadoop/conf.tessera 50
+sudo update-alternatives --set hadoop-conf /etc/hadoop/conf.tessera
+\end{verbatim}
+
+
+Add Hadoop environment variables and an updated path to the user environment for future logins.  This assumes users use an sh/ksh/bash/zsh based login shell.
+\begin{verbatim}
+echo "export HADOOP=/usr/lib/hadoop
+export HADOOP_HOME=\$HADOOP	
+export HADOOP_BIN=\$HADOOP/bin
+export HADOOP_LIB=\$HADOOP/lib
+export HADOOP_LIBS=\`hadoop classpath | tr -d \\*\`
+export HADOOP_CONF_DIR=/etc/hadoop/conf.tessera
+export HADOOP_COMMON_HOME=/usr/lib/hadoop
+export HADOOP_MAPRED_HOME=/usr/lib/hadoop-mapreduce
+export HADOOP_HDFS_HOME=/usr/lib/hadoop-hdfs
+export YARN_HOME=/usr/lib/hadoop-yarn
+export PATH=\$PATH:\$HADOOP_BIN" | 
+sudo bash -c "cat > /etc/profile.d/hadoop.sh"
+\end{verbatim}
+
+\subsubsection{R (all nodes)} (\url{http://cran.r-project.org/})\\
+R is installed and configured to know about Java.
+\begin{verbatim}
+sudo apt-get install r-base r-base-dev r-recommended r-cran-rodbc
+sudo R CMD javareconf
+\end{verbatim}
+
+\subsubsection{rJava (all nodes)}(\url{http://www.rforge.net/rJava/})\\
+rJava is also required by RHIPE.  It is installed by:
+
+\begin{verbatim}
+sudo apt-get install r-cran-rjava
+\end{verbatim}
+
+\subsubsection{RHIPE (all nodes)}(\url{http://www.tessera.io/})\\
+RHIPE is downloaded and installed.
+\begin{verbatim}
+wget http://ml.stat.purdue.edu/rhipebin/Rhipe_0.75.0_cdh5mr2.tar.gz
+sudo R CMD INSTALL Rhipe_0.75.0_cdh5mr2.tar.gz
+\end{verbatim}
+
+\subsubsection{OpenSSL (all nodes)}(\url{https://www.openssl.org/})\\
+OpenSSL package is required by the Github installer/package handler for R. 
+\begin{verbatim}
+sudo apt-get install libcurl4-openssl-dev
+\end{verbatim}
+
+\subsubsection{datadr and trelliscope support packages (all nodes)}(\url{http://cran.r-project.org/web/packages/available\_packages\_by\_name.html})\\
+R packages - codetools, latttice, MASS, ggplot2, boot, shiny and devtools are needed for trelliscope and datadr. They are installed using the R internal package installer \textbf{install.packages}. Use the command line to enter the following commands. 
+\begin{verbatim}
+sudo apt-get install r-cran-codetools r-cran-mass r-cran-ggplot2 \
+r-cran-lattice r-cran-boot
+sudo R -e "install.packages('RCurl', repos='http://cran.rstudio.com/')"
+sudo R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
+sudo R -e "install.packages('devtools', repos='http://cran.rstudio.com/')"
+\end{verbatim}
+
+\subsubsection{datadr and trelliscope (all nodes)}(\url{http://www.tessera.io})\\
+datadr and trelliscope are installed using install\_github package from R. 
+\begin{verbatim}
+sudo R -e "options(repos = 'http://cran.rstudio.com/');\
+ library(devtools); install_github('tesseradata/datadr')"
+sudo R -e "options(repos = 'http://cran.rstudio.com/');\
+ library(devtools); install_github('tesseradata/trelliscope')"
+\end{verbatim}
+
+\subsubsection{gdebi-core (frontend server)}(\url{https://apps.ubuntu.com/cat/applications/precise/gdebi/})\\
+gdebi is a deb package installer. It automatically resolves and installs library dependencies.
+\begin{verbatim}
+sudo apt-get install gdebi-core
+\end{verbatim}
+
+\subsubsection{Shiny server (frontend server)}(\url{http://www.rstudio.com/products/shiny/shiny-server/})\\
+
+Shiny server is only installed on frontend.example.com, our designated Shiny server.
+
+\begin{verbatim}
+sudo R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
+wget http://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.3.0.403-amd64.deb
+sudo gdebi --n shiny-server-1.3.0.403-amd64.deb
+\end{verbatim}
+
+\subsubsection{Rstudio Server (frontend server)}(\url{http://www.rstudio.com/})\\
+Rstudio Server is installed on just the shiny server, frontend.example.com.
+\begin{verbatim}
+wget http://download2.rstudio.org/rstudio-server-0.98.1103-amd64.deb \
+-O /tmp/rstudio-server.deb
+sudo gdebi --n /tmp/rstudio-server.deb
+rm /tmp/rstudio-server.deb
+\end{verbatim}
+
+Rstudio Server should now be running on frontend.example.com.  Connect to
+it by browsing to \url{http://frontend.example.com:8787} and logging in as a
+normal user with accounts on that server.  This may require firewall changes.

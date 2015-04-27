@@ -1,0 +1,109 @@
+\subsection{Hadoop Pre-run Setup}
+At this point the configuration files created in
+\verb|/etc/hadoop/conf.tessera| on node001 should be copied to all
+other nodes.  Any future changes to any configuration files should be
+done on node001 and then copied from there to all other nodes.
+
+Note: In the event that some nodes have different number of drives,
+or the paths to those drives differ, or they have a different number
+of CPUs, different amounts of RAM, etc. then separate, independent
+\verb|hdfs-site.xml| and \verb|yarn-site.xml| files may be necessary on
+each node.
+
+Next we format the new HDFS filesystem before actually starting the
+NameNode service for the first time.  This is done on the NameNode
+(node001) only.  It must be done as the user "hdfs":
+
+\begin{verbatim}
+sudo -u hdfs hdfs namenode -format
+\end{verbatim}
+
+Manually start hdfs first by starting the NameNode service on node001:
+
+\begin{verbatim}
+sudo service hadoop-hdfs-namenode start
+\end{verbatim}
+
+Then start the datanode service on node002 - node005 by typing this on
+each of them one at a time:
+
+\begin{verbatim}
+sudo service hadoop-hdfs-datanode start
+\end{verbatim}
+
+Once the NameNode service is running on node001 and the DataNode service
+is running on the other nodes, it is time to create new folders in HDFS
+for Hadoop to use and set permissions correctly.  Note these are HDFS
+paths, NOT normal Linux filesystem paths:
+
+\begin{verbatim}
+sudo -u hdfs hadoop fs -mkdir -p /tmp/hadoop-yarn/staging
+sudo -u hdfs hadoop fs -chmod -R 1777 /tmp
+sudo -u hdfs hadoop fs -mkdir -p /user/history
+sudo -u hdfs hadoop fs -chmod -R 1777 /user/history
+sudo -u hdfs hadoop fs -chown mapred:hadoop /user/history
+sudo -u hdfs hadoop fs -mkdir -p /var/log/hadoop-yarn
+sudo -u hdfs hadoop fs -chown yarn:mapred /var/log/hadoop-yarn
+\end{verbatim}
+
+The administrator much make some choices about where users will be storing
+their files, what permissions should exist on the /user directory, etc.  If
+privacy is important, the administrator must create user directories in
+HDFS individually for every user on the system and set the permissions
+on those directories accordingly.  For example, to create a private
+storage location for users joe and bob, the adminsitrator would type:
+
+\begin{verbatim}
+sudo -u hdfs hadoop fs -mkdir /user/joe /user/bob
+sudo -u hdfs hadoop fs -chown joe /user/joe
+sudo -u hdfs hadoop fs -chown bob /user/bob
+sudo -u hdfs hadoop fs -chmod  700 /user/joe /user/bob
+\end{verbatim}
+
+This would permit joe and only joe to read, write, and create files
+in \verb|/user/joe|.  Only bob could read, write, and create files in
+\verb|/user/bob|.
+
+In a research group where all users are permitted to see files created by
+all other users, the easiest approach is just to set permissions such that
+anyone can create new directories inside the /user directory themselves.
+To do this, the administrator would set the permissions like this:
+
+\begin{verbatim}
+sudo -u hdfs hadoop fs -chmod 1777 /user
+\end{verbatim}
+
+Then an individual user, like bob, could create his own directory where he
+can store data, rather than having the adminsitrator create directories
+for everyone individually.  Bob could just log into the frontend server
+and type this himself:
+
+\begin{verbatim}
+hadoop fs -mkdir /user/bob
+\end{verbatim}
+
+
+\subsection{Starting the Hadoop Cluster}
+Configuration settings and environment varaibles have been changed
+such that rebooting all servers should cause all Hadoop services to
+automatically start and the environment to be correctly set for all new
+logins.  Do that now by rebooting node001 through node005, and the frontend
+server, by typing this on each node:
+
+\begin{verbatim}
+sudo reboot
+\end{verbatim}
+
+\subsection{Checking the status of the Hadoop Cluster}
+You can see the status of the ResourceManager, the jobs
+that are running, have been completed, etc. by browsing to
+\url{http://node001.example.com:8088}.  This may require firewall settings
+to be adjusted before this is visible to your browser.  Clicking on the
+Nodes link in the left sidebar should show that node002 through node005
+are running and reporting in.
+
+To see the status of HDFS, which nodes are up, how much space is used
+and available, etc., browse to \url{http://node001.example.com:50070}.
+This may also require firewall settings to be adjusted before this is
+visible to your browser.  Clicking the Datanodes link should show that
+node002 through node005 are running and reoprting in.

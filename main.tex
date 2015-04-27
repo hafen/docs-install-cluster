@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{pslatex}
+\usepackage{framed}
+\usepackage{fancyvrb}
+\usepackage[longnamesfirst ,super,sort]{natbib}
+\bibpunct{(}{)}{;}{a}{,}{,}
+\setlength{\topmargin}{0in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9in}
+\setlength{\parindent}{0in}
+\setlength{\parskip}{1ex}
+\setlength{\columnsep}{0.34in}
+\setlength{\marginparwidth}{0in}
+\setlength{\marginparsep}{0in}
+\setlength{\headsep}{0in}
+%\newcommand{\dg}{\ensuremath{^\circ} }
+%\renewcommand{\baselinestretch}{2}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+%\providecommand{\abs}[1]{\lvert#1\rvert}
+%\providecommand{\Caption}[1]{\footnotesize{\it \caption{#1}}}
+%\newtheorem{thm}{Theorem}
+%\newtheorem{cor}{Corollary}
+
+% hyperlinks
+%\usepackage[breaklinks]{hyperref}
+\usepackage{hyperref}
+%   this opens up plot in a new window
+\hypersetup{pdfnewwindow}
+% captions
+\usepackage{caption}
+
+
+\newcommand{\myitemize}{\begin{itemize}\vspace*{-.25ex}}
+\newcommand{\myitem}{\item\vspace*{-1.5ex}}
+\newcommand{\mysubitem}{\item\vspace*{-1ex}}
+
+\author{
+Ashrith Barthur\\
+Doug Crabill\\
+Xiaosu Tong
+}
+\title{ Tessera Stack Cluster Installation
+}
+\date{}
+\begin{document}
+\maketitle
+\input setup.tex
+\newpage
+\input installation.tex
+\newpage
+\input configuration.tex
+\newpage
+\input final.tex
+\newpage
+\input notes.tex
+\newpage
+\input packageinstall.tex
+%\bibliography{references}
+\bibliographystyle{unsrtnat}
+%\bibliography{references}
+
+
+\end{document}

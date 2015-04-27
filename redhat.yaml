@@ -1,0 +1,10 @@
+---
+title: "Tessera Installation on a Cluster"
+output:
+  packagedocs:
+    toc: true
+navpills: |
+  <li class="active"><a href='install-redhat.html'>Redhat</a></li>
+  <li><a href='install-ubuntu.html'>Ubuntu</a></li>
+---
+
