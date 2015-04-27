@@ -8,4 +8,5 @@ cat setup.tex installation.tex configuration.tex final.tex notes.tex packageinst
 Rscript -e 'library(rmarkdown); library(packagedocs); render("install-ubuntu.Rmd", output_format = package_docs(lib_dir = "assets"))'
 cat setup.tex installation-redhat.tex configuration.tex final.tex notes.tex packageinstall.tex | pandoc -s --smart -f latex -t markdown | iconv -f utf-8 -t ascii//TRANSLIT | (cat redhat.yaml; cat) > install-redhat.Rmd
 Rscript -e 'library(rmarkdown); library(packagedocs); render("install-redhat.Rmd", output_format = package_docs(lib_dir = "assets"))'
+cp install-redhat.html index.html
 #pdfnew main.pdf &
