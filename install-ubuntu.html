@@ -120,7 +120,7 @@
 <h1>Tessera Stack Cluster Installation Guide</h1>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
-<p>This is a guide to installing the Tessera stack consisting of Hadoop, RHIPE, datadr, trelliscope and other supporting packages on a multi-node cluster. This guide is intended to be used by the Systems Administrator to quickly install and configure the software necessary to run the full Tessera stack. It is not focused on tuning and optimally configuring the Tessera stack. It simplifies and generalizes certain aspects of the installation. The Systems Administrator is encouraged to consult individual package documentation for further tuning later. In this guide we use assume UbuntuLinux version 14.04 is the operating system installed on he cluster.</p>
+<p>This is a guide to installing the Tessera stack consisting of Hadoop, RHIPE, datadr, trelliscope and other supporting packages on a multi-node cluster. This guide is intended to be used by the Systems Administrator to quickly install and configure the software necessary to run the full Tessera stack. It is not focused on tuning and optimally configuring the Tessera stack. It simplifies and generalizes certain aspects of the installation. The Systems Administrator is encouraged to consult individual package documentation for further tuning later. In this guide we use assume UbuntuLinux version 14.04 is the operating system installed on he cluster. A Red Hat Enterprise Linux version of this installation guide is available at <a href="http://tessera.io/docs-install-cluster/install-redhat.html" class="uri">http://tessera.io/docs-install-cluster/install-redhat.html</a>.</p>
 </div>
 <div id="example-configuration" class="section level2">
 <h2>Example Configuration</h2>
@@ -198,8 +198,21 @@ sudo apt-get install oracle-java7-installer</code></pre>
 </div>
 <div id="protocol-buffers-all-servers" class="section level3">
 <h3>Protocol Buffers (all servers)</h3>
-<p>(<a href="https://code.google.com/p/protobuf/" class="uri">https://code.google.com/p/protobuf/</a>)<br />Install Protocol Buffers (version 2.5.0):</p>
+<p>(<a href="https://code.google.com/p/protobuf/" class="uri">https://code.google.com/p/protobuf/</a>)<br />Install Protocol Buffers version 2.5.0. It is important that version 2.5.0 be installed and not a newer or older version. Ubuntu 14.04 should have version 2.5.0 available by default. Confirm this first by installing the <code>aptitude</code> package manager and ensuring it is version 2.5.0:</p>
+<pre><code>sudo apt-get install aptitude
+aptitude show protobuf-compiler</code></pre>
+<p>If it says it is version 2.5.0-something, then proceed to install it via:</p>
 <pre><code>sudo apt-get install protobuf-compiler protobuf-c-compiler libprotobuf-dev</code></pre>
+<p>If it does NOT say it is version 2.5.0-something, then manually install it. First cd to a directory the software can be downloaded and built, and type the following:</p>
+<pre><code># Only install manually if the steps above did not say version 2.5.0-something
+sudo apt-get install libtool
+wget https://github.com/google/protobuf/archive/v2.5.0.zip
+unzip v2.5.0.zip
+cd protobuf-2.5.0
+./autogen.sh 
+./configure --prefix=/usr/local
+make
+sudo make install</code></pre>
 </div>
 <div id="hadoop-all-servers" class="section level3">
 <h3>Hadoop (all servers)</h3>
@@ -614,14 +627,14 @@ install.packages(&quot;Rhipe_0.75.1.4_cdh5.tar.gz&quot;, repos=NULL, type=&quot;
 <p>RHIPE is now installed. Each time you start an R session and you want RHIPE to be available, type:</p>
 <pre><code>library(Rhipe)
 rhinit()</code></pre>
-<p>As a one-time configuration step, you push all the R packages you have installed on the R session server, including RHIPE, onto the cluster HDFS. First, you need the system administrator to configure a directory in HDFS that is writable by you. We will assume the administrator has created for you the writable directory <code>/yourloginname</code> using your login name, and has done the same thing for other users. Suppose in <code>/yourloginname</code> you want to create a directory <code>bin</code> on HDFS where you will push your installations on the R session server. You can do this and carry out the push by</p>
-<pre><code>rhmkdir(&quot;/yourloginname/bin&quot;)
-hdfs.setwd(&quot;/yourloginname/bin&quot;)
+<p>As a one-time configuration step, you push all the R packages you have installed on the R session server, including RHIPE, onto the cluster HDFS. First, you need the system administrator to configure a directory in HDFS that is writable by you. We will assume the administrator has created for you the writable directory <code>/user/loginname</code> using your login name, and has done the same thing for other users. Suppose in <code>/user/loginname</code> you want to create a directory <code>bin</code> on HDFS where you will push your installations on the R session server. You can do this and carry out the push by</p>
+<pre><code>rhmkdir(&quot;/user/loginname/bin&quot;)
+hdfs.setwd(&quot;/user/loginname/bin&quot;)
 bashRhipeArchive(&quot;R.Pkg&quot;)</code></pre>
-<p><code>rhmkdir()</code> creates your directory <code>bin</code> in the directory <code>yourloginname</code>. <code>hdfs.setwd()</code> declares <code>/yourloginname/bin</code> to be the directory with your choice of installations. <code>bashRhipeArchive()</code> creates the actual archive of your installations and names it as <code>R.Pkg</code>.</p>
+<p><code>rhmkdir()</code> creates your directory <code>bin</code> in the directory <code>/user/loginname</code>. <code>hdfs.setwd()</code> declares <code>/user/loginname/bin</code> to be the directory with your choice of installations. <code>bashRhipeArchive()</code> creates the actual archive of your installations and names it as <code>R.Pkg</code>.</p>
 <p>Each time your R code will require the installations on the HDFS, you must in your R session run</p>
 <pre><code>library(Rhipe) rhinit()
-rhoptions(zips = &quot;/yourloginname/bin/R.Pkg.tar.gz&quot;)
+rhoptions(zips = &quot;/user/loginname/bin/R.Pkg.tar.gz&quot;)
 rhoptions(runner = &quot;sh ./R.Pkg/library/Rhipe/bin/RhipeMapReduce.sh&quot;)</code></pre>
 </div>
 <div id="example-housing-data" class="section level2">
@@ -653,23 +666,23 @@ rhoptions(runner = &quot;sh ./R.Pkg/library/Rhipe/bin/RhipeMapReduce.sh&quot;)</
 <div id="write-housing.txt-to-the-hdfs" class="section level3">
 <h3>Write housing.txt to the HDFS</h3>
 <p>To get started, we need to make <code>housing.txt</code> available as a text file within the HDFS file system. This puts it in a place where it can be read into R, form subsets, and write the subsets to the HDFS. This is similar to what we do using R in the standard serial way; if we have a text file to read into R, we move put it in a place where we can read it into R, for example, in the working directory of the R session.</p>
-<p>To set this up, the system administrator must do two tasks. On the R session server, set up a login directory where you have write permission; let’s call it <code>yourloginname</code> in, say, <code>/home</code>. In the HDFS, the administrator does a similar thing, creates, say, <code>/yourloginname</code> which is in the root directory.</p>
-<p>Your first step, as for the standard R case, is to copy <code>housing.txt</code> to a directory on the R-session server where your R session is running. Suppose in your login directory you have created a directory <code>/housing</code> for your analysis of the housing data. You can copy <code>housing.txt</code> to</p>
-<pre><code>&quot;/home/yourloginname/housing/&quot;</code></pre>
+<p>To set this up, the system administrator must do two tasks. On the R session server, set up a home directory where you have write permission; let’s call it <code>/home/loginname</code>. In the HDFS, the administrator does a similar thing, creates, say, <code>/user/loginname</code> which is in the root directory.</p>
+<p>Your first step, as for the standard R case, is to copy <code>housing.txt</code> to a directory on the R-session server where your R session is running. Suppose in your login directory you have created a directory <code>housing</code> for your analysis of the housing data. You can copy <code>housing.txt</code> to</p>
+<pre><code>&quot;/home/loginname/housing/&quot;</code></pre>
 <p>The next step is to get <code>housing.txt</code> onto the HDFS as a text file, so we can read it into R on the cluster. There are Hadoop commands that could be used directly to copy the file, but our promise to you is that you never need to use Hadoop commands. There is a RHIPE function, <code>rhput()</code> that will do it for you.</p>
-<pre><code>rhput(&quot;/home/yourloginname/housing/housing.txt&quot;, &quot;/yourloginname/housing/housing.txt&quot;)</code></pre>
-<p>The <code>rhput()</code> function takes two arguments. The first is the path name of the R server file to be copied. The second argument is the path name HDFS where the file will be written. Note that for the HDFS, in the directory <code>/yourloginname</code> there is a directory <code>housing</code>. You might have created <code>housing</code> already with the command</p>
-<pre><code>rhmkdir(/yourloginname/housing)</code></pre>
+<pre><code>rhput(&quot;/home/loginname/housing/housing.txt&quot;, &quot;/user/loginname/housing/housing.txt&quot;)</code></pre>
+<p>The <code>rhput()</code> function takes two arguments. The first is the path name of the R server file to be copied. The second argument is the path name HDFS where the file will be written. Note that for the HDFS, in the directory <code>/user/loginname</code> there is a directory <code>housing</code>. You might have created <code>housing</code> already with the command</p>
+<pre><code>rhmkdir(&quot;/user/loginname/housing&quot;)</code></pre>
 <p>If not, then <code>rhput()</code> creates the directory for you.</p>
 <p>We can confirm that the housing data text file has been written to the HDFS with the <code>rhexists()</code> function.</p>
-<pre><code>rhexists(&quot;/yourloginname/housing/housing.txt&quot;)
+<pre><code>rhexists(&quot;/user/loginname/housing/housing.txt&quot;)
 [1] TRUE</code></pre>
 <p>We can use <code>rhls()</code> to get more information about files on the HDFS. It is similar to the Unix command <code>ls</code>. For example,</p>
-<pre><code>rhls(&quot;/yourloginname/housing&quot;)
+<pre><code>rhls(&quot;/user/loginname/housing&quot;)
   permission         owner      group     size          modtime
-1 -rw-rw-rw- yourloginname supergroup 7.683 mb 2014-09-17 11:11
+1 -rw-rw-rw- loginname supergroup 7.683 mb 2014-09-17 11:11
                               file
-/yourloginname/housing/housing.txt</code></pre>
+/user/loginname/housing/housing.txt</code></pre>
 </div>
 <div id="read-and-divide-by-county" class="section level3">
 <h3>Read and Divide by County</h3>
@@ -683,16 +696,16 @@ rhoptions(runner = &quot;sh ./R.Pkg/library/Rhipe/bin/RhipeMapReduce.sh&quot;)</
 <pre><code>mr1 &lt;- rhwatch(
   map      = map1,
   reduce   = reduce1,
-  input    = rhfmt(&quot;/yourloginname/housing/housing.txt&quot;, type = &quot;text&quot;),
-  output   = rhfmt(&quot;/yourloginname/housing/byCounty&quot;, type = &quot;sequence&quot;),
+  input    = rhfmt(&quot;/user/loginname/housing/housing.txt&quot;, type = &quot;text&quot;),
+  output   = rhfmt(&quot;/user/loginname/housing/byCounty&quot;, type = &quot;sequence&quot;),
   readback = FALSE
 )</code></pre>
 <p>Arguments <code>map</code> and <code>reduce</code> take your Map and Reduce R code, which will be described below. <code>input</code> specifies the input to be the text file in the HDFS that we put there earlier using <code>rhput()</code>. The file supplies input key-value pairs for the Map code. <code>output</code> specifies the file name into which final output key-value pairs of the Reduce code that are written to the HDFS. <code>rhwatch()</code> creates this file if it does not exist, or overwrites it if it does not.</p>
 <p>In our division by county here, the Reduce recombination outputs are the 2883 county <code>data.frame</code> R objects. They are a <code>list</code> object that describes the key-value pairs: <code>FIPS</code> key and <code>data.frame</code> value. There is one <code>list</code> element per pair; that element is itself a list with two elements, the <code>FIPS</code> key and then the <code>data.frame</code> value.</p>
 <p>The Reduce <code>list</code> output can also be written to the R global environment of the R session. One use of this is analytic recombination in the R session when the outputs are a small enough dataset. You can do this with the argument <code>readback</code>. If <code>TRUE</code>, the list is also written to the global environment. If <code>FALSE</code>, it is not. If FALSE, it can be written latter using the RHIPE R function <code>rhread()</code>.</p>
-<pre><code>countySubsets &lt;- rhread(&quot;/yourloginname/housing/byCounty&quot;)</code></pre>
+<pre><code>countySubsets &lt;- rhread(&quot;/user/loginname/housing/byCounty&quot;)</code></pre>
 <p>Suppose you just want to look over the <code>byCounty</code> file on the HDFS just to see if all is well, but that this can be done by looking at a small number of key-value pairs, say 10. The code for this is</p>
-<pre><code>countySubsets &lt;- rhread(&quot;/yourloginname/housing/byCounty&quot;, max = 10)
+<pre><code>countySubsets &lt;- rhread(&quot;/user/loginname/housing/byCounty&quot;, max = 10)
 Read 10 objects(31.39 KB) in 0.04 seconds</code></pre>
 <p>Then you can look at the list of length 10 in various was such as</p>
 <pre><code>keys &lt;- unlist(lapply(countySubsets, &quot;[[&quot;, 1))
@@ -764,12 +777,12 @@ $class
 <pre><code>CountyStats &lt;- rhwatch(
   map      = map2,
   reduce   = reduce2,
-  input    = rhfmt(&quot;/yourloginname/housing/byCounty&quot;, type = &quot;sequence&quot;),
-  output   = rhfmt(&quot;/yourloginname/housing/CountyStats&quot;, type = &quot;sequence&quot;),
+  input    = rhfmt(&quot;/user/loginname/housing/byCounty&quot;, type = &quot;sequence&quot;),
+  output   = rhfmt(&quot;/user/loginname/housing/CountyStats&quot;, type = &quot;sequence&quot;),
   readback = TRUE
 )</code></pre>
 <p>Our Map and Reduce code, <code>map2</code> and <code>reduce2</code>, is given to the arguments <code>map</code> and <code>reduce</code>. The code will be will be discussed later.</p>
-<p>The input key-value pairs for Map, given to the argument <code>input</code>, are our county subsets which were written to the HDFS directory <code>/yourloginname/housing</code> as the key-value pairs <code>list</code> object <code>byCounty</code>. The final output key-value pairs for Reduce, specified by the argument <code>output</code>, will be written to the <code>list</code> object <code>CountyStats</code> in the same directory as the subsets. The keys are the states, and the values are the <code>data.frame</code> objects for the states.</p>
+<p>The input key-value pairs for Map, given to the argument <code>input</code>, are our county subsets which were written to the HDFS directory <code>/user/loginname/housing</code> as the key-value pairs <code>list</code> object <code>byCounty</code>. The final output key-value pairs for Reduce, specified by the argument <code>output</code>, will be written to the <code>list</code> object <code>CountyStats</code> in the same directory as the subsets. The keys are the states, and the values are the <code>data.frame</code> objects for the states.</p>
 <p>The argument <code>readback</code> is given the value TRUE, which means <code>CountyStats</code> is also written to the R global environment of the R session. We do this because our scenario is that analytic recombination is done in R.</p>
 <p>The argument <code>mapred.reduce.tasks</code> is given the value 10, as in our use of it to create the county subsets.</p>
 <p><strong>The Map R Code</strong></p>

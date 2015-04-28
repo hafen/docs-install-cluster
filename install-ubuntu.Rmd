@@ -130,7 +130,9 @@ Tessera stack. It simplifies and generalizes certain aspects of the
 installation. The Systems Administrator is encouraged to consult
 individual package documentation for further tuning later. In this guide
 we use assume UbuntuLinux version 14.04 is the operating system
-installed on he cluster.
+installed on he cluster. A Red Hat Enterprise Linux version of this
+installation guide is available at
+<http://tessera.io/docs-install-cluster/install-redhat.html>.
 
 Example Configuration
 ---------------------
@@ -272,9 +274,33 @@ The system repository store is updated and Java is installed.
 ### Protocol Buffers (all servers)
 
 (<https://code.google.com/p/protobuf/>)\
-Install Protocol Buffers (version 2.5.0):
+Install Protocol Buffers version 2.5.0. It is important that version
+2.5.0 be installed and not a newer or older version. Ubuntu 14.04 should
+have version 2.5.0 available by default. Confirm this first by
+installing the `aptitude` package manager and ensuring it is version
+2.5.0:
+
+    sudo apt-get install aptitude
+    aptitude show protobuf-compiler
+
+If it says it is version 2.5.0-something, then proceed to install it
+via:
 
     sudo apt-get install protobuf-compiler protobuf-c-compiler libprotobuf-dev
+
+If it does NOT say it is version 2.5.0-something, then manually install
+it. First cd to a directory the software can be downloaded and built,
+and type the following:
+
+    # Only install manually if the steps above did not say version 2.5.0-something
+    sudo apt-get install libtool
+    wget https://github.com/google/protobuf/archive/v2.5.0.zip
+    unzip v2.5.0.zip
+    cd protobuf-2.5.0
+    ./autogen.sh 
+    ./configure --prefix=/usr/local
+    make
+    sudo make install
 
 ### Hadoop (all servers)
 
@@ -969,19 +995,19 @@ As a one-time configuration step, you push all the R packages you have
 installed on the R session server, including RHIPE, onto the cluster
 HDFS. First, you need the system administrator to configure a directory
 in HDFS that is writable by you. We will assume the administrator has
-created for you the writable directory `/yourloginname` using your login
-name, and has done the same thing for other users. Suppose in
-`/yourloginname` you want to create a directory `bin` on HDFS where you
+created for you the writable directory `/user/loginname` using your
+login name, and has done the same thing for other users. Suppose in
+`/user/loginname` you want to create a directory `bin` on HDFS where you
 will push your installations on the R session server. You can do this
 and carry out the push by
 
-    rhmkdir("/yourloginname/bin")
-    hdfs.setwd("/yourloginname/bin")
+    rhmkdir("/user/loginname/bin")
+    hdfs.setwd("/user/loginname/bin")
     bashRhipeArchive("R.Pkg")
 
 `rhmkdir()` creates your directory `bin` in the directory
-`yourloginname`. `hdfs.setwd()` declares `/yourloginname/bin` to be the
-directory with your choice of installations. `bashRhipeArchive()`
+`/user/loginname`. `hdfs.setwd()` declares `/user/loginname/bin` to be
+the directory with your choice of installations. `bashRhipeArchive()`
 creates the actual archive of your installations and names it as
 `R.Pkg`.
 
@@ -989,7 +1015,7 @@ Each time your R code will require the installations on the HDFS, you
 must in your R session run
 
     library(Rhipe) rhinit()
-    rhoptions(zips = "/yourloginname/bin/R.Pkg.tar.gz")
+    rhoptions(zips = "/user/loginname/bin/R.Pkg.tar.gz")
     rhoptions(runner = "sh ./R.Pkg/library/Rhipe/bin/RhipeMapReduce.sh")
 
 Example: Housing Data
@@ -1060,17 +1086,17 @@ text file to read into R, we move put it in a place where we can read it
 into R, for example, in the working directory of the R session.
 
 To set this up, the system administrator must do two tasks. On the R
-session server, set up a login directory where you have write
-permission; let's call it `yourloginname` in, say, `/home`. In the HDFS,
-the administrator does a similar thing, creates, say, `/yourloginname`
-which is in the root directory.
+session server, set up a home directory where you have write permission;
+let's call it `/home/loginname`. In the HDFS, the administrator does a
+similar thing, creates, say, `/user/loginname` which is in the root
+directory.
 
 Your first step, as for the standard R case, is to copy `housing.txt` to
 a directory on the R-session server where your R session is running.
-Suppose in your login directory you have created a directory `/housing`
+Suppose in your login directory you have created a directory `housing`
 for your analysis of the housing data. You can copy `housing.txt` to
 
-    "/home/yourloginname/housing/"
+    "/home/loginname/housing/"
 
 The next step is to get `housing.txt` onto the HDFS as a text file, so
 we can read it into R on the cluster. There are Hadoop commands that
@@ -1078,32 +1104,32 @@ could be used directly to copy the file, but our promise to you is that
 you never need to use Hadoop commands. There is a RHIPE function,
 `rhput()` that will do it for you.
 
-    rhput("/home/yourloginname/housing/housing.txt", "/yourloginname/housing/housing.txt")
+    rhput("/home/loginname/housing/housing.txt", "/user/loginname/housing/housing.txt")
 
 The `rhput()` function takes two arguments. The first is the path name
 of the R server file to be copied. The second argument is the path name
 HDFS where the file will be written. Note that for the HDFS, in the
-directory `/yourloginname` there is a directory `housing`. You might
+directory `/user/loginname` there is a directory `housing`. You might
 have created `housing` already with the command
 
-    rhmkdir(/yourloginname/housing)
+    rhmkdir("/user/loginname/housing")
 
 If not, then `rhput()` creates the directory for you.
 
 We can confirm that the housing data text file has been written to the
 HDFS with the `rhexists()` function.
 
-    rhexists("/yourloginname/housing/housing.txt")
+    rhexists("/user/loginname/housing/housing.txt")
     [1] TRUE
 
 We can use `rhls()` to get more information about files on the HDFS. It
 is similar to the Unix command `ls`. For example,
 
-    rhls("/yourloginname/housing")
+    rhls("/user/loginname/housing")
       permission         owner      group     size          modtime
-    1 -rw-rw-rw- yourloginname supergroup 7.683 mb 2014-09-17 11:11
+    1 -rw-rw-rw- loginname supergroup 7.683 mb 2014-09-17 11:11
                                   file
-    /yourloginname/housing/housing.txt
+    /user/loginname/housing/housing.txt
 
 ### Read and Divide by County
 
@@ -1154,8 +1180,8 @@ The code for the county division is
     mr1 <- rhwatch(
       map      = map1,
       reduce   = reduce1,
-      input    = rhfmt("/yourloginname/housing/housing.txt", type = "text"),
-      output   = rhfmt("/yourloginname/housing/byCounty", type = "sequence"),
+      input    = rhfmt("/user/loginname/housing/housing.txt", type = "text"),
+      output   = rhfmt("/user/loginname/housing/byCounty", type = "sequence"),
       readback = FALSE
     )
 
@@ -1180,13 +1206,13 @@ with the argument `readback`. If `TRUE`, the list is also written to the
 global environment. If `FALSE`, it is not. If FALSE, it can be written
 latter using the RHIPE R function `rhread()`.
 
-    countySubsets <- rhread("/yourloginname/housing/byCounty")
+    countySubsets <- rhread("/user/loginname/housing/byCounty")
 
 Suppose you just want to look over the `byCounty` file on the HDFS just
 to see if all is well, but that this can be done by looking at a small
 number of key-value pairs, say 10. The code for this is
 
-    countySubsets <- rhread("/yourloginname/housing/byCounty", max = 10)
+    countySubsets <- rhread("/user/loginname/housing/byCounty", max = 10)
     Read 10 objects(31.39 KB) in 0.04 seconds
 
 Then you can look at the list of length 10 in various was such as
@@ -1345,8 +1371,8 @@ Here is the code for `rhwatch()`.
     CountyStats <- rhwatch(
       map      = map2,
       reduce   = reduce2,
-      input    = rhfmt("/yourloginname/housing/byCounty", type = "sequence"),
-      output   = rhfmt("/yourloginname/housing/CountyStats", type = "sequence"),
+      input    = rhfmt("/user/loginname/housing/byCounty", type = "sequence"),
+      output   = rhfmt("/user/loginname/housing/CountyStats", type = "sequence"),
       readback = TRUE
     )
 
@@ -1355,7 +1381,7 @@ Our Map and Reduce code, `map2` and `reduce2`, is given to the arguments
 
 The input key-value pairs for Map, given to the argument `input`, are
 our county subsets which were written to the HDFS directory
-`/yourloginname/housing` as the key-value pairs `list` object
+`/user/loginname/housing` as the key-value pairs `list` object
 `byCounty`. The final output key-value pairs for Reduce, specified by
 the argument `output`, will be written to the `list` object
 `CountyStats` in the same directory as the subsets. The keys are the
