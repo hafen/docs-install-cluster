@@ -39,20 +39,20 @@ As a one-time configuration step, you push all the R packages you have
 installed on the R session server, including RHIPE, onto the cluster HDFS.
 First, you need the system administrator to configure a directory in HDFS
 that is writable by you. We will assume the administrator has created
-for you the writable directory \texttt{/yourloginname} using your
+for you the writable directory \texttt{/user/loginname} using your
 login name, and has done the same thing for other users.  Suppose in
-\texttt{/yourloginname} you want to create a directory \texttt{bin}
+\texttt{/user/loginname} you want to create a directory \texttt{bin}
 on HDFS where you will push your installations on the R session
 server. You can do this and carry out the push by
 
 \begin{verbatim}
-rhmkdir("/yourloginname/bin")
-hdfs.setwd("/yourloginname/bin")
+rhmkdir("/user/loginname/bin")
+hdfs.setwd("/user/loginname/bin")
 bashRhipeArchive("R.Pkg")
 \end{verbatim}
 
-\texttt{rhmkdir()} creates your directory \texttt{bin} in the directory \texttt{yourloginname}.
-\texttt{hdfs.setwd()} declares \texttt{/yourloginname/bin} to be the directory with your
+\texttt{rhmkdir()} creates your directory \texttt{bin} in the directory \texttt{/user/loginname}.
+\texttt{hdfs.setwd()} declares \texttt{/user/loginname/bin} to be the directory with your
 choice of installations.  \texttt{bashRhipeArchive()} creates the actual archive of
 your installations and names it as \texttt{R.Pkg}.
 
@@ -61,7 +61,7 @@ must in your R session run
 
 \begin{verbatim}
 library(Rhipe) rhinit()
-rhoptions(zips = "/yourloginname/bin/R.Pkg.tar.gz")
+rhoptions(zips = "/user/loginname/bin/R.Pkg.tar.gz")
 rhoptions(runner = "sh ./R.Pkg/library/Rhipe/bin/RhipeMapReduce.sh")
 \end{verbatim}
 
@@ -130,18 +130,18 @@ move put it in a place where we can read it into R, for example, in the working
 directory of the R session.
 
 To set this up, the system administrator must do two tasks.
-On the R session server, set up a login directory where you have write
-permission; let's call it \texttt{yourloginname} in, say, \texttt{/home}.
+On the R session server, set up a home directory where you have write
+permission; let's call it \texttt{/home/loginname}.
 In the HDFS, the administrator does a similar thing, creates, say,
-\texttt{/yourloginname} which is in the root directory.
+\texttt{/user/loginname} which is in the root directory.
 
 Your first step, as for the standard R case, is to copy \texttt{housing.txt} to a
 directory on the R-session server where your R session is running.
-Suppose in your login directory you have created a directory \texttt{/housing}
+Suppose in your login directory you have created a directory \texttt{housing}
 for your analysis of the housing data. You can copy \texttt{housing.txt} to
 
 \begin{verbatim}
-"/home/yourloginname/housing/"
+"/home/loginname/housing/"
 \end{verbatim}
 
 The next step is to get \texttt{housing.txt} onto the HDFS as a text file, so we can
@@ -151,19 +151,19 @@ use Hadoop commands. There is a RHIPE function, \texttt{rhput()} that will do it
 for you.
 
 \begin{verbatim}
-rhput("/home/yourloginname/housing/housing.txt", "/yourloginname/housing/housing.txt")
+rhput("/home/loginname/housing/housing.txt", "/user/loginname/housing/housing.txt")
 \end{verbatim}
 
 
 The \texttt{rhput()} function takes two arguments.
 The first is the path name of the R server file to be copied. The second
 argument is the path name HDFS where the file will be written.
-Note that for the HDFS, in the  directory \texttt{/yourloginname}
+Note that for the HDFS, in the  directory \texttt{/user/loginname}
 there is a directory \texttt{housing}. You might have created \texttt{housing}
 already with the command
 
 \begin{verbatim}
-rhmkdir(/yourloginname/housing)
+rhmkdir("/user/loginname/housing")
 \end{verbatim}
 
 If not, then \texttt{rhput()} creates the directory for you.
@@ -172,7 +172,7 @@ We can confirm that the housing data text file has been written to the HDFS
 with the \texttt{rhexists()} function.
 
 \begin{verbatim}
-rhexists("/yourloginname/housing/housing.txt")
+rhexists("/user/loginname/housing/housing.txt")
 [1] TRUE
 \end{verbatim}
 
@@ -180,11 +180,11 @@ We can use \texttt{rhls()} to get more information about files on the
 HDFS. It is similar to the Unix command \texttt{ls}. For example,
 
 \begin{verbatim}
-rhls("/yourloginname/housing")
+rhls("/user/loginname/housing")
   permission         owner      group     size          modtime
-1 -rw-rw-rw- yourloginname supergroup 7.683 mb 2014-09-17 11:11
+1 -rw-rw-rw- loginname supergroup 7.683 mb 2014-09-17 11:11
                               file
-/yourloginname/housing/housing.txt
+/user/loginname/housing/housing.txt
 \end{verbatim}
 
 \subsubsection{Read and Divide by County}
@@ -235,8 +235,8 @@ The code for the county division is
 mr1 <- rhwatch(
   map      = map1,
   reduce   = reduce1,
-  input    = rhfmt("/yourloginname/housing/housing.txt", type = "text"),
-  output   = rhfmt("/yourloginname/housing/byCounty", type = "sequence"),
+  input    = rhfmt("/user/loginname/housing/housing.txt", type = "text"),
+  output   = rhfmt("/user/loginname/housing/byCounty", type = "sequence"),
   readback = FALSE
 )
 \end{verbatim}
@@ -263,7 +263,7 @@ If \texttt{FALSE}, it is not. If FALSE, it can be written latter using the RHIPE
 function \texttt{rhread()}.
 
 \begin{verbatim}
-countySubsets <- rhread("/yourloginname/housing/byCounty")
+countySubsets <- rhread("/user/loginname/housing/byCounty")
 \end{verbatim}
 
 Suppose you just want to look over the \texttt{byCounty} file on the HDFS just to see
@@ -271,7 +271,7 @@ if all is well, but that this can be done by looking at a small number of
 key-value pairs, say 10. The code for this is
 
 \begin{verbatim}
-countySubsets <- rhread("/yourloginname/housing/byCounty", max = 10)
+countySubsets <- rhread("/user/loginname/housing/byCounty", max = 10)
 Read 10 objects(31.39 KB) in 0.04 seconds
 \end{verbatim}
 
@@ -442,8 +442,8 @@ Here is the code for \texttt{rhwatch()}.
 CountyStats <- rhwatch(
   map      = map2,
   reduce   = reduce2,
-  input    = rhfmt("/yourloginname/housing/byCounty", type = "sequence"),
-  output   = rhfmt("/yourloginname/housing/CountyStats", type = "sequence"),
+  input    = rhfmt("/user/loginname/housing/byCounty", type = "sequence"),
+  output   = rhfmt("/user/loginname/housing/CountyStats", type = "sequence"),
   readback = TRUE
 )
 \end{verbatim}
@@ -453,7 +453,7 @@ Our Map and Reduce code, \texttt{map2} and \texttt{reduce2}, is given to the arg
 
 The input key-value pairs for Map, given to the argument \texttt{input},
 are our county subsets which were written to the HDFS directory
-\texttt{/yourloginname/housing}  as the key-value pairs \texttt{list} object \texttt{byCounty}. 
+\texttt{/user/loginname/housing}  as the key-value pairs \texttt{list} object \texttt{byCounty}. 
 The final output key-value pairs for Reduce, specified by the argument
 \texttt{output}, will be written to the \texttt{list} object \texttt{CountyStats} in the same
 directory as the subsets. The keys are the states, and the values are the
