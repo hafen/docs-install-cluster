@@ -10,7 +10,10 @@ and generalizes certain aspects of the installation.  The Systems
 Administrator is encouraged to consult individual package
 documentation for further tuning later.  In this guide we use assume
 Ubuntu\textregistered Linux version 14.04 is the operating system
-installed on he cluster.
+installed on he cluster.  A Red Hat Enterprise Linux version of this
+installation guide is available at
+\url{http://tessera.io/docs-install-cluster/install-redhat.html}.
+
 
 \subsection{Example Configuration}
 Running the Tessera stack on a Hadoop cluster requires each Hadoop node to be configured to fill one or more of the roles of ResourceManager, NameNode, Secondary NameNode, DataNode, and NodeManager. The role descriptions are as follows.
@@ -123,10 +126,38 @@ sudo apt-get install oracle-java7-installer
 %%%%%%
 
 \subsubsection{Protocol Buffers (all servers)} (\url{https://code.google.com/p/protobuf/})\\
-Install Protocol Buffers (version 2.5.0):
+Install Protocol Buffers version 2.5.0.  It is important that version
+2.5.0 be installed and not a newer or older version.  Ubuntu 14.04 should
+have version 2.5.0 available by default.  Confirm this first by installing the
+\verb|aptitude| package manager and ensuring it is version 2.5.0:
+
+\begin{verbatim}
+sudo apt-get install aptitude
+aptitude show protobuf-compiler
+\end{verbatim}
+
+If it says it is version 2.5.0-something, then proceed to install it via:
+
 \begin{verbatim}
 sudo apt-get install protobuf-compiler protobuf-c-compiler libprotobuf-dev
 \end{verbatim}
+
+If it does NOT say it is version 2.5.0-something, then manually install
+it.  First cd to a directory the software can be downloaded and built,
+and type the following:
+
+\begin{verbatim}
+# Only install manually if the steps above did not say version 2.5.0-something
+sudo apt-get install libtool
+wget https://github.com/google/protobuf/archive/v2.5.0.zip
+unzip v2.5.0.zip
+cd protobuf-2.5.0
+./autogen.sh 
+./configure --prefix=/usr/local
+make
+sudo make install
+\end{verbatim}
+
 
 \subsubsection{Hadoop (all servers)} (\url{http://www.cloudera.com/content/cloudera/en/products-and-services/cdh.html})\\
 We use the Hadoop distribution built by Cloudera.  It is a Hadoop MRv2 /
