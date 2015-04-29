@@ -12,13 +12,14 @@
   <link href="assets/bootstrap-3.3.2/css/custom.css" rel="stylesheet" />
   <link href="assets/bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet" />
   <script src="assets/bootstrap-3.3.2/js/bootstrap.min.js"></script>
-  <script src="assets/bootstrap-3.3.2/js/custom.js"></script>
   <script src="assets/bootstrap-3.3.2/shim/html5shiv.min.js"></script>
   <script src="assets/bootstrap-3.3.2/shim/respond.min.js"></script>
   <link href="assets/highlight-8.4/tomorrow.css" rel="stylesheet" />
   <script src="assets/highlight-8.4/highlight.pack.js"></script>
   <link href="assets/fontawesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" />
   <script src="assets/stickykit-1.1.1/sticky-kit.min.js"></script>
+  <script src="assets/jqueryeasing-1.3/jquery.easing.min.js"></script>
+  <script src="assets/packagedocscustom-0.0.1/custom.js"></script>
   
   
   
@@ -39,7 +40,12 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a href="#" class="navbar-brand">Tessera Installation on a Cluster</a>
+                <span class="navbar-brand">
+<a href="http://tessera.io"> <img src='figures/icon.png' alt='tessera icon' width='30px' height='30px' style='margin-top: -3px;'> </a>
+        </span>
+                <a href="#content-top" class="navbar-brand page-scroll">
+        Tessera Installation on a Cluster
+        </a>
       </div>
             <nav class="collapse navbar-collapse" role="navigation">
         <ul class="nav nav-pills pull-right">
@@ -88,6 +94,7 @@
       </div>
       <div class="col-md-9" id="content-col">
       
+<div id="content-top"></div>
 <div id="the-r-rhipe-hadoop-setting" class="section level1">
 <h1>The R, RHIPE, Hadoop Setting</h1>
 <div id="overview" class="section level2">
@@ -870,54 +877,6 @@ state
       </div>
     </div>
   </div>
-
-  <script type="text/javascript">
-    function handleSticky() {
-      if($(window).width() > 979) {
-        var stickBottom = true;
-        if($(window).height() > $("#sidebar-col").height())
-          stickBottom = false;
-        $("#sidebar-col").stick_in_parent({offset_top: 60, bottoming: stickBottom});
-      } else {
-        $("#sidebar-col").trigger("sticky_kit:detach");
-      }
-    }
-
-    $(document).ready(function() {
-      $('#toc ul:first').addClass('nav nav-stacked');
-      $('#toc ul:first').attr('id', 'sidebar');
-
-      // add class to toc sub-elements
-      $('#toc ul:first ul').addClass("nav nav-stacked")
-
-      handleSticky();
-
-      $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
-
-      var $body    = $(document.body);
-      var navHeight = $('.navbar').outerHeight(true) + 10;
-
-      $body.scrollspy({
-        target: '#toc',
-        offset: navHeight
-      });
-
-      hljs.initHighlightingOnLoad();
-    });
-
-    // let a user resize for 250ms before triggering actions
-    $(window).resize(function() {
-       if(this.resizeTO) clearTimeout(this.resizeTO);
-       this.resizeTO = setTimeout(function() {
-          $(this).trigger('resizeEnd');
-       }, 250);
-    });
-
-    $(window).bind('resizeEnd', function() {
-      handleSticky();
-    });
-
-  </script>
 
   
 </body>
