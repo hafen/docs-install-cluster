@@ -114,3 +114,13 @@ pre.r-output {
 #sidebar li > ul > li > a {
   font-size: 13px;
 }
+
+img {
+  max-width: 100%;
+}
+
+blockquote {
+  font-size: 18px;
+  font-style: italic;
+  opacity: 0.7;
+}
