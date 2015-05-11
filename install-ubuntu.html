@@ -67,6 +67,7 @@
             <div class="col-md-3" id="sidebar-col">
         <div id="toc">
           <ul>
+          <li><a href="#tessera-installation-on-ubuntu">Tessera Installation on Ubuntu</a></li>
           <li><a href="#the-r-rhipe-hadoop-setting">The R, RHIPE, Hadoop Setting</a><ul>
           <li><a href="#overview">Overview</a></li>
           <li><a href="#the-r-session-server-and-rstudio">The R-Session Server and RStudio</a></li>
@@ -96,6 +97,10 @@
       <div class="col-md-9" id="content-col">
       
 <div id="content-top"></div>
+<div id="tessera-installation-on-ubuntu" class="section level1">
+<h1>Tessera Installation on Ubuntu</h1>
+<p>This is a guide to installing the Tessera stack consisting of Hadoop, RHIPE, datadr, trelliscope and other supporting packages on a multi-node cluster running Ubuntu Linux version 14.04. A Red Hat Enterprise Linux version of this installation guide is available at <a href="http://tessera.io/docs-install-cluster/install-redhat.html" class="uri">http://tessera.io/docs-install-cluster/install-redhat.html</a>.</p>
+</div>
 <div id="the-r-rhipe-hadoop-setting" class="section level1">
 <h1>The R, RHIPE, Hadoop Setting</h1>
 <div id="overview" class="section level2">
@@ -128,7 +133,7 @@
 <h1>Tessera Stack Cluster Installation Guide</h1>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
-<p>This is a guide to installing the Tessera stack consisting of Hadoop, RHIPE, datadr, trelliscope and other supporting packages on a multi-node cluster. This guide is intended to be used by the Systems Administrator to quickly install and configure the software necessary to run the full Tessera stack. It is not focused on tuning and optimally configuring the Tessera stack. It simplifies and generalizes certain aspects of the installation. The Systems Administrator is encouraged to consult individual package documentation for further tuning later. In this guide we use assume UbuntuLinux version 14.04 is the operating system installed on he cluster. A Red Hat Enterprise Linux version of this installation guide is available at <a href="http://tessera.io/docs-install-cluster/install-redhat.html" class="uri">http://tessera.io/docs-install-cluster/install-redhat.html</a>.</p>
+<p>This guide is intended to be used by the Systems Administrator to quickly install and configure the software necessary to run the full Tessera stack on a multi-node cluster. It is not focused on tuning and optimally configuring the Tessera stack. Most components of Tessera require no tuning. However, the Systems Administrator is encouraged to consult the Cloudera Hadoop documentation for further tuning of Hadoop and HDFS.</p>
 </div>
 <div id="example-configuration" class="section level2">
 <h2>Example Configuration</h2>
