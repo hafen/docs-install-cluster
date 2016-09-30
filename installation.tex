@@ -1,25 +1,25 @@
-\section{Tessera Stack Cluster Installation Guide}
+\section{DeltaRho Stack Cluster Installation Guide}
 \subsection{Introduction}
-This is a guide to installing the Tessera stack consisting of
+This is a guide to installing the DeltaRho stack consisting of
 Hadoop\textregistered, RHIPE, datadr, trelliscope and other supporting
 packages on a multi-node cluster.  This guide is intended to be used
 by the Systems Administrator to quickly install and configure the
-software necessary to run the full Tessera stack.  It is not focused
-on tuning and optimally configuring the Tessera stack.  It simplifies
+software necessary to run the full DeltaRho stack.  It is not focused
+on tuning and optimally configuring the DeltaRho stack.  It simplifies
 and generalizes certain aspects of the installation.  The Systems
 Administrator is encouraged to consult individual package
 documentation for further tuning later.  In this guide we use assume
 Ubuntu\textregistered Linux version 14.04 is the operating system
 installed on he cluster.  A Red Hat Enterprise Linux version of this
 installation guide is available at
-\url{http://tessera.io/docs-install-cluster/install-redhat.html}.
+\url{http://deltarho.org/docs-install-cluster/install-redhat.html}.
 
 
 \subsection{Example Configuration}
-Running the Tessera stack on a Hadoop cluster requires each Hadoop node to be configured to fill one or more of the roles of ResourceManager, NameNode, Secondary NameNode, DataNode, and NodeManager. The role descriptions are as follows.
+Running the DeltaRho stack on a Hadoop cluster requires each Hadoop node to be configured to fill one or more of the roles of ResourceManager, NameNode, Secondary NameNode, DataNode, and NodeManager. The role descriptions are as follows.
 
 \begin{itemize}
-\item NameNode - Manages the directory tree and metadata of the Hadoop File System (HDFS), a distributed virtual file system that allows data to be replicated and stored across many nodes in the cluster. 
+\item NameNode - Manages the directory tree and metadata of the Hadoop File System (HDFS), a distributed virtual file system that allows data to be replicated and stored across many nodes in the cluster.
 \item SecondaryNameNode - Offloads HDFS checkpoint support for the NameNode.  It is not a NameNode failover or backup as the name may imply.
 \item ResourceManager - Schedules and issues map reduce jobs for NodeManagers across the cluster.
 \item DataNode - Stores data on the local drives of nodes as part of the distributed HDFS.  DataNodes are almost always also NodeManagers.
@@ -45,16 +45,16 @@ name of the form \verb|nodeNNN.example.com|. In our example,
 
 \begin{itemize}
 \item \verb|node001.example.com| will be the NameNode and the ResourceManager.
-\item \verb|node002.example.com| will be the Secondary NameNode, a NodeManager, and a DataNode. 
-\item \verb|node003.example.com| to \verb|node005.example.com| will be NodeManagers and DataNodes. 
+\item \verb|node002.example.com| will be the Secondary NameNode, a NodeManager, and a DataNode.
+\item \verb|node003.example.com| to \verb|node005.example.com| will be NodeManagers and DataNodes.
 \item \verb|frontend.example.com| will be the front end R-session server, the Shiny server, and optional Rstudio Server.
 \end{itemize}
 
 \subsection{Packages}
 \subsubsection{Required Packages}
-The Tessera stack consists of some packages provided by the Tessera group and some provided by other sources. \\
+The DeltaRho stack consists of some packages provided by the DeltaRho group and some provided by other sources. \\
 
-\textbf{Packages provided by the Tessera group}
+\textbf{Packages provided by the DeltaRho group}
 \begin{enumerate}
 \item RHIPE - 0.75
 \item datadr
@@ -64,10 +64,10 @@ The Tessera stack consists of some packages provided by the Tessera group and so
 \begin{enumerate}
 \item pkg-config
 \item Sun/Oracle Java - 7
-\item Protocol Buffers - 2.5.0 
+\item Protocol Buffers - 2.5.0
 \item Cloudera Hadoop version cdh5.3.2
 \item R - 3.0.1
-\item rJava - 0.9-6 
+\item rJava - 0.9-6
 \item OpenSSL (latest stable version)
 \item R packages - codetools, MASS, ggplot2, lattice, boot, shiny, devtools
 \item gdebi
@@ -75,7 +75,7 @@ The Tessera stack consists of some packages provided by the Tessera group and so
 \end{enumerate}
 
 \subsubsection{Optional Packages}
-These optional packages can be installed along with the Tessera stack providing convenience for the analyst. 
+These optional packages can be installed along with the DeltaRho stack providing convenience for the analyst.
 \begin{enumerate}
 \item Rstudio server - Rstudio server creates a persistent interactive R session for the analyst by running R on a remote server and providing access through a the analyst's local browser.
 \end{enumerate}
@@ -152,7 +152,7 @@ sudo apt-get install libtool
 wget https://github.com/google/protobuf/archive/v2.5.0.zip
 unzip v2.5.0.zip
 cd protobuf-2.5.0
-./autogen.sh 
+./autogen.sh
 ./configure --prefix=/usr/local
 make
 sudo make install
@@ -187,7 +187,7 @@ hadoop-client
 node002.example.com:
 \begin{verbatim}
 sudo apt-get install hadoop-yarn-nodemanager hadoop-hdfs-secondarynamenode \
-hadoop-hdfs-datanode hadoop-mapreduce 
+hadoop-hdfs-datanode hadoop-mapreduce
 \end{verbatim}
 
 node003.example.com through node005.example.com:
@@ -209,29 +209,29 @@ Configuration of Hadoop settings is done in another section, but for now
 we will prepare the configuration directory and set it as the default
 Hadoop configuration on the system.  On each of node001 through node005,
 and on the frontend execute the following.  We choose the configuration
-directory name of "conf.tessera" in this guide:
+directory name of "conf.deltarho" in this guide:
 
 \begin{verbatim}
-sudo cp -r /etc/hadoop/conf.empty /etc/hadoop/conf.tessera
+sudo cp -r /etc/hadoop/conf.empty /etc/hadoop/conf.deltarho
 sudo update-alternatives --install /etc/hadoop/conf hadoop-conf \
-/etc/hadoop/conf.tessera 50
-sudo update-alternatives --set hadoop-conf /etc/hadoop/conf.tessera
+/etc/hadoop/conf.deltarho 50
+sudo update-alternatives --set hadoop-conf /etc/hadoop/conf.deltarho
 \end{verbatim}
 
 
 Add Hadoop environment variables and an updated path to the user environment for future logins.  This assumes users use an sh/ksh/bash/zsh based login shell.
 \begin{verbatim}
 echo "export HADOOP=/usr/lib/hadoop
-export HADOOP_HOME=\$HADOOP	
+export HADOOP_HOME=\$HADOOP
 export HADOOP_BIN=\$HADOOP/bin
 export HADOOP_LIB=\$HADOOP/lib
 export HADOOP_LIBS=\`hadoop classpath | tr -d \\*\`
-export HADOOP_CONF_DIR=/etc/hadoop/conf.tessera
+export HADOOP_CONF_DIR=/etc/hadoop/conf.deltarho
 export HADOOP_COMMON_HOME=/usr/lib/hadoop
 export HADOOP_MAPRED_HOME=/usr/lib/hadoop-mapreduce
 export HADOOP_HDFS_HOME=/usr/lib/hadoop-hdfs
 export YARN_HOME=/usr/lib/hadoop-yarn
-export PATH=\$PATH:\$HADOOP_BIN" | 
+export PATH=\$PATH:\$HADOOP_BIN" |
 sudo bash -c "cat > /etc/profile.d/hadoop.sh"
 \end{verbatim}
 
@@ -249,7 +249,7 @@ rJava is also required by RHIPE.  It is installed by:
 sudo apt-get install r-cran-rjava
 \end{verbatim}
 
-\subsubsection{RHIPE (all nodes)}(\url{http://www.tessera.io/})\\
+\subsubsection{RHIPE (all nodes)}(\url{http://www.deltarho.org/})\\
 RHIPE is downloaded and installed.
 \begin{verbatim}
 wget http://ml.stat.purdue.edu/rhipebin/Rhipe_0.75.0_cdh5mr2.tar.gz
@@ -257,13 +257,13 @@ sudo R CMD INSTALL Rhipe_0.75.0_cdh5mr2.tar.gz
 \end{verbatim}
 
 \subsubsection{OpenSSL (all nodes)}(\url{https://www.openssl.org/})\\
-OpenSSL package is required by the Github installer/package handler for R. 
+OpenSSL package is required by the Github installer/package handler for R.
 \begin{verbatim}
 sudo apt-get install libcurl4-openssl-dev
 \end{verbatim}
 
 \subsubsection{datadr and trelliscope support packages (all nodes)}(\url{http://cran.r-project.org/web/packages/available\_packages\_by\_name.html})\\
-R packages - codetools, latttice, MASS, ggplot2, boot, shiny and devtools are needed for trelliscope and datadr. They are installed using the R internal package installer \textbf{install.packages}. Use the command line to enter the following commands. 
+R packages - codetools, latttice, MASS, ggplot2, boot, shiny and devtools are needed for trelliscope and datadr. They are installed using the R internal package installer \textbf{install.packages}. Use the command line to enter the following commands.
 \begin{verbatim}
 sudo apt-get install r-cran-codetools r-cran-mass r-cran-ggplot2 \
 r-cran-lattice r-cran-boot
@@ -272,13 +272,13 @@ sudo R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
 sudo R -e "install.packages('devtools', repos='http://cran.rstudio.com/')"
 \end{verbatim}
 
-\subsubsection{datadr and trelliscope (all nodes)}(\url{http://www.tessera.io})\\
-datadr and trelliscope are installed using install\_github package from R. 
+\subsubsection{datadr and trelliscope (all nodes)}(\url{http://www.deltarho.org})\\
+datadr and trelliscope are installed using install\_github package from R.
 \begin{verbatim}
 sudo R -e "options(repos = 'http://cran.rstudio.com/');\
- library(devtools); install_github('tesseradata/datadr')"
+ library(devtools); install_github('delta-rho/datadr')"
 sudo R -e "options(repos = 'http://cran.rstudio.com/');\
- library(devtools); install_github('tesseradata/trelliscope')"
+ library(devtools); install_github('delta-rho/trelliscope')"
 \end{verbatim}
 
 \subsubsection{gdebi-core (frontend server)}(\url{https://apps.ubuntu.com/cat/applications/precise/gdebi/})\\

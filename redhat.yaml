@@ -1,5 +1,5 @@
 ---
-title: "Tessera Installation on a Cluster"
+title: "DeltaRho Installation on a Cluster"
 output:
   packagedocs:
     toc: true
@@ -7,8 +7,8 @@ navpills: |
   <li class="active"><a href='install-redhat.html'>Redhat</a></li>
   <li><a href='install-ubuntu.html'>Ubuntu</a></li>
 brand: |-
-  <a href="http://tessera.io">
-  <img src='figures/icon.png' alt='tessera icon' width='30px' height='30px' style='margin-top: -3px;'>
+  <a href="http://deltarho.org">
+  <img src='figures/icon.png' alt='deltarho icon' width='30px' height='30px' style='margin-top: -3px;'>
   </a>
 ---
 

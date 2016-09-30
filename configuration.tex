@@ -70,7 +70,7 @@ HDFS, and port 8088 on node001 to see the status of the ResourceManager,
 the jobs that are running, have been completed, etc.
 
 \subsubsection{Hadoop core-site.xml}
-The \verb|core-site.xml| file is placed in \verb|/etc/hadoop/conf.tessera| on every server in the cluster (nodeNNN and frontend).  If a change is ever made to this config file, it must be made to that file on every node in the cluster as well.
+The \verb|core-site.xml| file is placed in \verb|/etc/hadoop/conf.deltarho| on every server in the cluster (nodeNNN and frontend).  If a change is ever made to this config file, it must be made to that file on every node in the cluster as well.
 \begin{verbatim}
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
@@ -85,7 +85,7 @@ The \verb|core-site.xml| file is placed in \verb|/etc/hadoop/conf.tessera| on ev
 
 
 \subsubsection{Hadoop mapred-site.xml}
-The \verb|mapred-site.xml| file in in \verb|/etc/hadoop/conf.tessera|
+The \verb|mapred-site.xml| file in in \verb|/etc/hadoop/conf.deltarho|
 is configured to tell Hadoop we are using the MRv2 / YARN framework.
 This file should be copied to all servers (nodeNNN and frontend).
 
@@ -102,7 +102,7 @@ This file should be copied to all servers (nodeNNN and frontend).
 
 
 \subsubsection{Hadoop yarn-site.xml}
-The \verb|yarn-site.xml| file in in \verb|/etc/hadoop/conf.tessera|
+The \verb|yarn-site.xml| file in in \verb|/etc/hadoop/conf.deltarho|
 is used to configure Hadoop settings related to temporary storage, number
 of CPU cores to use per node, memory per node, etc.   This file should
 be copied to all servers (nodeNNN and frontend).  Changes to this file
@@ -212,7 +212,7 @@ sudo chown -R yarn.yarn /hadoop/disk3/yarn/log /hadoop/disk4/yarn/log
 \end{verbatim}
 
 \subsubsection{Hadoop secondary namenode file masters}
-The file \verb|/etc/hadoop/conf.tessera/masters| must contain the hostname
+The file \verb|/etc/hadoop/conf.deltarho/masters| must contain the hostname
 of the secondary namenode.  This file should be copied to all servers.
 For our example, it contains just one line:
 
@@ -223,7 +223,7 @@ node002.example.com
 \subsubsection{Hadoop hdfs-site.xml}
 The \verb|hdfs-site.xml| file is used to configure the
 Hadoop file system (HDFS).   This file should be copied to the
-\verb|/etc/hadoop/conf.tessera| directory on all nodes (nodeNNN and
+\verb|/etc/hadoop/conf.deltarho| directory on all nodes (nodeNNN and
 frontend).  As with \verb|yarn-site.xml|, if your number of disks and
 size of disk varies among nodes, you must independently maintain copies
 of \verb|hdfs-site.xml| on each node.
@@ -306,7 +306,7 @@ We must pre-create the local metadata storage directories on the NameNode
 
 \begin{verbatim}
 sudo mkdir -p /hadoop/disk1/dfs/nn /hadoop/disk2/dfs/nn
-sudo mkdir -p /hadoop/disk3/dfs/nn /hadoop/disk4/dfs/nn 
+sudo mkdir -p /hadoop/disk3/dfs/nn /hadoop/disk4/dfs/nn
 sudo chown -R hdfs.hdfs /hadoop/disk1/dfs /hadoop/disk2/dfs
 sudo chown -R hdfs.hdfs /hadoop/disk3/dfs /hadoop/disk4/dfs
 sudo chmod 700 /hadoop/disk1/dfs /hadoop/disk2/dfs /hadoop/disk3/dfs /hadoop/disk4/dfs

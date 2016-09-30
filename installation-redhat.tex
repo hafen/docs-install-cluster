@@ -1,11 +1,11 @@
-\section{Tessera Stack Cluster Installation Guide}
+\section{DeltaRho Stack Cluster Installation Guide}
 \subsection{Introduction}
-This is a guide to installing the Tessera stack consisting of
+This is a guide to installing the DeltaRho stack consisting of
 Hadoop\textregistered, RHIPE, datadr, trelliscope and other supporting
 packages on a multi-node cluster.  This guide is intended to be used
 by the Systems Administrator to quickly install and configure the
-software necessary to run the full Tessera stack.  It is not focused
-on tuning and optimally configuring the Tessera stack.  It simplifies
+software necessary to run the full DeltaRho stack.  It is not focused
+on tuning and optimally configuring the DeltaRho stack.  It simplifies
 and generalizes certain aspects of the installation.  The Systems
 Administrator is encouraged to consult individual package
 documentation for further tuning later.  In this guide we assume
@@ -13,16 +13,16 @@ documentation for further tuning later.  In this guide we assume
 installed on he cluster, though these instructions should work with
 few modifications on CentOS and Fedora.  An Ubuntu version of this
 installation guide is available at
-\url{http://tessera.io/docs-install-cluster/install-ubuntu.html}.
+\url{http://deltarho.org/docs-install-cluster/install-ubuntu.html}.
 
 \subsection{Example Configuration}
-Running the Tessera stack on a Hadoop cluster requires each Hadoop node
+Running the DeltaRho stack on a Hadoop cluster requires each Hadoop node
 to be configured to fill one or more of the roles of ResourceManager,
 NameNode, Secondary NameNode, DataNode, and NodeManager. The role
 descriptions are as follows.
 
 \begin{itemize}
-\item NameNode - Manages the directory tree and metadata of the Hadoop File System (HDFS), a distributed virtual file system that allows data to be replicated and stored across many nodes in the cluster. 
+\item NameNode - Manages the directory tree and metadata of the Hadoop File System (HDFS), a distributed virtual file system that allows data to be replicated and stored across many nodes in the cluster.
 \item SecondaryNameNode - Offloads HDFS checkpoint support for the NameNode.  It is not a NameNode failover or backup as the name may imply.
 \item ResourceManager - Schedules and issues map reduce jobs for NodeManagers across the cluster.
 \item DataNode - Stores data on the local drives of nodes as part of the distributed HDFS.  DataNodes are almost always also NodeManagers.
@@ -48,16 +48,16 @@ name of the form \verb|nodeNNN.example.com|. In our example,
 
 \begin{itemize}
 \item \verb|node001.example.com| will be the NameNode and the ResourceManager.
-\item \verb|node002.example.com| will be the Secondary NameNode, a NodeManager, and a DataNode. 
-\item \verb|node003.example.com| to \verb|node005.example.com| will be NodeManagers and DataNodes. 
+\item \verb|node002.example.com| will be the Secondary NameNode, a NodeManager, and a DataNode.
+\item \verb|node003.example.com| to \verb|node005.example.com| will be NodeManagers and DataNodes.
 \item \verb|frontend.example.com| will be the front end R-session server, the Shiny server, and optional Rstudio Server.
 \end{itemize}
 
 \subsection{Packages}
 \subsubsection{Required Packages}
-The Tessera stack consists of some packages provided by the Tessera group and some provided by other sources. \\
+The DeltaRho stack consists of some packages provided by the DeltaRho group and some provided by other sources. \\
 
-\textbf{Packages provided by the Tessera group}
+\textbf{Packages provided by the DeltaRho group}
 \begin{enumerate}
 \item RHIPE - 0.75.1.4
 \item datadr
@@ -66,16 +66,16 @@ The Tessera stack consists of some packages provided by the Tessera group and so
 \textbf{Packages provided by others}
 \begin{enumerate}
 \item Sun/Oracle Java - 7
-\item Protocol Buffers - 2.5.0 
+\item Protocol Buffers - 2.5.0
 \item Cloudera Hadoop version cdh5.3.3
 \item R - 3.1.3
-\item rJava - 0.9-6 
+\item rJava - 0.9-6
 \item R packages - codetools, ggplot2, lattice, boot, shiny, devtools
 \item Shiny server
 \end{enumerate}
 
 \subsubsection{Optional Packages}
-These optional packages can be installed along with the Tessera stack providing convenience for the analyst. 
+These optional packages can be installed along with the DeltaRho stack providing convenience for the analyst.
 \begin{enumerate}
 \item Rstudio server - Rstudio server creates a persistent interactive R session for the analyst by running R on a remote server and providing access through a the analyst's local browser.
 \end{enumerate}
@@ -117,12 +117,12 @@ version to use, even if other versions of Java like OpenJDK were
 previously installed:
 
 \begin{verbatim}
-sudo /usr/sbin/alternatives --install /usr/bin/java java /usr/java/latest/bin/java 200005 
+sudo /usr/sbin/alternatives --install /usr/bin/java java /usr/java/latest/bin/java 200005
 sudo /usr/sbin/alternatives --install /usr/bin/javac javac /usr/java/latest/bin/javac 200005
 sudo /usr/sbin/alternatives --install /usr/bin/javadoc javadoc /usr/java/latest/bin/javadoc 200005
-sudo /usr/sbin/alternatives --install /usr/bin/javah javah /usr/java/latest/bin/javah 200005 
-sudo /usr/sbin/alternatives --install /usr/bin/javap javap /usr/java/latest/bin/javap 200005 
-sudo /usr/sbin/alternatives --install /usr/bin/javaws javaws /usr/java/latest/bin/javaws 200005 
+sudo /usr/sbin/alternatives --install /usr/bin/javah javah /usr/java/latest/bin/javah 200005
+sudo /usr/sbin/alternatives --install /usr/bin/javap javap /usr/java/latest/bin/javap 200005
+sudo /usr/sbin/alternatives --install /usr/bin/javaws javaws /usr/java/latest/bin/javaws 200005
 sudo /usr/sbin/alternatives --install /usr/lib64/mozilla/plugins/libjavaplugin.so libjavaplugin.so.x86_64 /usr/java/latest/jre/lib/amd64/libnpjp2.so 200005
 sudo /usr/sbin/alternatives --install /usr/bin/jar jar /usr/java/latest/bin/jar 200005
 \end{verbatim}
@@ -152,7 +152,7 @@ the software can be downloaded and built, and type the following.
 wget https://github.com/google/protobuf/archive/v2.5.0.zip
 unzip v2.5.0.zip
 cd protobuf-2.5.0
-./autogen.sh 
+./autogen.sh
 ./configure --prefix=/usr/local --libdir=/usr/lib64
 make
 sudo make install
@@ -184,7 +184,7 @@ sudo chkconfig hadoop-hdfs-namenode on
 node002.example.com:
 \begin{verbatim}
 sudo yum install hadoop-hdfs-secondarynamenode hadoop-yarn-nodemanager
-sudo yum install hadoop-hdfs-datanode hadoop-mapreduce 
+sudo yum install hadoop-hdfs-datanode hadoop-mapreduce
 sudo chkconfig hadoop-hdfs-secondarynamenode on
 sudo chkconfig hadoop-yarn-nodemanager on
 sudo chkconfig hadoop-hdfs-datanode on
@@ -210,12 +210,12 @@ Configuration of Hadoop settings is done in another section, but for now
 we will prepare the configuration directory and set it as the default
 Hadoop configuration on the system.  On each of node001 through node005
 and on the frontend, execute the following.  We choose the configuration
-directory name of "conf.tessera" in this guide:
+directory name of "conf.deltarho" in this guide:
 
 \begin{verbatim}
-sudo cp -r /etc/hadoop/conf.empty /etc/hadoop/conf.tessera
-sudo /usr/sbin/alternatives --install /etc/hadoop/conf hadoop-conf /etc/hadoop/conf.tessera 50
-sudo /usr/sbin/alternatives --set hadoop-conf /etc/hadoop/conf.tessera
+sudo cp -r /etc/hadoop/conf.empty /etc/hadoop/conf.deltarho
+sudo /usr/sbin/alternatives --install /etc/hadoop/conf hadoop-conf /etc/hadoop/conf.deltarho 50
+sudo /usr/sbin/alternatives --set hadoop-conf /etc/hadoop/conf.deltarho
 \end{verbatim}
 
 Add Hadoop environment variables and an updated path to the user
@@ -224,16 +224,16 @@ based login shell.
 
 \begin{verbatim}
 echo "export HADOOP=/usr/lib/hadoop
-export HADOOP_HOME=\$HADOOP	
+export HADOOP_HOME=\$HADOOP
 export HADOOP_BIN=\$HADOOP/bin
 export HADOOP_LIB=\$HADOOP/lib
 export HADOOP_LIBS=\`hadoop classpath | tr -d \\*\`
-export HADOOP_CONF_DIR=/etc/hadoop/conf.tessera
+export HADOOP_CONF_DIR=/etc/hadoop/conf.deltarho
 export HADOOP_COMMON_HOME=/usr/lib/hadoop
 export HADOOP_MAPRED_HOME=/usr/lib/hadoop-mapreduce
 export HADOOP_HDFS_HOME=/usr/lib/hadoop-hdfs
 export YARN_HOME=/usr/lib/hadoop-yarn
-export PATH=\$PATH:\$HADOOP_BIN" | 
+export PATH=\$PATH:\$HADOOP_BIN" |
 sudo bash -c "cat > /etc/profile.d/hadoop.sh"
 \end{verbatim}
 
@@ -259,7 +259,7 @@ rJava is also required by RHIPE.  It is installed by:
 sudo env PATH=/usr/local/bin:$PATH R -e "install.packages('rJava', repos='http://cran.rstudio.com/')"
 \end{verbatim}
 
-\subsubsection{RHIPE (all nodes)}(\url{http://tessera.io/})\\
+\subsubsection{RHIPE (all nodes)}(\url{http://deltarho.org/})\\
 RHIPE is downloaded and installed.
 \begin{verbatim}
 wget http://ml.stat.purdue.edu/rhipebin/Rhipe_0.75.1.4_cdh5.tar.gz
@@ -267,7 +267,7 @@ sudo env PATH=/usr/local/bin:$PATH R CMD INSTALL Rhipe_0.75.1.4_cdh5.tar.gz
 \end{verbatim}
 
 \subsubsection{datadr and trelliscope support packages (all nodes)}(\url{http://cran.r-project.org/web/packages/available\_packages\_by\_name.html})\\
-Additional R packages - codetools, latttice, ggplot2, boot, shiny and devtools are needed for trelliscope and datadr. They are installed using the R internal package installer \verb|install.packages|. Use the command line to enter the following commands. 
+Additional R packages - codetools, latttice, ggplot2, boot, shiny and devtools are needed for trelliscope and datadr. They are installed using the R internal package installer \verb|install.packages|. Use the command line to enter the following commands.
 \begin{verbatim}
 sudo yum install libcurl-devel
 sudo env PATH=/usr/local/bin:$PATH R -e "install.packages('ggplot2', repos='http://cran.rstudio.com/')"
@@ -277,13 +277,13 @@ sudo env PATH=/usr/local/bin:$PATH R -e "install.packages('shiny', repos='http:/
 sudo env PATH=/usr/local/bin:$PATH R -e "install.packages('devtools', repos='http://cran.rstudio.com/')"
 \end{verbatim}
 
-\subsubsection{datadr and trelliscope (all nodes)}(\url{http://tessera.io})\\
-datadr and trelliscope are installed using install\_github package from R. 
+\subsubsection{datadr and trelliscope (all nodes)}(\url{http://deltarho.org})\\
+datadr and trelliscope are installed using install\_github package from R.
 \begin{verbatim}
 sudo env PATH=/usr/local/bin:$PATH R -e "options(repos = 'http://cran.rstudio.com/');\
- library(devtools); install_github('tesseradata/datadr')"
+ library(devtools); install_github('delta-rho/datadr')"
 sudo env PATH=/usr/local/bin:$PATH R -e "options(repos = 'http://cran.rstudio.com/');\
- library(devtools); install_github('tesseradata/trelliscope')"
+ library(devtools); install_github('delta-rho/trelliscope')"
 \end{verbatim}
 
 \subsubsection{Shiny server (frontend server)}(\url{http://www.rstudio.com/products/shiny/shiny-server/})\\

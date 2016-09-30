@@ -1,5 +1,5 @@
 ---
-title: "Tessera Installation on a Cluster"
+title: "DeltaRho Installation on a Cluster"
 output:
   packagedocs:
     toc: true
@@ -7,8 +7,8 @@ navpills: |
   <li><a href='install-redhat.html'>Redhat</a></li>
   <li class="active"><a href='install-ubuntu.html'>Ubuntu</a></li>
 brand: |-
-  <a href="http://tessera.io">
-  <img src='figures/icon.png' alt='tessera icon' width='30px' height='30px' style='margin-top: -3px;'>
+  <a href="http://deltarho.org">
+  <img src='figures/icon.png' alt='deltarho icon' width='30px' height='30px' style='margin-top: -3px;'>
   </a>
 ---
 
@@ -119,29 +119,29 @@ subset on a core, Hadoop seeks to assign a subset on the same node as
 the core to avoid transmission of the subset across the network
 connecting the nodes, which is more time consuming.
 
-Tessera Stack Cluster Installation Guide
+DeltaRho Stack Cluster Installation Guide
 ========================================
 
 Introduction
 ------------
 
-This is a guide to installing the Tessera stack consisting of Hadoop,
+This is a guide to installing the DeltaRho stack consisting of Hadoop,
 RHIPE, datadr, trelliscope and other supporting packages on a multi-node
 cluster. This guide is intended to be used by the Systems Administrator
 to quickly install and configure the software necessary to run the full
-Tessera stack. It is not focused on tuning and optimally configuring the
-Tessera stack. It simplifies and generalizes certain aspects of the
+DeltaRho stack. It is not focused on tuning and optimally configuring the
+DeltaRho stack. It simplifies and generalizes certain aspects of the
 installation. The Systems Administrator is encouraged to consult
 individual package documentation for further tuning later. In this guide
 we use assume UbuntuLinux version 14.04 is the operating system
 installed on he cluster. A Red Hat Enterprise Linux version of this
 installation guide is available at
-<http://tessera.io/docs-install-cluster/install-redhat.html>.
+<http://deltarho.org/docs-install-cluster/install-redhat.html>.
 
 Example Configuration
 ---------------------
 
-Running the Tessera stack on a Hadoop cluster requires each Hadoop node
+Running the DeltaRho stack on a Hadoop cluster requires each Hadoop node
 to be configured to fill one or more of the roles of ResourceManager,
 NameNode, Secondary NameNode, DataNode, and NodeManager. The role
 descriptions are as follows.
@@ -196,10 +196,10 @@ Packages
 
 ### Required Packages
 
-The Tessera stack consists of some packages provided by the Tessera
+The DeltaRho stack consists of some packages provided by the DeltaRho
 group and some provided by other sources.\
 
-**Packages provided by the Tessera group**
+**Packages provided by the DeltaRho group**
 
 1.  RHIPE - 0.75
 
@@ -232,7 +232,7 @@ group and some provided by other sources.\
 
 ### Optional Packages
 
-These optional packages can be installed along with the Tessera stack
+These optional packages can be installed along with the DeltaRho stack
 providing convenience for the analyst.
 
 1.  Rstudio server - Rstudio server creates a persistent interactive R
@@ -301,7 +301,7 @@ and type the following:
     wget https://github.com/google/protobuf/archive/v2.5.0.zip
     unzip v2.5.0.zip
     cd protobuf-2.5.0
-    ./autogen.sh 
+    ./autogen.sh
     ./configure --prefix=/usr/local
     make
     sudo make install
@@ -333,7 +333,7 @@ node001.example.com:
 node002.example.com:
 
     sudo apt-get install hadoop-yarn-nodemanager hadoop-hdfs-secondarynamenode \
-    hadoop-hdfs-datanode hadoop-mapreduce 
+    hadoop-hdfs-datanode hadoop-mapreduce
 
 node003.example.com through node005.example.com:
 
@@ -353,28 +353,28 @@ Configuration of Hadoop settings is done in another section, but for now
 we will prepare the configuration directory and set it as the default
 Hadoop configuration on the system. On each of node001 through node005,
 and on the frontend execute the following. We choose the configuration
-directory name of "conf.tessera" in this guide:
+directory name of "conf.deltarho" in this guide:
 
-    sudo cp -r /etc/hadoop/conf.empty /etc/hadoop/conf.tessera
+    sudo cp -r /etc/hadoop/conf.empty /etc/hadoop/conf.deltarho
     sudo update-alternatives --install /etc/hadoop/conf hadoop-conf \
-    /etc/hadoop/conf.tessera 50
-    sudo update-alternatives --set hadoop-conf /etc/hadoop/conf.tessera
+    /etc/hadoop/conf.deltarho 50
+    sudo update-alternatives --set hadoop-conf /etc/hadoop/conf.deltarho
 
 Add Hadoop environment variables and an updated path to the user
 environment for future logins. This assumes users use an sh/ksh/bash/zsh
 based login shell.
 
     echo "export HADOOP=/usr/lib/hadoop
-    export HADOOP_HOME=\$HADOOP 
+    export HADOOP_HOME=\$HADOOP
     export HADOOP_BIN=\$HADOOP/bin
     export HADOOP_LIB=\$HADOOP/lib
     export HADOOP_LIBS=\`hadoop classpath | tr -d \\*\`
-    export HADOOP_CONF_DIR=/etc/hadoop/conf.tessera
+    export HADOOP_CONF_DIR=/etc/hadoop/conf.deltarho
     export HADOOP_COMMON_HOME=/usr/lib/hadoop
     export HADOOP_MAPRED_HOME=/usr/lib/hadoop-mapreduce
     export HADOOP_HDFS_HOME=/usr/lib/hadoop-hdfs
     export YARN_HOME=/usr/lib/hadoop-yarn
-    export PATH=\$PATH:\$HADOOP_BIN" | 
+    export PATH=\$PATH:\$HADOOP_BIN" |
     sudo bash -c "cat > /etc/profile.d/hadoop.sh"
 
 ### R (all nodes)
@@ -394,7 +394,7 @@ rJava is also required by RHIPE. It is installed by:
 
 ### RHIPE (all nodes)
 
-(<http://www.tessera.io/>)\
+(<http://www.deltarho.org/>)\
 RHIPE is downloaded and installed.
 
     wget http://ml.stat.purdue.edu/rhipebin/Rhipe_0.75.0_cdh5mr2.tar.gz
@@ -424,14 +424,14 @@ line to enter the following commands.
 
 ### datadr and trelliscope (all nodes)
 
-(<http://www.tessera.io>)\
+(<http://www.deltarho.org>)\
 datadr and trelliscope are installed using install\_github package from
 R.
 
     sudo R -e "options(repos = 'http://cran.rstudio.com/');\
-     library(devtools); install_github('tesseradata/datadr')"
+     library(devtools); install_github('delta-rho/datadr')"
     sudo R -e "options(repos = 'http://cran.rstudio.com/');\
-     library(devtools); install_github('tesseradata/trelliscope')"
+     library(devtools); install_github('delta-rho/trelliscope')"
 
 ### gdebi-core (frontend server)
 
@@ -544,7 +544,7 @@ been completed, etc.
 
 ### Hadoop core-site.xml
 
-The `core-site.xml` file is placed in `/etc/hadoop/conf.tessera` on
+The `core-site.xml` file is placed in `/etc/hadoop/conf.deltarho` on
 every server in the cluster (nodeNNN and frontend). If a change is ever
 made to this config file, it must be made to that file on every node in
 the cluster as well.
@@ -561,7 +561,7 @@ the cluster as well.
 
 ### Hadoop mapred-site.xml
 
-The `mapred-site.xml` file in in `/etc/hadoop/conf.tessera` is
+The `mapred-site.xml` file in in `/etc/hadoop/conf.deltarho` is
 configured to tell Hadoop we are using the MRv2 / YARN framework. This
 file should be copied to all servers (nodeNNN and frontend).
 
@@ -576,7 +576,7 @@ file should be copied to all servers (nodeNNN and frontend).
 
 ### Hadoop yarn-site.xml
 
-The `yarn-site.xml` file in in `/etc/hadoop/conf.tessera` is used to
+The `yarn-site.xml` file in in `/etc/hadoop/conf.deltarho` is used to
 configure Hadoop settings related to temporary storage, number of CPU
 cores to use per node, memory per node, etc. This file should be copied
 to all servers (nodeNNN and frontend). Changes to this file can have
@@ -682,7 +682,7 @@ on node001 - node005:
 
 ### Hadoop secondary namenode file masters
 
-The file `/etc/hadoop/conf.tessera/masters` must contain the hostname of
+The file `/etc/hadoop/conf.deltarho/masters` must contain the hostname of
 the secondary namenode. This file should be copied to all servers. For
 our example, it contains just one line:
 
@@ -691,7 +691,7 @@ our example, it contains just one line:
 ### Hadoop hdfs-site.xml
 
 The `hdfs-site.xml` file is used to configure the Hadoop file system
-(HDFS). This file should be copied to the `/etc/hadoop/conf.tessera`
+(HDFS). This file should be copied to the `/etc/hadoop/conf.deltarho`
 directory on all nodes (nodeNNN and frontend). As with `yarn-site.xml`,
 if your number of disks and size of disk varies among nodes, you must
 independently maintain copies of `hdfs-site.xml` on each node.
@@ -770,7 +770,7 @@ We must pre-create the local metadata storage directories on the
 NameNode (node001), and on the Secondary NameNode (node002):
 
     sudo mkdir -p /hadoop/disk1/dfs/nn /hadoop/disk2/dfs/nn
-    sudo mkdir -p /hadoop/disk3/dfs/nn /hadoop/disk4/dfs/nn 
+    sudo mkdir -p /hadoop/disk3/dfs/nn /hadoop/disk4/dfs/nn
     sudo chown -R hdfs.hdfs /hadoop/disk1/dfs /hadoop/disk2/dfs
     sudo chown -R hdfs.hdfs /hadoop/disk3/dfs /hadoop/disk4/dfs
     sudo chmod 700 /hadoop/disk1/dfs /hadoop/disk2/dfs /hadoop/disk3/dfs /hadoop/disk4/dfs
@@ -789,7 +789,7 @@ Hadoop Pre-run Setup
 --------------------
 
 At this point the configuration files created in
-`/etc/hadoop/conf.tessera` on node001 should be copied to all other
+`/etc/hadoop/conf.deltarho` on node001 should be copied to all other
 nodes. Any future changes to any configuration files should be done on
 node001 and then copied from there to all other nodes.
 
@@ -965,7 +965,7 @@ Installing R Packages and Examples for Users
 Background
 ----------
 
-At this point, the Tessera stack, including Hadoop (a YARN based
+At this point, the DeltaRho stack, including Hadoop (a YARN based
 distribution, such as Cloudera CDH5.x), R, and RHIPE should be
 installed. However, at some sites the administrator may choose to only
 maintain Hadoop, Java, Protocol Buffers, and R and rely on the end users
@@ -1064,10 +1064,10 @@ The small size let's you easily pick up the data, follow along using the
 R commands in the tutorial, and explore RHIPE yourself with other RHIPE
 R commands.
 
-"housing.txt" is available in our Tesseradata Github repository of the
+"housing.txt" is available in our DeltaRhodata Github repository of the
 RHIPE documentation, or at:
 
-    https://raw.githubusercontent.com/tesseradata/docs-RHIPE/gh-pages/housing.txt
+    https://raw.githubusercontent.com/delta-rho/docs-RHIPE/gh-pages/housing.txt
 
 The file is a table with 190,278 rows (66 months x 2883 counties) and 7
 columns (the variables). The fields in each row are separated by a
@@ -1229,8 +1229,8 @@ Then you can look at the list of length 10 in various was such as
     $names
     [1] "date"             "units"            "listing"             "selling"
     $row.names
-     [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 
-    [25] 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 
+     [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+    [25] 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48
     [49] 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66
     $state
     [1] "AL"
