@@ -12,14 +12,14 @@ brand: |-
   </a>
 ---
 
-Tessera Installation on Ubuntu
+DeltaRho Installation on Ubuntu
 ==============================
 
-This is a guide to installing the Tessera stack consisting of Hadoop,
+This is a guide to installing the DeltaRho stack consisting of Hadoop,
 RHIPE, datadr, trelliscope and other supporting packages on a multi-node
 cluster running Ubuntu Linux version 14.04. A Red Hat Enterprise Linux
 version of this installation guide is available at
-<http://tessera.io/docs-install-cluster/install-redhat.html>.
+<http://deltarho.org/docs-install-cluster/install-redhat.html>.
 
 The R, RHIPE, Hadoop Setting
 ============================
