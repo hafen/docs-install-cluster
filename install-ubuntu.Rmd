@@ -12,6 +12,15 @@ brand: |-
   </a>
 ---
 
+Tessera Installation on Ubuntu
+==============================
+
+This is a guide to installing the Tessera stack consisting of Hadoop,
+RHIPE, datadr, trelliscope and other supporting packages on a multi-node
+cluster running Ubuntu Linux version 14.04. A Red Hat Enterprise Linux
+version of this installation guide is available at
+<http://tessera.io/docs-install-cluster/install-redhat.html>.
+
 The R, RHIPE, Hadoop Setting
 ============================
 
@@ -125,18 +134,13 @@ DeltaRho Stack Cluster Installation Guide
 Introduction
 ------------
 
-This is a guide to installing the DeltaRho stack consisting of Hadoop,
-RHIPE, datadr, trelliscope and other supporting packages on a multi-node
-cluster. This guide is intended to be used by the Systems Administrator
-to quickly install and configure the software necessary to run the full
-DeltaRho stack. It is not focused on tuning and optimally configuring the
-DeltaRho stack. It simplifies and generalizes certain aspects of the
-installation. The Systems Administrator is encouraged to consult
-individual package documentation for further tuning later. In this guide
-we use assume UbuntuLinux version 14.04 is the operating system
-installed on he cluster. A Red Hat Enterprise Linux version of this
-installation guide is available at
-<http://deltarho.org/docs-install-cluster/install-redhat.html>.
+This guide is intended to be used by the Systems Administrator to
+quickly install and configure the software necessary to run the full
+DeltaRho stack on a multi-node cluster. It is not focused on tuning and
+optimally configuring the DeltaRho stack. Most components of DeltaRho
+require no tuning. However, the Systems Administrator is encouraged to
+consult the Cloudera Hadoop documentation for further tuning of Hadoop
+and HDFS.
 
 Example Configuration
 ---------------------
